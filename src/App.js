@@ -17,8 +17,9 @@ const App = () => {
     axios.get('cards.json')
       .then( reponse => {
         setCards(reponse.data.cards)
+        console.log('got data!')
       })
-  })
+  }, [])
 
   return (
     <div>
