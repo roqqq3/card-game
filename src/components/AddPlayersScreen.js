@@ -32,7 +32,7 @@ const StyledDescription = styled.p`
 
 const StyledInput = styled.input`
   padding: 1em
-  margin: 1em
+  margin: 0.25em
   color: palevioletred
   background: papayawhip
   border: none
@@ -60,7 +60,7 @@ const StyledAddButton = styled.button`
   color: white
   font-size: 2em
   font-variant: helvetica
-  margin: 1em
+  margin: 0.25em
   padding: 0.25em 1em
   border: 2px solid palevioletred
   border-radius: 50px
@@ -83,11 +83,11 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0px;
+  display: flex
+  flex-direction: column
+  padding: 10px 0px
   :first-child {
-    border-top: none;
+    border-top: none
   }
 `;
 

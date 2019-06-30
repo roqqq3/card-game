@@ -89,7 +89,7 @@ const App = () => {
   } else if (game) {
     return (
       <div className='centered'>
-        <div className='mainContainer'>
+        <div>
           <KeyHandler //binds space to new card
               keyEventName={KEYDOWN}
               keyValue=" "
@@ -104,7 +104,7 @@ const App = () => {
           <Notification
             message={message}
           />
-        </div>
+          </div>
       </div>
     )
   } else {

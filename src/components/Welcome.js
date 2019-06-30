@@ -4,13 +4,14 @@ import styled from 'styled-components'
 const WelcomeContainer = styled.div`
   text-align: center
   max-width: 500px
-  height: 500px
+  min-width: 100px
+  height: 70vh
 `
 
 const ButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex
+  align-items: center
+  justify-content: center
 `
 
 const StyledTitle = styled.h1`
@@ -28,17 +29,17 @@ const StyledDescription = styled.p`
 `;
 
 const StyledButton = styled.button`
-  color: white;
-  font-size: 2em;
+  color: white
+  font-size: 2em
   font-variant: helvetica
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 50px;
+  margin: 0.7em
+  padding: 0.25em 1em
+  border: 2px solid palevioletred
+  border-radius: 50px
   align-items: center
   background-color: #FB8E7E
   :hover {
-    color: #FB8E7E;
+    color: #FB8E7E
     background-color: white
   }
 `

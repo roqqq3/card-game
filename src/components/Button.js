@@ -7,17 +7,17 @@ const ButtonContainer = styled.div`
 `
 
 const StyledButton = styled.button`
-  color: white;
-  font-size: 2em;
+  color: white
+  font-size: 2em
   font-variant: helvetica
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 50px;
+  margin: 1em
+  padding: 0.25em 1em
+  border: 2px solid palevioletred
+  border-radius: 50px
   align-items: center
   background-color: #FB8E7E
   :hover {
-    color: #FB8E7E;
+    color: #FB8E7E
     background-color: white
   }
 `
