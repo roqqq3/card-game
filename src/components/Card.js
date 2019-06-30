@@ -8,26 +8,26 @@ const CardContainer = styled.div`
   max-width: 500px
   height: 70vh
 `
-
+//NOTE: semicolons necessary here to make the code work!
 const fadeIn = keyframes`
   from {
-    transform: scale(.25)
-    opacity: 0
+    transform: scale(.25);
+    opacity: 0;
   }
   to {
-    transform: scale(1)
-    opacity: 1
+    transform: scale(1);
+    opacity: 1;
   }
 `
-
+//NOTE: semicolons necessary here to make the code work!
 const fadeOut = keyframes`
   from {
-    transform: scale(1)
-    opacity: 1
+    transform: scale(1);
+    opacity: 1;
   }
   to {
     transform: scale(.25)
-    opacity: 0
+    opacity: 0;
   }
 `
 
