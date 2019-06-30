@@ -3,6 +3,7 @@ import axios from 'axios'
 import logo from './logo.svg';
 import './App.css';
 import Card from './components/Card'
+import Button from './components/Button'
 
 const App = () => {
 
@@ -10,21 +11,27 @@ const App = () => {
   const [ newCard, setNewCard ] = useState(0)
 
   const handleNewCard = () => {
-    setNewCard(Math.floor(Math.random() * (cards.length)))
+    let index = Math.floor(Math.random() * (cards.length))
+    if (index !== cards.length && index !== newCard) {
+      setNewCard(index)
+    } else {
+      handleNewCard()
+    }
   }
 
   useEffect(() => {
     axios.get('cards.json')
       .then( reponse => {
         setCards(reponse.data.cards)
-        console.log('got data!')
       })
   }, [])
 
   return (
-    <div>
-      <Card card={cards[newCard]}/>
-      <button value='newCard' type='submit' onClick={handleNewCard}>pistä uus</button>
+    <div className='centered'>
+      <div>
+        <Card card={cards[newCard]}/>
+        <Button handleNewCard={handleNewCard}/>
+      </div>
     </div>
   );
 

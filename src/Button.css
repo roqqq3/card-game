@@ -1,0 +1,7 @@
+.newCardButton {
+  padding: 10px 20px;
+  color: orange;
+  background-color: white;
+  border-color: orange;
+  font: regular 16px/24px Arial, sans-serif;
+}
