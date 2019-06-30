@@ -1,19 +1,19 @@
 {
   "cards": [
     {
+      "id": 1,
       "name": "paha",
-      "description": "juo 10 shottia :Ddddd",
-      "id": 1
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum mattis sollicitudin. In turpis dui, fermentum nec massa facilisis, facilisis vehicula turpis. Pellentesque et augue nulla. Morbi blandit augue sed quam tristique mattis."
     },
     {
+      "id": 2,
       "name": "hyvä",
-      "description": "ota housut pois",
-      "id": 2
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum mattis sollicitudin. In turpis dui, fermentum nec massa facilisis, facilisis vehicula turpis."
     },
     {
+      "id": 3,
       "name": "aika paha",
-      "description": "kellota kalja tai maksa 500e",
-      "id": 3
+      "description": "lyhyt descriptioni"
     }
   ]
 }

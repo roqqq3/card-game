@@ -7,6 +7,7 @@
     "react": "^16.8.6",
     "react-center": "^1.1.1",
     "react-dom": "^16.8.6",
+    "react-key-handler": "^1.2.0-beta.3",
     "react-scripts": "3.0.1",
     "styled-components": "^4.3.2"
   },

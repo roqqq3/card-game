@@ -1,8 +1,12 @@
 .centered {
-  height: 100vh; /* Magic here */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mainContainer {
+  height: 70vh
 }
 
 body {
