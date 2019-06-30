@@ -7,6 +7,12 @@ const WelcomeContainer = styled.div`
   height: 500px
 `
 
+const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const StyledTitle = styled.h1`
   font-size: 3.5em
   font-variant: helvetica
@@ -37,18 +43,27 @@ const StyledButton = styled.button`
   }
 `
 
-const Welcome = ({handleGameStart}) => {
+const Welcome = ({quickStartGame, handleSetAddPlayersScreen}) => {
   return (
     <WelcomeContainer>
       <StyledTitle>Drinking game</StyledTitle>
-      <StyledDescription>Click the button below to get started</StyledDescription>
-      <StyledButton 
-        classname='startGameButton' 
-        value='startGame' 
-        type='submit'
-        onClick={handleGameStart}>
-          Start Game
-      </StyledButton>
+      <StyledDescription>Adding players will track cards. Choose quick start if you just want to get playing.</StyledDescription>
+      <ButtonContainer>
+        <StyledButton 
+          classname='addPlayersButton' 
+          value='addPlayers' 
+          type='submit'
+          onClick={handleSetAddPlayersScreen}>
+            Add Players
+        </StyledButton>
+        <StyledButton
+          classname='QuickStartGameButton' 
+          value='QuickStartGame' 
+          type='submit'
+          onClick={quickStartGame}>
+            Quick Start
+        </StyledButton>
+      </ButtonContainer>
     </WelcomeContainer>
   )
 }
