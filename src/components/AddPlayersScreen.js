@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const AddPlayersContainer = styled.div`
   display: flex;
+  width: 95vw
   max-width: 500px
   height: 90vh
 `
@@ -38,6 +39,8 @@ const StyledInput = styled.input`
   border: none
   border-radius: 3px
   font-size: 1.3em
+  max-width: 200px
+  width: 40vw
 `
 
 const StyledNavigationButton = styled.button`

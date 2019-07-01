@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 const CardContainer = styled.div`
   align-text: center
   align-items: center
-  min-width: 100px
+  width: 60vw
   max-width: 500px
   height: 70vh
 `
@@ -56,8 +56,10 @@ const Card = (props) => {
   return (
     <CardContainer key={props.card.name}>
       <Fade>
+      <CardContainer key={props.card.name}>
         <StyledTitle>{props.card.name}</StyledTitle>
         <StyledDescription>{props.card.description}</StyledDescription>
+      </CardContainer>
       </Fade>
     </CardContainer>
   )
