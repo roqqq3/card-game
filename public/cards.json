@@ -2,18 +2,18 @@
   "cards": [
     {
       "id": 1,
-      "name": "paha",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum mattis sollicitudin. In turpis dui, fermentum nec massa facilisis, facilisis vehicula turpis. Pellentesque et augue nulla."
+      "name": "Drink 3",
+      "description": "Drink three times."
     },
     {
       "id": 2,
-      "name": "hyvä",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum mattis sollicitudin. In turpis dui, fermentum nec massa facilisis, facilisis vehicula turpis."
+      "name": "Whore",
+      "description": "You are the whore. You drink when someone else drinks."
     },
     {
       "id": 3,
-      "name": "aika paha",
-      "description": "lyhyt descriptioni"
+      "name": "Choose 3",
+      "description": "Choose someone to drink three times."
     }
   ]
 }
