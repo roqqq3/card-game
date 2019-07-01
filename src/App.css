@@ -5,9 +5,25 @@
   justify-content: center;
 }
 
-.gameScreen {
-  height: 90vh
+.playerList {
+  width: 20vw
 }
+
+.effectList {
+  width: 20vw
+}
+
+.mainContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gameScreen {
+  height: 90vh;
+}
+
 
 body {
   background-color: #F5D6C6

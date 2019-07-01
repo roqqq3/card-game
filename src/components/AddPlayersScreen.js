@@ -79,7 +79,7 @@ const List = styled.ul`
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
-  align-text: center
+  text-align: center
 `;
 
 const ListItem = styled.li`
@@ -104,7 +104,7 @@ const StartGameButton = ({players, startGame}) => {
         Start Game
       </StyledNavigationButton>
     )
-  } else if (players.length == 0) {
+  } else if (players.length === 0) {
     return (
       <StyledDescription>
         Add 2 more players

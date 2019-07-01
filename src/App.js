@@ -8,6 +8,8 @@ import Button from './components/Button'
 import Welcome from './components/Welcome'
 import Notification from './components/Notification'
 import AddPlayersScreen from './components/AddPlayersScreen'
+import PlayerList from './components/PlayerList'
+import CardEffects from './components/CardEffects'
 
 const App = () => {
 
@@ -18,8 +20,12 @@ const App = () => {
   const [ message, setMessage ] = useState(null) //used to send tips to players
   const [ players, setPlayers ] = useState([]) //the players in the game if user has set them
   const [ newPlayerName, setNewPlayerName ] = useState('') //the value of the name field when adding a new player
+  const [ currentPlayer, setCurrentPlayer ] = useState(0) //the index of the player to receive the next card
 
   const handleNewCard = () => { //TODO: all cards should not have same odds
+    if (players.length !== 0) {
+      setCurrentPlayer((currentPlayer + 1) % players.length)
+    }
     let index = Math.floor(Math.random() * (cards.length))
     if (index !== cards.length && index !== newCard) {
       setNewCard(index)
@@ -57,8 +63,17 @@ const App = () => {
       setMessage(null)
     }, 5000)
   }
+  
+  const quickStartGame = () => {
+    setPlayers([])
+    showMessage("Pressing SPACE will draw a new card")
+    setGame(true)
+  }
 
   const startGame = () => {
+    if (players.length !== 0) {
+      setCurrentPlayer(0)
+    }
     setAddPlayersScreen(false)
     showMessage("Pressing SPACE will draw a new card")
     setGame(true)
@@ -88,22 +103,33 @@ const App = () => {
     )
   } else if (game) {
     return (
-      <div className='centered'>
-        <div className='gameScreen'>
-          <KeyHandler //binds space to new card
-              keyEventName={KEYDOWN}
-              keyValue=" "
-              onKeyHandle={handleNewCard}
+      <div className='mainContainer'>
+        <div className='playerList'>
+          <PlayerList
+            players={players}
+            currentPlayer={currentPlayer}
           />
-          <Card
-            card={cards[newCard]}
-          />
-          <Button
-            handleNewCard={handleNewCard}
-          />
-          <Notification
-            message={message}
-          />
+        </div>
+        <div className='centered'>
+          <div className='gameScreen'>
+            <KeyHandler //binds space to new card
+                keyEventName={KEYDOWN}
+                keyValue=" "
+                onKeyHandle={handleNewCard}
+            />
+            <Card
+              card={cards[newCard]}
+            />
+            <Button
+              handleNewCard={handleNewCard}
+            />
+            <Notification
+              message={message}
+            />
+          </div>
+        </div>
+        <div className='effectList'>
+          <CardEffects/>
         </div>
       </div>
     )
@@ -111,7 +137,7 @@ const App = () => {
     return (
       <div className='centered'>
         <Welcome 
-          quickStartGame={startGame}
+          quickStartGame={quickStartGame}
           handleSetAddPlayersScreen={handleSetAddPlayersScreen}
         />
       </div>
