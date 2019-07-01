@@ -38,6 +38,7 @@ const StyledButton = styled.button`
   border-radius: 50px
   align-items: center
   background-color: #FB8E7E
+  outline: 0
   :hover {
     color: #FB8E7E
     background-color: white

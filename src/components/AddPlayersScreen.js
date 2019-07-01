@@ -44,19 +44,20 @@ const StyledInput = styled.input`
 `
 
 const StyledNavigationButton = styled.button`
-color: white
-font-size: 1.5em
-font-variant: helvetica
-margin: 1em
-padding: 0.25em 1em
-border: 2px solid palevioletred
-border-radius: 50px
-align-items: center
-background-color: #FB8E7E
-:hover {
-  color: #FB8E7E
-  background-color: white
-}
+  color: white
+  font-size: 1.5em
+  font-variant: helvetica
+  margin: 1em
+  padding: 0.25em 1em
+  border: 2px solid palevioletred
+  border-radius: 50px
+  align-items: center
+  background-color: #FB8E7E
+  outline: 0
+  :hover {
+    color: #FB8E7E
+    background-color: white
+  }
 `
 
 const StyledAddButton = styled.button`
@@ -69,6 +70,7 @@ const StyledAddButton = styled.button`
   border-radius: 50px
   align-items: center
   background-color: #FB8E7E
+  outline: 0;
   :hover {
     color: #FB8E7E
     background-color: white
