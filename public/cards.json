@@ -3,17 +3,26 @@
     {
       "id": 1,
       "name": "Drink 3",
-      "description": "Drink three times."
+      "description": "Drink three times.",
+      "difficulty": 1
     },
     {
       "id": 2,
       "name": "Whore",
-      "description": "You are the whore. You drink when someone else drinks."
+      "description": "You are the whore. You drink when someone else drinks.",
+      "difficulty": 2
     },
     {
       "id": 3,
       "name": "Choose 3",
-      "description": "Choose someone to drink three times."
+      "description": "Choose someone to drink three times.",
+      "difficulty": 1
+    },
+    {
+      "id": 4,
+      "name": "Down your drink",
+      "description": "Down your drink. You have 60 seconds.",
+      "difficulty": 3
     }
   ]
 }

@@ -14,7 +14,7 @@ import CardEffects from './components/CardEffects'
 const App = () => {
 
   const [ cards, setCards ] = useState(['']) //the cards that are loaded from json
-  const [ newCard, setNewCard ] = useState(0) //index of the current card
+  const [ currentCard, setCurrentCard ] = useState([]) //index of the current card
   const [ game, setGame ] = useState(false) //boolean whether game is started
   const [ addPlayersScreen, setAddPlayersScreen ] = useState(false) //boolean whether add players screen is on
   const [ message, setMessage ] = useState(null) //used to send tips to players
@@ -22,13 +22,27 @@ const App = () => {
   const [ newPlayerName, setNewPlayerName ] = useState('') //the value of the name field when adding a new player
   const [ currentPlayer, setCurrentPlayer ] = useState(0) //the index of the player to receive the next card
 
-  const handleNewCard = () => { //TODO: all cards should not have same odds
+  const handleTurnChange = () => {
+    handleNewCard()
     if (players.length !== 0) {
       setCurrentPlayer((currentPlayer + 1) % players.length)
     }
-    let index = Math.floor(Math.random() * (cards.length))
-    if (index !== cards.length && index !== newCard) {
-      setNewCard(index)
+  }
+
+  const handleNewCard = () => { //TODO: all cards should not have same odds
+    let filteredCards
+    let dice = Math.random() * 100
+    console.log(dice)
+    if (dice < 60) {
+      filteredCards = cards.filter(i => i.difficulty === 1)
+    } else if (dice < 98) {
+      filteredCards = cards.filter(i => i.difficulty === 2)
+    } else {
+      filteredCards = cards.filter(i => i.difficulty === 3)
+    }
+    let index = Math.floor(Math.random() * (filteredCards.length))
+    if (index !== filteredCards.length && filteredCards[index].id !== currentCard.id) {
+      setCurrentCard(filteredCards[index])
     } else {
       handleNewCard()
     }
@@ -65,12 +79,14 @@ const App = () => {
   }
   
   const quickStartGame = () => {
+    handleNewCard()
     setPlayers([])
     showMessage("Pressing SPACE will draw a new card")
     setGame(true)
   }
 
   const startGame = () => {
+    handleNewCard()
     if (players.length !== 0) {
       setCurrentPlayer(0)
     }
@@ -118,10 +134,10 @@ const App = () => {
                 onKeyHandle={handleNewCard}
             />
             <Card
-              card={cards[newCard]}
+              card={currentCard}
             />
             <Button
-              handleNewCard={handleNewCard}
+              handleTurnChange={handleTurnChange}
             />
             <Notification
               message={message}
