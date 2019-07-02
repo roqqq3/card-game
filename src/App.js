@@ -21,6 +21,7 @@ const App = () => {
   const [ players, setPlayers ] = useState([]) //the players in the game if user has set them
   const [ newPlayerName, setNewPlayerName ] = useState('') //the value of the name field when adding a new player
   const [ currentPlayer, setCurrentPlayer ] = useState(0) //the index of the player to receive the next card
+  const [ continuousCards, setContinuousCards ] = useState([])
 
   const handleTurnChange = () => {
     handleNewCard()
@@ -30,22 +31,36 @@ const App = () => {
   }
 
   const handleNewCard = () => { //TODO: all cards should not have same odds
-    let filteredCards
     let dice = Math.random() * 100
     console.log(dice)
-    if (dice < 60) {
-      filteredCards = cards.filter(i => i.difficulty === 1)
-    } else if (dice < 98) {
-      filteredCards = cards.filter(i => i.difficulty === 2)
-    } else {
-      filteredCards = cards.filter(i => i.difficulty === 3)
-    }
+    let filteredCards = cards.filter(i => i.difficulty < dice)
     let index = Math.floor(Math.random() * (filteredCards.length))
     if (index !== filteredCards.length && filteredCards[index].id !== currentCard.id) {
-      setCurrentCard(filteredCards[index])
+      let chosen = filteredCards[index]
+      setCurrentCard(chosen)
+      if (chosen.continuous && players.length !== 0) {
+        handleNewContinuousCard(chosen)
+      }
     } else {
       handleNewCard()
     }
+  }
+
+  const handleNewContinuousCard = (card) => {
+    let newContinuousCards = [...continuousCards]
+    for (let i = 0; i < newContinuousCards.length; i++) {
+      if (newContinuousCards[i].id === card.id) {
+        newContinuousCards.splice(i, 1)
+      }
+    }
+    const newContinuousCard = {
+      "id": card.id,
+      "name": card.name,
+      "player": players[currentPlayer]
+    }
+    console.log(players[currentPlayer].name)
+    newContinuousCards.push(newContinuousCard)
+    setContinuousCards(newContinuousCards)
   }
 
   const handleNewPlayerNameChange = (event) => {
@@ -145,7 +160,9 @@ const App = () => {
           </div>
         </div>
         <div className='effectList'>
-          <CardEffects/>
+          <CardEffects
+            continuousCards={continuousCards}
+          />
         </div>
       </div>
     )
