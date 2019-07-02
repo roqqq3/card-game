@@ -44,16 +44,16 @@
     },
     {
       "id": 7,
-      "name": "Shotgun or shot",
+      "name": "Card of death",
       "description": "Shotgun a can of drink or take a shot",
-      "difficulty": 99,
+      "difficulty": 97,
       "continuous": false
     },
     {
       "id": 8,
       "name": "Question master",
-      "description": "You are the question master. If someone answers your question, they drink.",
-      "difficulty": 80,
+      "description": "You are the question master. If someone answers a question you ask, they drink.",
+      "difficulty": 90,
       "continuous": true
     },
     {
@@ -61,6 +61,111 @@
       "name": "Rule",
       "description": "Make up a rule. Everyone must follow this rule. Previous rules are no longer active.",
       "difficulty": 80,
+      "continuous": false
+    },
+    {
+      "id": 10,
+      "name": "Summer",
+      "description": "If you are born in the summer, take a drink.",
+      "difficulty": 0,
+      "continuous": false
+    },
+    {
+      "id": 11,
+      "name": "Distribute 5",
+      "description": "Distribute five swigs among the players.",
+      "difficulty": 50,
+      "continuous": false
+    },
+    {
+      "id": 12,
+      "name": "Drink n times",
+      "description": "Drink as many times as there are players in this game.",
+      "difficulty": 70,
+      "continuous": false
+    },
+    {
+      "id": 13,
+      "name": "Category",
+      "description": "State a category and players must state things, that belong in this category. The loser must finish their drink.",
+      "difficulty": 90,
+      "continuous": false
+    },
+    {
+      "id": 14,
+      "name": "Rhyme",
+      "description": "Choose a word. Players must say words that rhyme with the chosen word. The loser must finish their drink.",
+      "difficulty": 90,
+      "continuous": false
+    },
+    {
+      "id": 15,
+      "name": "Waterfall",
+      "description": "Everyone starts drinking until the player on their right stops. The player who drew this card can stop at any time.",
+      "difficulty": 80,
+      "continuous": false
+    },
+    {
+      "id": 16,
+      "name": "123",
+      "description": "The player who drew this card drinks once, the player on their right twice, and so on for all players.",
+      "difficulty": 50,
+      "continuous": false
+    },
+    {
+      "id": 17,
+      "name": "Story",
+      "description": "Start a story with one word. Players must repeat the story and add one more word. The loser finishes their drink.",
+      "difficulty": 90,
+      "continuous": false
+    },
+    {
+      "id": 18,
+      "name": "Democracy",
+      "description": "Vote on a player. The player with the most votes must shotgun a beer or take a shot.",
+      "difficulty": 97,
+      "continuous": false
+    },
+    {
+      "id": 19,
+      "name": "Coinflip",
+      "description": "Flip a coin. If heads everyone drinks three times. If tails you drink six times.",
+      "difficulty": 90,
+      "continuous": false
+    },
+    {
+      "id": 20,
+      "name": "Half full",
+      "description": "If your drink is less than half-full, finish it. Otherwise choose someone with less than half-full drink to finish it.",
+      "difficulty": 90,
+      "continuous": false
+    },
+    {
+      "id": 21,
+      "name": "Chug master",
+      "description": "You can at any point make a player finish their drink. Can only be used once.",
+      "difficulty": 90,
+      "continuous": false
+    },
+    {
+      "id": 22,
+      "name": "Go back",
+      "description": "The previous player drinks three times.",
+      "difficulty": 50,
+      "continuous": false
+    },
+    {
+      "id": 23,
+      "name": "Thumb master",
+      "description": "You can at any point put your thumb on the table, and all players must follow. The last player to do this drinks.",
+      "difficulty": 90,
+      "continuous": true
+    },
+    {
+      "id": 24,
+      "name": "The unlucky number",
+      "description": "Players start counting numbers from 1. All numbers containing or divisible by 7 must be skipped. The loser drinks three times.",
+      "difficulty": 70,
       "continuous": false
     }
   ]

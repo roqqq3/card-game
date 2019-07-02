@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const AddPlayersContainer = styled.div`
-  display: flex;
   width: 95vw
   max-width: 500px
   height: 90vh
+  text-align: center
 `
 
 const ButtonContainer = styled.div`
@@ -70,7 +70,7 @@ const StyledAddButton = styled.button`
   border-radius: 50px
   align-items: center
   background-color: #FB8E7E
-  outline: 0;
+  outline: 0
   :hover {
     color: #FB8E7E
     background-color: white

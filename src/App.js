@@ -120,7 +120,6 @@ const App = () => {
   if (addPlayersScreen) {
     return ( 
       <div className='centered'>
-        <div>
           <AddPlayersScreen
             newPlayerName={newPlayerName}
             players={players}
@@ -129,7 +128,6 @@ const App = () => {
             handleGoToWelcome={handleGoToWelcome}
             startGame={startGame}
           />
-        </div>
       </div>
     )
   } else if (game) {
