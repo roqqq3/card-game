@@ -131,7 +131,7 @@ const App = () => {
             <KeyHandler //binds space to new card
                 keyEventName={KEYDOWN}
                 keyValue=" "
-                onKeyHandle={handleNewCard}
+                onKeyHandle={handleTurnChange}
             />
             <Card
               card={currentCard}

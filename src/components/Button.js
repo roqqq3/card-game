@@ -23,14 +23,14 @@ const StyledButton = styled.button`
   }
 `
 
-const Button = ({handleTurnCard}) => {
+const Button = ({handleTurnChange}) => {
   return(
     <ButtonContainer>
       <StyledButton 
         classname='newCardButton' 
         value='newCard' 
         type='submit' 
-        onClick={handleTurnCard}>
+        onClick={handleTurnChange}>
           uusi kortti
       </StyledButton>
     </ButtonContainer>
