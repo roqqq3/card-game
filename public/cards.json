@@ -4,168 +4,427 @@
       "id": 1,
       "name": "Drink 3",
       "description": "Take a drink three times.",
-      "difficulty": 50,
+      "rarity": 50,
       "continuous": false
     },
     {
       "id": 2,
       "name": "Whore",
-      "description": "You are the whore. You drink when someone else drinks.",
-      "difficulty": 80,
+      "description": "You are the whore. You drink up to three times when someone else drinks.",
+      "rarity": 50,
       "continuous": true
     },
     {
       "id": 3,
       "name": "Choose 3",
       "description": "Choose someone to drink three times.",
-      "difficulty": 50,
+      "rarity": 50,
       "continuous": false
     },
     {
       "id": 4,
       "name": "Down your drink",
       "description": "Down your drink. You have 60 seconds.",
-      "difficulty": 98,
+      "rarity": 80,
       "continuous": false
     },
     {
       "id": 5,
       "name": "Drink",
       "description": "Take a drink",
-      "difficulty": 0,
+      "rarity": 0,
       "continuous": false
     },
     {
       "id": 6,
       "name": "Choose",
       "description": "Choose someone to take a drink",
-      "difficulty": 0,
+      "rarity": 0,
       "continuous": false
     },
     {
       "id": 7,
-      "name": "Card of death",
+      "name": "Card of drinking",
       "description": "Shotgun a can of drink or take a shot",
-      "difficulty": 97,
+      "rarity": 90,
       "continuous": false
     },
     {
       "id": 8,
       "name": "Question master",
       "description": "You are the question master. If someone answers a question you ask, they drink.",
-      "difficulty": 90,
+      "rarity": 50,
       "continuous": true
     },
     {
       "id": 9,
       "name": "Rule",
       "description": "Make up a rule. Everyone must follow this rule. Previous rules are no longer active.",
-      "difficulty": 80,
+      "rarity": 60,
       "continuous": false
     },
     {
       "id": 10,
       "name": "Summer",
-      "description": "If you are born in the summer, take a drink.",
-      "difficulty": 0,
+      "description": "Everyone born in the summer takes a drink.",
+      "rarity": 50,
       "continuous": false
     },
     {
       "id": 11,
       "name": "Distribute 5",
       "description": "Distribute five swigs among the players.",
-      "difficulty": 50,
+      "rarity": 0,
       "continuous": false
     },
     {
       "id": 12,
       "name": "Drink n times",
       "description": "Drink as many times as there are players in this game.",
-      "difficulty": 70,
+      "rarity": 70,
       "continuous": false
     },
     {
       "id": 13,
       "name": "Category",
       "description": "State a category and players must state things, that belong in this category. The loser must finish their drink.",
-      "difficulty": 90,
+      "rarity": 60,
       "continuous": false
     },
     {
       "id": 14,
       "name": "Rhyme",
       "description": "Choose a word. Players must say words that rhyme with the chosen word. The loser must finish their drink.",
-      "difficulty": 90,
+      "rarity": 60,
       "continuous": false
     },
     {
       "id": 15,
       "name": "Waterfall",
       "description": "Everyone starts drinking until the player on their right stops. The player who drew this card can stop at any time.",
-      "difficulty": 80,
+      "rarity": 80,
       "continuous": false
     },
     {
       "id": 16,
       "name": "123",
       "description": "The player who drew this card drinks once, the player on their right twice, and so on for all players.",
-      "difficulty": 50,
+      "rarity": 50,
       "continuous": false
     },
     {
       "id": 17,
       "name": "Story",
       "description": "Start a story with one word. Players must repeat the story and add one more word. The loser finishes their drink.",
-      "difficulty": 90,
+      "rarity": 90,
       "continuous": false
     },
     {
       "id": 18,
       "name": "Democracy",
       "description": "Vote on a player. The player with the most votes must shotgun a beer or take a shot.",
-      "difficulty": 97,
+      "rarity": 97,
       "continuous": false
     },
     {
       "id": 19,
       "name": "Coinflip",
       "description": "Flip a coin. If heads everyone drinks three times. If tails you drink six times.",
-      "difficulty": 90,
+      "rarity": 90,
       "continuous": false
     },
     {
       "id": 20,
       "name": "Half full",
       "description": "If your drink is less than half-full, finish it. Otherwise choose someone with less than half-full drink to finish it.",
-      "difficulty": 90,
+      "rarity": 90,
       "continuous": false
     },
     {
       "id": 21,
       "name": "Chug master",
       "description": "You can at any point make a player finish their drink. Can only be used once.",
-      "difficulty": 90,
+      "rarity": 90,
       "continuous": false
     },
     {
       "id": 22,
       "name": "Go back",
       "description": "The previous player drinks three times.",
-      "difficulty": 50,
+      "rarity": 50,
       "continuous": false
     },
     {
       "id": 23,
       "name": "Thumb master",
       "description": "You can at any point put your thumb on the table, and all players must follow. The last player to do this drinks.",
-      "difficulty": 90,
+      "rarity": 90,
       "continuous": true
     },
     {
       "id": 24,
       "name": "The unlucky number",
       "description": "Players start counting numbers from 1. All numbers containing or divisible by 7 must be skipped. The loser drinks three times.",
-      "difficulty": 70,
+      "rarity": 70,
+      "continuous": false
+    },
+    {
+      "id": 25,
+      "name": "Winter",
+      "description": "Everyone born in the winter takes a drink.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 25,
+      "name": "Long hair",
+      "description": "The player with the longest hair drinks.",
+      "rarity": 70,
+      "continuous": false
+    },
+    {
+      "id": 26,
+      "name": "Pointing fingers",
+      "description": "Everyone points a finger at a player at the same time. The player with most fingers pointed at drinks 3 times.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 27,
+      "name": "Even age",
+      "description": "If your age is an even number, take a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 28,
+      "name": "Science question",
+      "description": "Ask the player on your right a science question. If they are right, you drink. If they are wrong, they drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 29,
+      "name": "Drum a beat",
+      "description": "Drum a beat on the table. The player on your right must drum your beat again. If he fails, he drinks 3. If he succeeds, you drink 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 30,
+      "name": "Truth or dare",
+      "description": "The player on your right asks you to play truth or dare. If you refuse, finish your drink.",
+      "rarity": 80,
+      "continuous": false
+    },
+    {
+      "id": 31,
+      "name": "2 truths and a lie",
+      "description": "State 2 truths and a lie about yourself. The player on the right tries to guess the lie. If successful, you drink 3 times. If not, he drinks 3 times.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 32,
+      "name": "Good memory",
+      "description": "If you can't remember what your last card did, take a drink. Otherwise, choose someone to drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 33,
+      "name": "Black socks",
+      "description": "All players wearing black socks take a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 34,
+      "name": "General knowledge question",
+      "description": "Ask the player on your right a general knowledge question. If they are right, you drink. If they are wrong, they drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 35,
+      "name": "Drinking sick",
+      "description": "Anyone who has ever been sick while drinking takes a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 36,
+      "name": "Apple",
+      "description": "Anyone that owns an Apple product takes a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 37,
+      "name": "Android",
+      "description": "Anyone that owns an Android phone takes a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 38,
+      "name": "Siblings",
+      "description": "Take a drink for every sibling you have.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 39,
+      "name": "Pale",
+      "description": "The most pale player takes a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 40,
+      "name": "21",
+      "description": "Start counting numbers from 1. You can say up to 3 numbers. After, pass the turn to your right and so on. The player that says 21 drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 41,
+      "name": "Arm wrestle",
+      "description": "Have an arm wrestle with the player on your right. The loser drinks 3 times.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 42,
+      "name": "Cash",
+      "description": "The player with the most cash on them must drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 43,
+      "name": "Forgiveness",
+      "description": "Choose a player. Anyone except you and that player must drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 44,
+      "name": "Hum a song",
+      "description": "Hum a song. The first player to guess the song can choose someone to drink 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 45,
+      "name": "Most likely",
+      "description": "Starting with you go round saying Most Likely to do x and then players point their finger at someone. The player with the most votes drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 46,
+      "name": "Majority rule",
+      "description": "All players choose either black or white and state their choice at the same time. The minority drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 47,
+      "name": "Beer",
+      "description": "If you are drinking beer, drink 3. Otherwise, choose someone to drink 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 48,
+      "name": "Long drink",
+      "description": "If you are drinking a long drink, drink 3. Otherwise, choose someone to drink 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 49,
+      "name": "Big shoes",
+      "description": "The player with the biggest shoe size drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 50,
+      "name": "One more",
+      "description": "The player who last drank drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 51,
+      "name": "I choose you",
+      "description": "Pick a player. Start drinking at the same time. You can stop only after the player you chose stops.",
+      "rarity": 60,
+      "continuous": false
+    },
+    {
+      "id": 52,
+      "name": "Thumb war",
+      "description": "Have a thumb war with the player on your right. The loser drinks 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 53,
+      "name": "Rock paper scissors",
+      "description": "Play rock paper scissors with the player on your right. The loser drinks 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 54,
+      "name": "Free drink",
+      "description": "Pick a players drink and take a drink from it.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 55,
+      "name": "Video games",
+      "description": "The player who owns the most video games takes a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 56,
+      "name": "Drink for name",
+      "description": "Drink for every letter in your name.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 57,
+      "name": "Balance",
+      "description": "Everyone must stand on one leg. The first player to fall must drink 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 58,
+      "name": "Going to bar",
+      "description": "Starting with you go round saying 'I'm going to the bar...' and adding one drink name. The player who messes up drinks 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 59,
+      "name": "Empty everything",
+      "description": "Everyone downs their drinks.",
+      "rarity": 90,
+      "continuous": false
+    },
+    {
+      "id": 60,
+      "name": "Choose to down",
+      "description": "Choose someone to down their drink.",
+      "rarity": 90,
       "continuous": false
     }
   ]

@@ -33,7 +33,7 @@ const App = () => {
   const handleNewCard = () => { //TODO: all cards should not have same odds
     let dice = Math.random() * 100
     console.log(dice)
-    let filteredCards = cards.filter(i => i.difficulty < dice)
+    let filteredCards = cards.filter(i => i.rarity < dice)
     let index = Math.floor(Math.random() * (filteredCards.length))
     if (index !== filteredCards.length && filteredCards[index].id !== currentCard.id) {
       let chosen = filteredCards[index]
