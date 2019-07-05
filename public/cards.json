@@ -53,14 +53,14 @@
       "id": 8,
       "name": "Question master",
       "description": "You are the question master. If someone answers a question you ask, they drink.",
-      "rarity": 50,
+      "rarity": 30,
       "continuous": true
     },
     {
       "id": 9,
       "name": "Rule",
       "description": "Make up a rule. Everyone must follow this rule. Previous rules are no longer active.",
-      "rarity": 60,
+      "rarity": 50,
       "continuous": false
     },
     {
@@ -81,7 +81,7 @@
       "id": 12,
       "name": "Drink n times",
       "description": "Drink as many times as there are players in this game.",
-      "rarity": 70,
+      "rarity": 0,
       "continuous": false
     },
     {
@@ -425,6 +425,76 @@
       "name": "Choose to down",
       "description": "Choose someone to down their drink.",
       "rarity": 90,
+      "continuous": false
+    },
+    {
+      "id": 61,
+      "name": "Weakest drink",
+      "description": "The player with the weakest drink takes a drink.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 62,
+      "name": "Instrument players",
+      "description": "Anyone who can play an instrumet drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 63,
+      "name": "Dog breeds",
+      "description": "Starting with you, go round saying dog breeds. The player who takes over 10 seconds drinks 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 64,
+      "name": "Phone users",
+      "description": "Anyone on their phone right now drinks 5.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 65,
+      "name": "Quench the thirst",
+      "description": "The player who hasn't drank for the longest time drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 66,
+      "name": "Mr. Worldwide",
+      "description": "The player who has been to the most countries drinks.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 67,
+      "name": "Riddle",
+      "description": "Tell the player on your right a riddle. If you can't think of one or they guess correctly, you drink. Otherwise, they drink.",
+      "rarity": 90,
+      "continuous": false
+    },
+    {
+      "id": 68,
+      "name": "Currencies",
+      "description": "Starting with you, go round saying currencies. The player who takes over 10 seconds drinks 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 69,
+      "name": "Higher or lower",
+      "description": "Play a game of higher or lower with a positive number below 100. Players have 5 tries and will guess in turn. The loser(s) drink 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 70,
+      "name": "Secret drink",
+      "description": "Close your eyes and try to guess a secret drink the player on your right gives you. If correct, the other player drinks 3. If not, you drink 3.",
+      "rarity": 0,
       "continuous": false
     }
   ]
