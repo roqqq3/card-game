@@ -14,7 +14,7 @@ import CardEffects from './components/CardEffects'
 const App = () => {
 
   const [ cards, setCards ] = useState(['']) //the cards that are loaded from json
-  const [ currentCard, setCurrentCard ] = useState([]) //index of the current card
+  const [ currentCard, setCurrentCard ] = useState([]) //the current card
   const [ game, setGame ] = useState(false) //boolean whether game is started
   const [ addPlayersScreen, setAddPlayersScreen ] = useState(false) //boolean whether add players screen is on
   const [ message, setMessage ] = useState(null) //used to send tips to players
@@ -22,6 +22,7 @@ const App = () => {
   const [ newPlayerName, setNewPlayerName ] = useState('') //the value of the name field when adding a new player
   const [ currentPlayer, setCurrentPlayer ] = useState(0) //the index of the player to receive the next card
   const [ continuousCards, setContinuousCards ] = useState([])
+  const [ previousCards, setPreviousCards ] = useState([])
 
   const handleTurnChange = () => {
     handleNewCard()
@@ -35,15 +36,40 @@ const App = () => {
     console.log(dice)
     let filteredCards = cards.filter(i => i.rarity < dice)
     let index = Math.floor(Math.random() * (filteredCards.length))
-    if (index !== filteredCards.length && filteredCards[index].id !== currentCard.id) {
-      let chosen = filteredCards[index]
+    let chosen = filteredCards[index]
+    if (index !== filteredCards.length && chosen.id !== currentCard.id
+        && (chosen.continuous || checkPreviousCards(chosen))) {
+      //continuous cards are not filtered through the previous cards filter
       setCurrentCard(chosen)
       if (chosen.continuous && players.length !== 0) {
         handleNewContinuousCard(chosen)
       }
+      if (!chosen.continuous) {
+        handleSetPreviousCards(chosen)
+      }
     } else {
       handleNewCard()
     }
+  }
+
+  const checkPreviousCards = (card) => {
+    for (let i = 0; i < previousCards.length; i++) {
+      if (previousCards[i].id === card.id) {
+        console.log(previousCards)
+        return false
+      }
+    }
+    return true
+  }
+
+  const handleSetPreviousCards = (card) => {
+    let logLength = 30
+    let newPreviousCards = [...previousCards]
+    if (newPreviousCards.length >= logLength) {
+      newPreviousCards.shift()
+    }
+    newPreviousCards.push(card)
+    setPreviousCards(newPreviousCards)
   }
 
   const handleNewContinuousCard = (card) => {
@@ -58,7 +84,6 @@ const App = () => {
       "name": card.name,
       "player": players[currentPlayer]
     }
-    console.log(players[currentPlayer].name)
     newContinuousCards.push(newContinuousCard)
     setContinuousCards(newContinuousCards)
   }
