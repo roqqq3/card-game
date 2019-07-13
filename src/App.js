@@ -25,10 +25,10 @@ const App = () => {
   const [ previousCards, setPreviousCards ] = useState([])
 
   const handleTurnChange = () => {
-    handleNewCard()
     if (players.length !== 0) {
       setCurrentPlayer((currentPlayer + 1) % players.length)
     }
+    handleNewCard()
   }
 
   const handleNewCard = () => { //TODO: all cards should not have same odds
@@ -63,7 +63,7 @@ const App = () => {
   }
 
   const handleSetPreviousCards = (card) => {
-    let logLength = 30
+    let logLength = 50
     let newPreviousCards = [...previousCards]
     if (newPreviousCards.length >= logLength) {
       newPreviousCards.shift()

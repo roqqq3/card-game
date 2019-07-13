@@ -39,14 +39,14 @@ const Fade = styled.div`
 `
 
 const StyledTitle = styled.h1`
-  font-size: 3.5em
+  font-size: calc(2em + 1vw);
   font-variant: helvetica
   text-align: center
   color: #FA6E4F
 `
 
 const StyledDescription = styled.p`
-  font-size: 2em
+  font-size: calc(1.5em + 1vw);
   font-variant: helvetica
   text-align: center
   color: #FA6E4F

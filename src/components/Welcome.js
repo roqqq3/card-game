@@ -6,6 +6,7 @@ const WelcomeContainer = styled.div`
   max-width: 500px
   min-width: 100px
   height: 70vh
+  padding: 5vw
 `
 
 const ButtonContainer = styled.div`
@@ -15,7 +16,7 @@ const ButtonContainer = styled.div`
 `
 
 const StyledTitle = styled.h1`
-  font-size: 3.5em
+  font-size: 3.5rem
   font-variant: helvetica
   text-align: center
   color: #FA6E4F
