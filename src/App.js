@@ -26,12 +26,14 @@ const App = () => {
 
   const handleTurnChange = () => {
     if (players.length !== 0) {
-      setCurrentPlayer((currentPlayer + 1) % players.length)
+      let player = updateCurrentPlayer()
+      handleNewCard(player)
+    } else {
+      handleNewCard()
     }
-    handleNewCard()
   }
 
-  const handleNewCard = () => { //TODO: all cards should not have same odds
+  const handleNewCard = (player) => {
     let dice = Math.random() * 100
     console.log(dice)
     let filteredCards = cards.filter(i => i.rarity < dice)
@@ -42,14 +44,20 @@ const App = () => {
       //continuous cards are not filtered through the previous cards filter
       setCurrentCard(chosen)
       if (chosen.continuous && players.length !== 0) {
-        handleNewContinuousCard(chosen)
+        handleNewContinuousCard(chosen, player)
       }
       if (!chosen.continuous) {
         handleSetPreviousCards(chosen)
       }
     } else {
-      handleNewCard()
+      handleNewCard(player)
     }
+  }
+
+  const updateCurrentPlayer = () => {
+    let idx = (currentPlayer + 1) % players.length
+    setCurrentPlayer(idx)
+    return idx
   }
 
   const checkPreviousCards = (card) => {
@@ -63,7 +71,7 @@ const App = () => {
   }
 
   const handleSetPreviousCards = (card) => {
-    let logLength = 50
+    let logLength = 60
     let newPreviousCards = [...previousCards]
     if (newPreviousCards.length >= logLength) {
       newPreviousCards.shift()
@@ -72,7 +80,8 @@ const App = () => {
     setPreviousCards(newPreviousCards)
   }
 
-  const handleNewContinuousCard = (card) => {
+  const handleNewContinuousCard = (card, player) => {
+    console.log('new continuous card for ' + players[player])
     let newContinuousCards = [...continuousCards]
     for (let i = 0; i < newContinuousCards.length; i++) {
       if (newContinuousCards[i].id === card.id) {
@@ -82,7 +91,7 @@ const App = () => {
     const newContinuousCard = {
       "id": card.id,
       "name": card.name,
-      "player": players[currentPlayer]
+      "player": players[player]
     }
     newContinuousCards.push(newContinuousCard)
     setContinuousCards(newContinuousCards)

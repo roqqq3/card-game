@@ -46,7 +46,7 @@ const StyledTitle = styled.h1`
 `
 
 const StyledDescription = styled.p`
-  font-size: calc(1.5em + 1vw);
+  font-size: calc(1.5em + 0.7vw);
   font-variant: helvetica
   text-align: center
   color: #FA6E4F
