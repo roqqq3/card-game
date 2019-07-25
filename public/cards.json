@@ -676,7 +676,7 @@
       "id": 97,
       "name": "UKKOMETSO",
       "description": "Laita ukkometso soimaan. Kaikkien tulee juoda juomansa loppuun biisin loppuun mennessä.",
-      "rarity": 80,
+      "rarity": 70,
       "continuous": false
     },
     {
@@ -689,7 +689,7 @@
     {
       "id": 99,
       "name": "Hienoja miehiä",
-      "description": "Alkaen sinusta, pelaajat vuorollaan luettelevat hienoja miehiä perustellen. Mikäli muiden mielestä kyseessä ei ole hieno mies, loppuu peli ja juot 3.",
+      "description": "Alkaen sinusta, pelaajat vuorollaan luettelevat hienoja miehiä perustellen. Mikäli muiden mielestä kyseessä ei ole hieno mies, loppuu peli ja häviäjä juo 3.",
       "rarity": 0,
       "continuous": false
     },
@@ -712,6 +712,111 @@
       "name": "Hyvä teko?",
       "description": "Valitse juotko itse 3 kertaa vai juoko joku toinen 6 kertaa.",
       "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 103,
+      "name": "Kieli rullalle",
+      "description": "Jos et osaa laittaa kieltäsi rullalle, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 104,
+      "name": "Teini ninjat",
+      "description": "Nimeä kaikki teini-ikäiset mutantti ninja kilpikonnat. Jos et osaa, juo 3 kertaa.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 105,
+      "name": "Noppa",
+      "description": "Heitä noppaa ja juo silmäluvun verran. Jos ei ole noppaa, juo 4 kertaa.",
+      "rarity": 30,
+      "continuous": false
+    },
+    {
+      "id": 106,
+      "name": "Kruuna",
+      "description": "Heitä kolikkoa. Jos kruuna, juo 3 kertaa.",
+      "rarity": 30,
+      "continuous": false
+    },
+    {
+      "id": 107,
+      "name": "Klaava",
+      "description": "Heitä kolikkoa. Jos klaava, juo 3 kertaa.",
+      "rarity": 30,
+      "continuous": false
+    },
+    {
+      "id": 108,
+      "name": "Uusi kokemus",
+      "description": "Juo jotain, mitä et ole vielä juonut tänään.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 109,
+      "name": "JUOMAKISA",
+      "description": "Ota juomakisa oikealla olevan kanssa. Se, joka juo juomansa hitaammin loppuun, juo toisen juoman tai ottaa shotin (4cl).",
+      "rarity": 90,
+      "continuous": false
+    },
+    {
+      "id": 110,
+      "name": "Adjektiiveja",
+      "description": "Kuvaile vasemmalla olevaa kolmella adjektiivilla. Molemmat juovat 3 kertaa.",
+      "rarity": 30,
+      "continuous": false
+    },
+    {
+      "id": 111,
+      "name": "Laavaa",
+      "description": "Lattia on laavaa yhden kierroksen ajan. Jos joku pelaajista jää kiinni lattiaan koskemisesta, tulee hänen juoda juomansa loppuun.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 112,
+      "name": "Arvaa kortti",
+      "description": "Arvaa kortti ja nosta korttipakasta satunnainen kortti. Jos arvasit oikein, kaikki muut juovat juomansa tyhjiksi. Jos et tai ei ole korttipakkaa, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 113,
+      "name": "Kuoleman kortit",
+      "description": "Jaa kaikille kortit. Kaikki juovat oman kortin luvun määrän. Jos ei ole korttipakkaa, kaikki juovat 7 kertaa.",
+      "rarity": 60,
+      "continuous": false
+    },
+    {
+      "id": 114,
+      "name": "Suurin kortti",
+      "description": "Jaa kaikille kortit. Suurimman kortin saaja juo 3 kertaa. Jos ei ole korttipakkaa, sinä juot 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 115,
+      "name": "Pienin kortti",
+      "description": "Jaa kaikille kortit. Pienimmän kortin saaja juo 3 kertaa. Jos ei ole korttipakkaa, sinä juot 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 116,
+      "name": "Blackjack",
+      "description": "Jaa kierros blackjackia. Kaikki jotka häviävät jakajalle juovat juomansa loppuun. Jos ei ole korttipakkaa, sinä juot juomasi loppuun.",
+      "rarity": 70,
+      "continuous": false
+    },
+    {
+      "id": 117,
+      "name": "Suurin noppa",
+      "description": "Kaikki heittävät vuorollaan noppaa. Suurimman silmäluvun saaja(t) juo silmäluvun verran. Jos ei ole noppaa, sinä juot 6 kertaa.",
+      "rarity": 30,
       "continuous": false
     }
   ]
