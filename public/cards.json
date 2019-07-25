@@ -818,6 +818,34 @@
       "description": "Kaikki heittävät vuorollaan noppaa. Suurimman silmäluvun saaja(t) juo silmäluvun verran. Jos ei ole noppaa, sinä juot 6 kertaa.",
       "rarity": 30,
       "continuous": false
+    },
+    {
+      "id": 118,
+      "name": "Kossuvissy",
+      "description": "Jos olet juonut tänä iltana kossuvissyä, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 118,
+      "name": "Laskettelu",
+      "description": "Kaikki, jotka ovat joskus käyneet laskettelemassa, juovat kerran.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 119,
+      "name": "Huojuva torni",
+      "description": "Jos pelaat huojuvaa tornia samalla, nosta toinenkin palikka nostamatta kuitenkaan toista korttia. Jos et pelaa huojuvaa tornia, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 120,
+      "name": "Laulumiehiä",
+      "description": "Valitse kappale ja laula se karaokena alusta loppuun. Jos et halua, juot juomasi loppuun.",
+      "rarity": 70,
+      "continuous": false
     }
   ]
 }
