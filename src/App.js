@@ -71,7 +71,7 @@ const App = () => {
   }
 
   const handleSetPreviousCards = (card) => {
-    let logLength = 60
+    let logLength = 90
     let newPreviousCards = [...previousCards]
     if (newPreviousCards.length >= logLength) {
       newPreviousCards.shift()
