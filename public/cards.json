@@ -500,7 +500,7 @@
     {
       "id": 71,
       "name": "Elokuvalainaus",
-      "description": "Siteeraa elokuvaa. Oikealla oleva yrittää arvata elokuvan nimen. Jos oikein, sinä juot 3. Jos väärin, hän juo 3.",
+      "description": "Siteeraa elokuvaa. Oikealla oleva yrittää arvata elokuvan nimen. Jos väärä arvaus, molemmat juovat 3 kertaa.",
       "rarity": 0,
       "continuous": false
     },
