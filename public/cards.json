@@ -846,6 +846,223 @@
       "description": "Valitse kappale ja laula se karaokena alusta loppuun. Jos et halua, juot juomasi loppuun.",
       "rarity": 70,
       "continuous": false
+    },
+    {
+      "id": 121,
+      "name": "Turnajaiset",
+      "description": "Ottakaa kädenvääntöturnaus jakautuen pareihin ja aina häviäjän jatkaen seuraaviin erään. Se, joka häviää viimeiseksi juo juomansa loppuun.",
+      "rarity": 70,
+      "continuous": false
+    },
+    {
+      "id": 122,
+      "name": "Euroopan ulkopuolella",
+      "description": "Kaikki, jotka eivät ole ikinä käyneet Euroopan ulkopuolella, juovat 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 123,
+      "name": "Maailman mestari",
+      "description": "Monessako maassa olet käynyt? Juo niin monta kertaa.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 124,
+      "name": "Korkeasaari",
+      "description": "Alkaen sinusta pelaajat vuorollaan sanovat eläinrotuja, joita on Korkeasaaressa. Pelaaja, jolla kestää yli 10 sekuntia tai sanoo väärän eläimen, juo 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 125,
+      "name": "Pisin matka autolla",
+      "description": "Mikä on pisin matka kilometreissä, jonka olet ajanut autolla? Jaa se sadalla ja pyöristä ylöspäin. Juo sen verran.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 126,
+      "name": "Eksoottiset pojat",
+      "description": "Kaikki, jotka ovat käyneet Aasiassa, juovat 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 127,
+      "name": "Palomies",
+      "description": "Laita puhelimen taustakuvaksi kuva palomiehestä tai juo juomasi loppuun.",
+      "rarity": 50,
+      "continuous": false
+    },
+    {
+      "id": 128,
+      "name": "Paha kierre",
+      "description": "Montako annosta olet juonut tänään? Juo niin monta kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 129,
+      "name": "Kieli solmussa",
+      "description": "Sano ääneen ''Kas vain!' sanoi kasvain, ja kasvoi vain. Vain kasvain voi kasvaa noin vain.' Jos epäonnistuit muiden mielestä, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 130,
+      "name": "Kieli solmussa",
+      "description": "Sano ääneen 'Appilan pappilan piski paksuposki pakkas kapsäkin ja pinkaisi juoksuun.' Jos epäonnistuit muiden mielestä, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 131,
+      "name": "Kieli solmussa",
+      "description": "Sano ääneen 'Presidenttipari pariloi Floridan kolesterolitonta broileria.' Jos epäonnistuit muiden mielestä, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 132,
+      "name": "Risto Räppääjä",
+      "description": "Miten jatkuu riimi 'Elämä ei ole hassumpaa...'? Et voi sanoa samaa, mitä on jo sanottu tässä pelissä. Jos et tiedä, juo 3. Jos tiedät, valitse joku juomaan 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 133,
+      "name": "Risto Räppääjä",
+      "description": "Miten jatkuu riimi 'Elämä ei ole hassumpaa...'? Et voi sanoa samaa, mitä on jo sanottu tässä pelissä. Jos et tiedä, juo 3. Jos tiedät, valitse joku juomaan 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 134,
+      "name": "Kaksi kaverusta",
+      "description": "Mitkä oli Leijonakuninkaassa eräiden mangustin ja pahkasian nimet? Jos et tiedä, häpeä ja juo 3 kertaa. Jos tiedät, valitse joku juomaan 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 135,
+      "name": "San Andreas",
+      "description": "Kaikki juovat 3 kertaa, paitsi ne, jotka muistavat jonkin huijauskoodin GTA San Andreasiin (PC tai PS2).",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 136,
+      "name": "Epic gamer",
+      "description": "Kaikki juovat kerran jokaista videopeliä kohden, jota ovat pelanneet yli 1000 tuntia.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 137,
+      "name": "Poliisin valvonnassa",
+      "description": "Kaikki, jotka ovat saaneet varoituksen tai sakon poliisilta, juovat 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 138,
+      "name": "Sitsien haltija",
+      "description": "Alkaen sinusta pelaajat vuorollaan sanovat virallisen laulukirjan sisältämiä lauluja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 139,
+      "name": "Festarit",
+      "description": "Monillako festareilla olet käynyt? Juo niin monta kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 140,
+      "name": "Kahvia",
+      "description": "Kaikki, jotka ovat juoneet kahvia tänään, juovat kerran.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 141,
+      "name": "Ring of death",
+      "description": "Tehkää korteista pieni ympyrä. Nostakaa vuorotellen kortteja ympärästä. Se, joka rikkoo ympyrän, juo juomansa tyhjäksi. Jos ei ole kortteja, sinä juot juomasi tyhjäksi.",
+      "rarity": 70,
+      "continuous": false
+    },
+    {
+      "id": 142,
+      "name": "Ikä ja siis häh?",
+      "description": "Valitse joku juomaan niiden oma ikänsä modulo 10 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 143,
+      "name": "Avatar",
+      "description": "Kaikki juovat 3 kertaa, paitsi ne, jotka muistavat minkä tahansa hahmon nimen James Cameronin Avatarista.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 144,
+      "name": "KUNNON TYÖ UKKO",
+      "description": "Jos olet juomassa kaljaa tölkistä, voit huutaa RÄYH ja pakottaa jonkun muun, kuin kaljaa tölkistä juovan, juomaan juomansa loppuun. Voit tehdä tämän vain nyt ja kerran.",
+      "rarity": 60,
+      "continuous": false
+    },
+    {
+      "id": 145,
+      "name": "Köyhät kävelee",
+      "description": "Kaikki juovat 3 kertaa, paitsi ne, jotka ovat ajaneet autolla tänään.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 146,
+      "name": "Köyhät kävelee",
+      "description": "Kaikki juovat 3 kertaa, paitsi ne, jotka ovat ajaneet autolla tänään.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 147,
+      "name": "Bionicle",
+      "description": "Kaikki, jotka ovat joskus omistaneet tai omistavat Bioniclen, juovat 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 148,
+      "name": "Batman",
+      "description": "Jos et ole nähnyt kaikkia Batman-elokuvia, juo 3 kertaa. Jos olet, valitse joku juomaan 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 149,
+      "name": "Kotona",
+      "description": "Kaikki, jotka eivät ole kotipaikkakunnallansa, juovat 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 150,
+      "name": "Savo",
+      "description": "Jos olet syntynyt Savossa, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 151,
+      "name": "Pullonpyöritys",
+      "description": "Laita pullo pyörimään. Se, kehen kaula osoittaa, juo 3 kertaa. Jos ei ole pulloa, sinä juot 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
     }
   ]
 }
