@@ -11,7 +11,7 @@
       "id": 2,
       "name": "Huora",
       "description": "Olet huora. Juot aina, kun joku toinen juo, mutta enintään kerran per vuoro.",
-      "rarity": 30,
+      "rarity": 0,
       "continuous": true
     },
     {
@@ -53,7 +53,7 @@
       "id": 8,
       "name": "Kysymysmestari",
       "description": "Olet kysymysmestari. Kaikki jotka vastaavat kysymyksiisi juovat kerran.",
-      "rarity": 30,
+      "rarity": 0,
       "continuous": true
     },
     {
@@ -158,7 +158,7 @@
       "id": 23,
       "name": "Peukalomestari",
       "description": "Aina kun laitat peukalon pöytää vasten, pitää muiden pelaajien tehdä se myös. Viimeinen pelaajista juo.",
-      "rarity": 30,
+      "rarity": 0,
       "continuous": true
     },
     {
