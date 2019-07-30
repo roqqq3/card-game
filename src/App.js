@@ -34,6 +34,9 @@ const App = () => {
   }
 
   const handleNewCard = (player) => {
+    if (player === undefined) {
+      player = 0
+    }
     let dice = Math.random() * 100
     console.log(dice)
     let filteredCards = cards.filter(i => i.rarity < dice)
@@ -46,7 +49,7 @@ const App = () => {
       if (chosen.continuous && players.length !== 0) {
         handleNewContinuousCard(chosen, player)
       }
-      window.responsiveVoice.speak(chosen.description, "Finnish Female")
+      window.responsiveVoice.speak(players[player] + " on sinun vuorosi!" + chosen.description, "Finnish Female")
       if (!chosen.continuous) {
         handleSetPreviousCards(chosen)
       }
