@@ -46,6 +46,7 @@ const App = () => {
       if (chosen.continuous && players.length !== 0) {
         handleNewContinuousCard(chosen, player)
       }
+      window.responsiveVoice.speak(chosen.description, "Finnish Female")
       if (!chosen.continuous) {
         handleSetPreviousCards(chosen)
       }
