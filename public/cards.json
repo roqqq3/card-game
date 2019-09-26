@@ -157,7 +157,7 @@
     {
       "id": 23,
       "name": "Peukalomestari",
-      "description": "Aina kun laitat peukalon pöytää vasten, pitää muiden pelaajien tehdä se myös. Viimeinen pelaajista juo.",
+      "description": "Aina kun laitat peukalon pöytää vasten, pitää muiden pelaajien tehdä se myös. Viimeinen pelaajista juo. Tämän voi tehdä korkeintaan kerran vuorossa.",
       "rarity": 0,
       "continuous": true
     },
@@ -478,8 +478,8 @@
     },
     {
       "id": 68,
-      "name": "Valuuttoja",
-      "description": "Alkaen sinusta, pelaajat vuorollaan sanovat valuuttoja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+      "name": "Automerkit",
+      "description": "Alkaen sinusta, pelaajat vuorollaan sanovat automerkkejä. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
       "rarity": 0,
       "continuous": false
     },
@@ -618,7 +618,7 @@
     },
     {
       "id": 89,
-      "name": "Automerkit",
+      "name": "Valuutat",
       "description": "Alkaen sinusta, pelaajat vuorollaan sanovat valuuttoja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
       "rarity": 0,
       "continuous": false
