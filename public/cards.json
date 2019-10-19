@@ -1063,6 +1063,20 @@
       "description": "Laita pullo pyörimään. Se, kehen kaula osoittaa, juo 3 kertaa. Jos ei ole pulloa, sinä juot 3 kertaa.",
       "rarity": 0,
       "continuous": false
+    },
+    {
+      "id": 152,
+      "name": "Etelän vetelä",
+      "description": "Jos olet syntynyt etelempänä kuin Tampere, juo 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 153,
+      "name": "Telephone",
+      "description": "Ensimmäinen, joka soittaa tämän kortin saaneelle henkilölle, saa määrätä jonkun juomaan 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
     }
   ]
 }
