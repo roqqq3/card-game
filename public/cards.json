@@ -268,8 +268,8 @@
     },
     {
       "id": 38,
-      "name": "Siskokset",
-      "description": "Juo niin monta kertaa, kuin sinulla on siskoksia.",
+      "name": "Sisarukset",
+      "description": "Juo niin monta kertaa, kuin sinulla on sisaruksia.",
       "rarity": 40,
       "continuous": false
     },
@@ -1075,6 +1075,20 @@
       "id": 153,
       "name": "Telephone",
       "description": "Ensimmäinen, joka soittaa tämän kortin saaneelle henkilölle, saa määrätä jonkun juomaan 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 154,
+      "name": "Mun hoodit",
+      "description": "Pelaaja, joka asuu lähimpänä tätä paikkaa saa määrätä jonkun juomaan 3 kertaa.",
+      "rarity": 0,
+      "continuous": false
+    },
+    {
+      "id": 155,
+      "name": "Iso raha",
+      "description": "Pelaaja, jolla on suurin kolikko, tulee joko juoda 7 kertaa tai antaa suurin kolikko jollekkin ja määrätä kolikon saaneen juomaan 7 kertaa.",
       "rarity": 0,
       "continuous": false
     }
