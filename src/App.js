@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import KeyHandler, { KEYDOWN } from 'react-key-handler';
-import logo from './logo.svg';
 import './App.css';
 import Card from './components/Card'
 import Button from './components/Button'
@@ -23,13 +21,23 @@ const App = () => {
   const [ currentPlayer, setCurrentPlayer ] = useState(0) //the index of the player to receive the next card
   const [ continuousCards, setContinuousCards ] = useState([])
   const [ previousCards, setPreviousCards ] = useState([])
+  const [ keyIsDown, setKeyIsDown ] = useState(false)
 
-  const handleTurnChange = () => {
-    if (players.length !== 0) {
-      let player = updateCurrentPlayer()
-      handleNewCard(player)
-    } else {
-      handleNewCard()
+  const handleTurnChange = (e) => {
+    if (e.key === ' ' && !keyIsDown) {
+      setKeyIsDown(true);
+      if (players.length !== 0) {
+        let player = updateCurrentPlayer()
+        handleNewCard(player)
+      } else {
+        handleNewCard()
+      }
+    }
+  }
+
+  const handleKeyUp = (e) => {
+    if (e.key === ' ' && keyIsDown) {
+      setKeyIsDown(false);
     }
   }
 
@@ -174,7 +182,7 @@ const App = () => {
     )
   } else if (game) {
     return (
-      <div className='mainContainer'>
+      <div className='mainContainer' tabIndex='0' onKeyDown={handleTurnChange} onKeyUp={handleKeyUp}>
         <div className='playerList'>
           <PlayerList
             players={players}
@@ -183,11 +191,6 @@ const App = () => {
         </div>
         <div className='centered'>
           <div className='gameScreen'>
-            <KeyHandler //binds space to new card
-                keyEventName={KEYDOWN}
-                keyValue=" "
-                onKeyHandle={handleTurnChange}
-            />
             <Card
               card={currentCard}
             />
