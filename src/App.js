@@ -24,20 +24,26 @@ const App = () => {
   const [ keyIsDown, setKeyIsDown ] = useState(false)
 
   const handleTurnChange = (e) => {
-    if (e.key === ' ' && !keyIsDown) {
-      setKeyIsDown(true);
-      if (players.length !== 0) {
-        let player = updateCurrentPlayer()
-        handleNewCard(player)
-      } else {
-        handleNewCard()
-      }
+    if (e && e.screenX === 0) {
+      return;
+    }
+    if (players.length !== 0) {
+      let player = updateCurrentPlayer()
+      handleNewCard(player)
+    } else {
+      handleNewCard()
     }
   }
 
   const handleKeyUp = (e) => {
     if (e.key === ' ' && keyIsDown) {
-      setKeyIsDown(false);
+      setKeyIsDown(false)
+    }
+  }
+  const handleKeyDown = (e) => {
+    if (e.key === ' ' && !keyIsDown) {
+      setKeyIsDown(true)
+      handleTurnChange()
     }
   }
 
@@ -58,9 +64,9 @@ const App = () => {
         handleNewContinuousCard(chosen, player)
       }
       if (players.length > 0) {
-        window.responsiveVoice.speak(players[player] + " on sinun vuorosi!" + chosen.description, "Finnish Female")
+        //window.responsiveVoice.speak(players[player] + " on sinun vuorosi!" + chosen.description, "Finnish Female")
       } else {
-        window.responsiveVoice.speak(chosen.description, "Finnish Female")
+        //window.responsiveVoice.speak(chosen.description, "Finnish Female")
       }
       if (!chosen.continuous) {
         handleSetPreviousCards(chosen)
@@ -182,7 +188,7 @@ const App = () => {
     )
   } else if (game) {
     return (
-      <div className='mainContainer' tabIndex='0' onKeyDown={handleTurnChange} onKeyUp={handleKeyUp}>
+      <div className='mainContainer' tabIndex='0' onKeyDown={handleKeyDown} onKeyUp={handleKeyUp}>
         <div className='playerList'>
           <PlayerList
             players={players}

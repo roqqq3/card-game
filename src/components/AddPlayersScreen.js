@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const AddPlayersContainer = styled.div`
-  width: 95vw
-  max-width: 500px
-  height: 90vh
-  text-align: center
+  width: 95vw;
+  max-width: 500px;
+  height: 90vh;
+  text-align: center;
 `
 
 const ButtonContainer = styled.div`
@@ -15,91 +15,91 @@ const ButtonContainer = styled.div`
 `
 
 const StyledTitle = styled.h1`
-  font-size: 3.5em
-  font-variant: helvetica
-  text-align: center
-  color: #FA6E4F
+  font-size: 3.5em;
+  font-variant: helvetica;
+  text-align: center;
+  color: #FA6E4F;
 `
 
 const StyledDescription = styled.p`
-  font-size: 1em
-  font-variant: helvetica
-  text-align: center
-  color: #FA6E4F
-  width: 156px
-  margin: 1em
-  padding: 0.25em 1em
+  font-size: 1em;
+  font-variant: helvetica;
+  text-align: center;
+  color: #FA6E4F;
+  width: 156px;
+  margin: 1em;
+  padding: 0.25em 1em;
 `;
 
 const StyledInput = styled.input`
-  padding: 1em
-  margin: 0.25em
-  color: palevioletred
-  background: papayawhip
-  border: none
-  border-radius: 3px
-  font-size: 1.3em
-  max-width: 200px
-  width: 40vw
+  padding: 1em;
+  margin: 0.25em;
+  color: palevioletred;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.3em;
+  max-width: 200px;
+  width: 40vw;
 `
 
 const StyledNavigationButton = styled.button`
-  color: white
-  font-size: 1.5em
-  font-variant: helvetica
-  margin: 1em
-  padding: 0.25em 1em
-  border: 2px solid palevioletred
-  border-radius: 50px
-  align-items: center
-  background-color: #FB8E7E
-  outline: 0
+  color: white;
+  font-size: 1.5em;
+  font-variant: helvetica;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 50px;
+  align-items: center;
+  background-color: #FB8E7E;
+  outline: 0;
   :hover {
-    color: #FB8E7E
-    background-color: white
+    color: #FB8E7E;
+    background-color: white;
   }
 `
 
 const StyledAddButton = styled.button`
-  color: white
-  font-size: 2em
-  font-variant: helvetica
-  margin: 0.25em
-  padding: 0.25em 1em
-  border: 2px solid palevioletred
-  border-radius: 50px
-  align-items: center
-  background-color: #FB8E7E
-  outline: 0
+  color: white;
+  font-size: 2em;
+  font-variant: helvetica;
+  margin: 0.25em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 50px;
+  align-items: center;
+  background-color: #FB8E7E;
+  outline: 0;
   :hover {
-    color: #FB8E7E
-    background-color: white
+    color: #FB8E7E;
+    background-color: white;
   }
 `
 
 const List = styled.ul`
   list-style: none;
   padding: 0px 20px;
-  background-color: #E9C8B7
+  background-color: #E9C8B7;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
-  text-align: center
+  text-align: center;
 `;
 
 const ListItem = styled.li`
-  display: flex
-  flex-direction: column
-  padding: 10px 0px
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
   :first-child {
-    border-top: none
+    border-top: none;
   }
 `;
 
 const StyledName = styled.span`
-  font-size: 25px
-  color: #FA6E4F
-  margin-bottom: 5px
+  font-size: 25px;
+  color: #FA6E4F;
+  margin-bottom: 5px;
 `;
 
 const StartGameButton = ({players, startGame}) => {
