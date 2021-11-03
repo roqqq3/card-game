@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledNotification = styled.p`
-font-size: 1em
-font-variant: helvetica
-text-align: center
-color: #FA6E4F
+font-size: 1em;
+font-variant: helvetica;
+text-align: center;
+color: #FA6E4F;
 `
 
 const Notification = ({ message }) => {

@@ -23,9 +23,9 @@ const ListItem = styled.li`
 `;
 
 const StyledName = styled.span`
-  font-size: 25px
-  color: #FA6E4F
-  margin-bottom: 5px
+  font-size: 25px;
+  color: #FA6E4F;
+  margin-bottom: 5px;
 `;
 
 const CardEffects = ({continuousCards}) => {

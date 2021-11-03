@@ -2,11 +2,11 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const CardContainer = styled.div`
-  align-text: center
-  align-items: center
-  width: 60vw
-  max-width: 500px
-  height: 70vh
+  align-text: center;
+  align-items: center;
+  width: 60vw;
+  max-width: 500px;
+  height: 70vh;
 `
 //NOTE: semicolons necessary here to make the code work!
 const fadeIn = keyframes`
@@ -26,30 +26,30 @@ const fadeOut = keyframes`
     opacity: 1;
   }
   to {
-    transform: scale(.25)
+    transform: scale(.25);
     opacity: 0;
   }
 `
 
 const Fade = styled.div`
-  display: inline-block
-  visibility: ${props => props.out ? 'hidden' : 'visible'}
-  animation: ${props => props.out ? fadeOut : fadeIn} 0.5s linear
-  transition: visibility 1s linear
+  display: inline-block;
+  visibility: ${props => props.out ? 'hidden' : 'visible'};
+  animation: ${props => props.out ? fadeOut : fadeIn} 0.5s linear;
+  transition: visibility 1s linear;
 `
 
 const StyledTitle = styled.h1`
   font-size: calc(2em + 1vw);
-  font-variant: helvetica
-  text-align: center
-  color: #FA6E4F
+  font-variant: helvetica;
+  text-align: center;
+  color: #FA6E4F;
 `
 
 const StyledDescription = styled.p`
   font-size: calc(1.5em + 0.7vw);
-  font-variant: helvetica
-  text-align: center
-  color: #FA6E4F
+  font-variant: helvetica;
+  text-align: center;
+  color: #FA6E4F;
 `
 
 const Card = (props) => {
