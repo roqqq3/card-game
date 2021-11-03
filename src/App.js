@@ -64,9 +64,9 @@ const App = () => {
         handleNewContinuousCard(chosen, player)
       }
       if (players.length > 0) {
-        //window.responsiveVoice.speak(players[player] + " on sinun vuorosi!" + chosen.description, "Finnish Female")
+        window.responsiveVoice.speak(players[player] + " on sinun vuorosi!" + chosen.description, "Finnish Female")
       } else {
-        //window.responsiveVoice.speak(chosen.description, "Finnish Female")
+        window.responsiveVoice.speak(chosen.description, "Finnish Female")
       }
       if (!chosen.continuous) {
         handleSetPreviousCards(chosen)
