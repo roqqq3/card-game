@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'; 
 import styled from 'styled-components'
 
 const AddPlayersContainer = styled.div`
@@ -102,29 +102,51 @@ const StyledName = styled.span`
   margin-bottom: 5px;
 `;
 
-const StartGameButton = ({players, startGame}) => {
-  if (players.length > 1) {
-    return ( 
-      <StyledNavigationButton type='submit' onClick={startGame}>
-        Start Game
-      </StyledNavigationButton>
-    )
-  } else if (players.length === 0) {
-    return (
-      <StyledDescription>
-        Add 2 more players
-      </StyledDescription>
-    )
-  } else {
-    return (
-      <StyledDescription>
-        Add 1 more player
-      </StyledDescription>
-    )
-  }
+interface Props {
+  players: string[];
+  startGame: () => void;
+  handleNewPlayer: (name: string) => void;
+  handleGoToWelcome: () => void;
 }
 
-const AddPlayersScreen = (props) => {
+const AddPlayersScreen = (props: Props) => {
+
+  const [ newPlayerName, setNewPlayerName ] = useState('') // The value of the name field when adding a new player
+
+  const renderStartGameButton = () => {
+    if (props.players.length > 1) {
+      return ( 
+        <StyledNavigationButton type='submit' onClick={props.startGame}>
+          Start Game
+        </StyledNavigationButton>
+      )
+    } else if (props.players.length === 0) {
+      return (
+        <StyledDescription>
+          Add 2 more players
+        </StyledDescription>
+      )
+    } else {
+      return (
+        <StyledDescription>
+          Add 1 more player
+        </StyledDescription>
+      )
+    }
+  }
+
+  const handleNewPlayerName = (evt: React.FormEvent) => {
+    evt.preventDefault()
+    if (!props.players.includes(newPlayerName) && newPlayerName !== '') {
+      props.handleNewPlayer(newPlayerName)
+      setNewPlayerName('')
+    }
+  }
+
+  const handleNewPlayerNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNewPlayerName(event.target.value)
+  }
+
   return (
     <AddPlayersContainer>
       <div>
@@ -132,18 +154,15 @@ const AddPlayersScreen = (props) => {
           <StyledNavigationButton type='submit' onClick={props.handleGoToWelcome}>
             Go back
           </StyledNavigationButton>
-          <StartGameButton 
-            players={props.players}
-            startGame={props.startGame}
-          />
+          {renderStartGameButton()}
         </ButtonContainer>
           <StyledTitle>Add Players</StyledTitle>
           <ButtonContainer>
-            <form onSubmit={props.handleNewPlayer}>
+            <form onSubmit={handleNewPlayerName}>
               <StyledInput
-                value={props.newPlayerName} 
+                value={newPlayerName} 
                 placeholder='Enter name'
-                onChange={props.handleNewPlayerNameChange} 
+                onChange={handleNewPlayerNameChange} 
               />
               <StyledAddButton type='submit'>
                   Add

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const WelcomeContainer = styled.div`
@@ -46,21 +45,24 @@ const StyledButton = styled.button`
   }
 `
 
-const Welcome = ({quickStartGame, handleSetAddPlayersScreen}) => {
+interface WelcomeProps {
+  quickStartGame: () => void;
+  handleSetAddPlayersScreen: () => void;
+}
+
+const Welcome = ({ quickStartGame, handleSetAddPlayersScreen }: WelcomeProps) => {
   return (
     <WelcomeContainer>
       <StyledTitle>Drinking game</StyledTitle>
       <StyledDescription>Adding players will track cards. Choose quick start if you just want to get playing.</StyledDescription>
       <ButtonContainer>
-        <StyledButton 
-          classname='addPlayersButton' 
+        <StyledButton
           value='addPlayers' 
           type='submit'
           onClick={handleSetAddPlayersScreen}>
             Add Players
         </StyledButton>
         <StyledButton
-          classname='QuickStartGameButton' 
           value='QuickStartGame' 
           type='submit'
           onClick={quickStartGame}>

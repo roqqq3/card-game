@@ -1,5 +1,5 @@
-import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { Card } from '../cards/Card'
 
 const CardContainer = styled.div`
   align-text: center;
@@ -19,22 +19,11 @@ const fadeIn = keyframes`
     opacity: 1;
   }
 `
-//NOTE: semicolons necessary here to make the code work!
-const fadeOut = keyframes`
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: scale(.25);
-    opacity: 0;
-  }
-`
 
 const Fade = styled.div`
   display: inline-block;
-  visibility: ${props => props.out ? 'hidden' : 'visible'};
-  animation: ${props => props.out ? fadeOut : fadeIn} 0.5s linear;
+  visibility: 'visible';
+  animation: ${fadeIn} 0.5s linear;
   transition: visibility 1s linear;
 `
 
@@ -48,21 +37,25 @@ const StyledTitle = styled.h1`
 const StyledDescription = styled.p`
   font-size: calc(1.5em + 0.7vw);
   font-variant: helvetica;
-  text-align: center;
+  text-align: center; 
   color: #FA6E4F;
 `
 
-const Card = (props) => {
-  return (
-    <CardContainer key={props.card.name}>
-      <Fade>
-      <CardContainer key={props.card.name}>
-        <StyledTitle>{props.card.name}</StyledTitle>
-        <StyledDescription>{props.card.description}</StyledDescription>
-      </CardContainer>
-      </Fade>
-    </CardContainer>
-  )
+interface SingleCardProps {
+  card?: Card
 }
 
-export default Card
+const SingleCard = ({ card }: SingleCardProps) => {
+  return card 
+    ? <CardContainer key={card.name}>
+        <Fade>
+          <CardContainer key={card.name}>
+            <StyledTitle>{card.name}</StyledTitle>
+            <StyledDescription>{card.description}</StyledDescription>
+          </CardContainer>
+        </Fade>
+      </CardContainer>
+    : null;
+}
+
+export default SingleCard

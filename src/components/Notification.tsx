@@ -8,7 +8,11 @@ text-align: center;
 color: #FA6E4F;
 `
 
-const Notification = ({ message }) => {
+interface NotificationProps {
+  message: string | null
+}
+
+const Notification = ({ message }: NotificationProps) => {
   if (message !== null) {
     return (
       <div className="message">

@@ -1,5 +1,4 @@
 import React from "react";
-import "../Button.css";
 import styled from "styled-components";
 
 const ButtonContainer = styled.div`
@@ -23,7 +22,7 @@ const StyledButton = styled.button`
   }
 `;
 
-type ButtonProps = {
+interface ButtonProps {
   handleTurnChange: React.MouseEventHandler<HTMLButtonElement>
 }
 
@@ -31,7 +30,6 @@ const Button = ({ handleTurnChange }: ButtonProps) => {
   return (
     <ButtonContainer>
       <StyledButton
-        className="newCardButton"
         value="newCard"
         type="submit"
         onClick={handleTurnChange}

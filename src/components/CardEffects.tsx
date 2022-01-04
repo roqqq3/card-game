@@ -1,5 +1,5 @@
-import React from 'react'
 import styled from 'styled-components'
+import { ContinuousCard } from '../types/ContinuousCard';
 
 const List = styled.ul`
   overflow: hidden;
@@ -13,7 +13,7 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  background-color: ${props => props.current ? '#C7A290' : '#E9C8B7'};
+  background-color: #E9C8B7;
   display: flex;
   flex-direction: column;
   padding: 10px 0px;
@@ -27,20 +27,26 @@ const StyledName = styled.span`
   color: #FA6E4F;
   margin-bottom: 5px;
 `;
- 
-const PlayerList = (props) => {
+
+interface CardEffectsProps {
+  continuousCards: ContinuousCard[]
+}
+
+const CardEffects = ({continuousCards}: CardEffectsProps) => {
   return (
-  <List>
-    {props.players.map((i, index) => 
+    <List>
+    {continuousCards.map((card) => 
       <ListItem
-        key={index}
-        current={index === props.currentPlayer}>
+        key={card.id}>
         <StyledName>
-          {i}
+          {card.name}
+        </StyledName>
+        <StyledName>
+          {card.player}
         </StyledName>
       </ListItem>)}
   </List>
   )
 }
 
-export default PlayerList
+export default CardEffects
