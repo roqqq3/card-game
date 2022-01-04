@@ -1,0 +1,11 @@
+{
+  "cards": [
+    {
+      "id": 88,
+      "name": "En oo ikinä",
+      "description": "Pelaajat nostavat ylös 3 sormea. Listaa asioita, joita et ole ikinä tehnyt. Kaikki, jotka ovat tehneet asian laskevat sormen. Viimeisen sormen laskija juo 3.",
+      "rarity": 0,
+      "continuous": false
+    }
+  ]
+}
