@@ -34,7 +34,7 @@ const Button = ({ handleTurnChange }: ButtonProps) => {
         type="submit"
         onClick={handleTurnChange}
       >
-        new card
+        Uusi kortti
       </StyledButton>
     </ButtonContainer>
   );

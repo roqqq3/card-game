@@ -53,20 +53,20 @@ interface WelcomeProps {
 const Welcome = ({ quickStartGame, handleSetAddPlayersScreen }: WelcomeProps) => {
   return (
     <WelcomeContainer>
-      <StyledTitle>Drinking game</StyledTitle>
-      <StyledDescription>Adding players will track cards. Choose quick start if you just want to get playing.</StyledDescription>
+      <StyledTitle>Juomapeli</StyledTitle>
+      <StyledDescription>Pelaajien lisääminen näyttää vuorot ja jatkuvat kortit. Valitse nopea peli jos haluat vain päästä pelaamaan.</StyledDescription>
       <ButtonContainer>
         <StyledButton
           value='addPlayers' 
           type='submit'
           onClick={handleSetAddPlayersScreen}>
-            Add Players
+            Lisää pelaajia
         </StyledButton>
         <StyledButton
           value='QuickStartGame' 
           type='submit'
           onClick={quickStartGame}>
-            Quick Start
+            Nopea peli
         </StyledButton>
       </ButtonContainer>
     </WelcomeContainer>

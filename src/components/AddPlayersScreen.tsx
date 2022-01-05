@@ -114,22 +114,22 @@ const AddPlayersScreen = (props: Props) => {
   const [ newPlayerName, setNewPlayerName ] = useState('') // The value of the name field when adding a new player
 
   const renderStartGameButton = () => {
-    if (props.players.length > 1) {
+    if (props.players.length >= 2) {
       return ( 
         <StyledNavigationButton type='submit' onClick={props.startGame}>
-          Start Game
+          Aloita peli
         </StyledNavigationButton>
       )
     } else if (props.players.length === 0) {
       return (
         <StyledDescription>
-          Add 2 more players
+          Lisää kaksi pelaajaa
         </StyledDescription>
       )
     } else {
       return (
         <StyledDescription>
-          Add 1 more player
+          Lisää yksi pelaaja
         </StyledDescription>
       )
     }
@@ -152,11 +152,11 @@ const AddPlayersScreen = (props: Props) => {
       <div>
         <ButtonContainer>
           <StyledNavigationButton type='submit' onClick={props.handleGoToWelcome}>
-            Go back
+            Takaisin
           </StyledNavigationButton>
           {renderStartGameButton()}
         </ButtonContainer>
-          <StyledTitle>Add Players</StyledTitle>
+          <StyledTitle>Lisää pelaajia</StyledTitle>
           <ButtonContainer>
             <form onSubmit={handleNewPlayerName}>
               <StyledInput
@@ -165,7 +165,7 @@ const AddPlayersScreen = (props: Props) => {
                 onChange={handleNewPlayerNameChange} 
               />
               <StyledAddButton type='submit'>
-                  Add
+                  Lisää
               </StyledAddButton>
             </form>
           </ButtonContainer>
