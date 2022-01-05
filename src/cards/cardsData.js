@@ -395,7 +395,7 @@ export const cardsData = [
     "id": 56,
     "name": "Huono nimi",
     "description": "Juo niin monta kertaa kuin nimessäsi on kirjaimia.",
-    "rarity": 50,
+    "rarity": 30,
     "continuous": false
   },
   {
@@ -619,28 +619,28 @@ export const cardsData = [
     "id": 89,
     "name": "Valuutat",
     "description": "Alkaen sinusta, pelaajat vuorollaan sanovat valuuttoja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
-    "rarity": 0,
+    "rarity": 40,
     "continuous": false
   },
   {
     "id": 90,
     "name": "Osavaltiot",
     "description": "Alkaen sinusta, pelaajat vuorollaan sanovat Yhdysvaltojen osavaltioita. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
-    "rarity": 0,
+    "rarity": 40,
     "continuous": false
   },
   {
     "id": 91,
     "name": "Euroopan maat",
     "description": "Alkaen sinusta, pelaajat vuorollaan sanovat Euroopan maita. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
-    "rarity": 0,
+    "rarity": 40,
     "continuous": false
   },
   {
     "id": 92,
     "name": "Kiltoja",
     "description": "Alkaen sinusta, pelaajat vuorollaan sanovat kiltoja tai virallisia ainejärjestöjä. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
-    "rarity": 50,
+    "rarity": 40,
     "continuous": false
   },
   {
@@ -828,7 +828,7 @@ export const cardsData = [
   {
     "id": 118,
     "name": "Laskettelu",
-    "description": "Kaikki, jotka ovat joskus käyneet laskettelemassa, juovat kerran.",
+    "description": "Kaikki, jotka ovat joskus käyneet laskettelemassa, juovat 3 kertaa.",
     "rarity": 0,
     "continuous": false
   },
@@ -850,7 +850,7 @@ export const cardsData = [
     "id": 121,
     "name": "Turnajaiset",
     "description": "Ottakaa kädenvääntöturnaus jakautuen pareihin ja aina häviäjän jatkaen seuraaviin erään. Se, joka häviää viimeiseksi juo juomansa loppuun.",
-    "rarity": 70,
+    "rarity": 100,
     "continuous": false
   },
   {
@@ -1073,7 +1073,7 @@ export const cardsData = [
   {
     "id": 153,
     "name": "Telephone",
-    "description": "Ensimmäinen, joka soittaa tämän kortin saaneelle henkilölle, saa määrätä jonkun juomaan 3 kertaa.",
+    "description": "Ensimmäinen, joka soittaa tämän kortin saaneelle henkilölle, saa määrätä jonkun juomaan 6 kertaa.",
     "rarity": 0,
     "continuous": false
   },
@@ -1089,6 +1089,55 @@ export const cardsData = [
     "name": "Iso raha",
     "description": "Pelaaja, jolla on suurin kolikko, tulee joko juoda 7 kertaa tai antaa suurin kolikko jollekkin ja määrätä kolikon saaneen juomaan 7 kertaa.",
     "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 156,
+    "name": "Jämerät ukot",
+    "description": "Kaikki parrakkaat pelaajat juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 157,
+    "name": "Kuurojen tarina",
+    "description": "Aloita tarina yhdellä eleellä. Pelaajat vuorollaan lisäävät yhden eleen toistaen vanhat. Se, joka ei muista kaikkia eleitä, juo juomansa loppuun.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 158,
+    "name": "Seinä",
+    "description": "Kaikkien pelaajien pitää koskettaa seinää. Viimeinen seinän koskija juo 6 kertaa.",
+    "rarity": 60,
+    "continuous": false
+  },
+  {
+    "id": 159,
+    "name": "Hiukset",
+    "description": "Pelaaja, jolla on pisimmät hiukset, juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 160,
+    "name": "Syntymäpäivä",
+    "description": "Sano oikealla olevan syntymäpäivä. Jos oikein, juo oikealla oleva 3 kertaa. Jos väärin, juot sinä 3 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 161,
+    "name": "Äläpäs mene",
+    "description": "Seuraava pelaaja, joka haluaa poistua huoneesta, pitää juoda juomansa loppuun.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 162,
+    "name": "Tuu tänne",
+    "description": "Kaikkien pelaajien pitää koskettaa kortin saajaa. Viimeinen koskettaja juo 6 kertaa.",
+    "rarity": 50,
     "continuous": false
   }
 ]
