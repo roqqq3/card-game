@@ -112,13 +112,6 @@ const App = () => {
       setMessage(null)
     }, 5000)
   }
-  
-  const quickStartGame = () => {
-    handleNewCard()
-    setPlayers([])
-    showMessage("Pressing SPACE will draw a new card")
-    setGamestate(Gamestate.Playing)
-  }
 
   const startGame = () => {
     handleNewCard()
@@ -174,7 +167,7 @@ const App = () => {
       return (
         <div className='centered'>
           <Welcome 
-            quickStartGame={quickStartGame}
+            quickStartGame={startGame}
             handleSetAddPlayersScreen={handleSetAddPlayersScreen}
           />
         </div>
