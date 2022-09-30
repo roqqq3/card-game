@@ -282,7 +282,7 @@ export const cardsData = [
   {
     "id": 40,
     "name": "21",
-    "description": "Pelaajat aloittavat laskemisen vuorotellen. Kerralla voi sanoa enintään 3 numeroa. Pelaaja, joka sanoo 21, juo.",
+    "description": "Pelaajat aloittavat laskemisen vuorotellen järjestyksessä alkaen numerosta yksi. Kerralla voi sanoa enintään 3 numeroa. Pelaaja, joka sanoo 21, juo.",
     "rarity": 0,
     "continuous": false
   },
