@@ -177,8 +177,8 @@ export const cardsData = [
   {
     "id": 25,
     "name": "Pisimmät hiukset",
-    "description": "Pelaaja, jolla on pisimmät, hiukset juo.",
-    "rarity": 70,
+    "description": "Pelaaja, jolla on pisimmät hiukset, juo.",
+    "rarity": 0,
     "continuous": false
   },
   {
@@ -1114,30 +1114,121 @@ export const cardsData = [
   },
   {
     "id": 159,
-    "name": "Hiukset",
-    "description": "Pelaaja, jolla on pisimmät hiukset, juo 3 kertaa.",
-    "rarity": 0,
-    "continuous": false
-  },
-  {
-    "id": 160,
     "name": "Syntymäpäivä",
     "description": "Sano oikealla olevan syntymäpäivä. Jos oikein, juo oikealla oleva 3 kertaa. Jos väärin, juot sinä 3 kertaa.",
     "rarity": 50,
     "continuous": false
   },
   {
-    "id": 161,
+    "id": 160,
     "name": "Äläpäs mene",
     "description": "Seuraava pelaaja, joka haluaa poistua huoneesta, pitää juoda juomansa loppuun.",
     "rarity": 50,
     "continuous": false
   },
   {
-    "id": 162,
+    "id": 161,
     "name": "Tuu tänne",
     "description": "Kaikkien pelaajien pitää koskettaa kortin saajaa. Viimeinen koskettaja juo 6 kertaa.",
     "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 162,
+    "name": "Namskis",
+    "description": "Pelaaja, joka viimeksi söi mitään, juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 163,
+    "name": "Kaatunut",
+    "description": "Mene selällesi makaamaan lattialle ja juo.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 164,
+    "name": "90s kids",
+    "description": "Kaikki pelaajat, jotka ovat syntyneet 90-luvulla, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 165,
+    "name": "Zoomerit",
+    "description": "Kaikki pelaajat, jotka ovat syntyneet 00-luvulla, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 166,
+    "name": "Yhestä kymppii",
+    "description": "Valitse luonnollinen luku yhden ja kymmenen väliltä. Muiden pelaajien tulee vuorotellen yrittää arvata luku. Oikein arvannut määrää 6 juomaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 167,
+    "name": "öö ää åå",
+    "description": "Sano aakkoset takaperin tai juo juomasi loppuun.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 168,
+    "name": "Mitä sää sanoit?",
+    "description": "Saat puhua vain kuiskailemalla kunnes tulee uudestaan vuorosi. Mikäli jäät kiinni normaalisti puhumisesta, juo 6 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "id": 169,
+    "name": "Voimakas",
+    "description": "Tee 10 punnerrusta. Mikäli et pysty tai halua, juo 6 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "id": 170,
+    "name": "Väärä käsi",
+    "description": "Saat käyttää vain väärää kättäsi kunnes tulee uudestaan vuorosi. Mikäli jäät kiinni oikean käden käytöstä, juo 6 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "id": 171,
+    "name": "Pieni rakko",
+    "description": "Pelaaja, joka kävi viimeksi vessassa, juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 172,
+    "name": "Huono näkö",
+    "description": "Kaikki pelaajat, joilla on silmälasit, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 173,
+    "name": "Kertotaulu",
+    "description": "Luettele 6 kertotaulu. Jos menee jossain kohtaa väärin, juo 6 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 174,
+    "name": "Kyynärpää",
+    "description": "Kaikki pelaajat, jotka eivät pysty nuolemaan kyynärpäitään, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 175,
+    "name": "Kellojäbä",
+    "description": "Kaikki pelaajat, joilla on rannekello kädessä, juovat 3 kertaa.",
+    "rarity": 0,
     "continuous": false
   }
 ]
