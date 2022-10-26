@@ -1,3 +1,5 @@
+import { faDice } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 
@@ -7,12 +9,12 @@ const ButtonContainer = styled.div`
 
 const StyledButton = styled.button`
   color: white;
-  font-size: 2em;
+  font-size: 2rem;
   font-variant: helvetica;
   margin: 1em;
-  padding: 0.25em 1em;
+  padding: 1rem 2rem;
   border: 2px solid palevioletred;
-  border-radius: 50px;
+  border-radius: 1rem;
   align-items: center;
   background-color: #FB8E7E;
   outline: 0;
@@ -34,7 +36,7 @@ const Button = ({ handleTurnChange }: ButtonProps) => {
         type="submit"
         onClick={handleTurnChange}
       >
-        Uusi kortti
+        <FontAwesomeIcon icon={faDice} fixedWidth />
       </StyledButton>
     </ButtonContainer>
   );

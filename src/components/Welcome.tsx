@@ -1,3 +1,5 @@
+import { faBoltLightning, faPeoplePulling } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components'
 
 const WelcomeContainer = styled.div`
@@ -22,7 +24,7 @@ const StyledTitle = styled.h1`
 `
 
 const StyledDescription = styled.p`
-  font-size: 2em;
+  font-size: 2rem;
   font-variant: helvetica;
   text-align: center;
   color: #FA6E4F;
@@ -30,12 +32,12 @@ const StyledDescription = styled.p`
 
 const StyledButton = styled.button`
   color: white;
-  font-size: 2em;
+  font-size: 1.75rem;
   font-variant: helvetica;
-  margin: 0.7em;
-  padding: 0.25em 1em;
+  margin: 0.3rem;
+  padding: 0.5rem 0.5rem;
   border: 2px solid palevioletred;
-  border-radius: 50px;
+  border-radius: 1rem;
   align-items: center;
   background-color: #FB8E7E;
   outline: 0;
@@ -60,13 +62,13 @@ const Welcome = ({ quickStartGame, handleSetAddPlayersScreen }: WelcomeProps) =>
           value='addPlayers' 
           type='submit'
           onClick={handleSetAddPlayersScreen}>
-            Lisää pelaajia
+            <FontAwesomeIcon icon={faPeoplePulling} fixedWidth /> Lisää pelaajia
         </StyledButton>
         <StyledButton
           value='QuickStartGame' 
           type='submit'
           onClick={quickStartGame}>
-            Nopea peli
+            <FontAwesomeIcon icon={faBoltLightning} fixedWidth />Nopea peli
         </StyledButton>
       </ButtonContainer>
     </WelcomeContainer>

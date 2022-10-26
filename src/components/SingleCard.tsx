@@ -6,7 +6,7 @@ const CardContainer = styled.div`
   align-items: center;
   width: 60vw;
   max-width: 500px;
-  height: 70vh;
+  height: 80%;
 `
 
 const fadeIn = keyframes`

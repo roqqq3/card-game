@@ -1,17 +1,26 @@
 import React, { useState } from 'react'; 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const AddPlayersContainer = styled.div`
-  width: 95vw;
+  width: 100%;
   max-width: 500px;
+  margin-left: 10px;
+  margin-right: 10px;
   height: 90vh;
   text-align: center;
+`
+
+const TopButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 const StyledTitle = styled.h1`
@@ -32,25 +41,24 @@ const StyledDescription = styled.p`
 `;
 
 const StyledInput = styled.input`
-  padding: 1em;
+  padding: 1rem;
   margin: 0.25em;
   color: palevioletred;
   background: papayawhip;
   border: none;
   border-radius: 3px;
   font-size: 1.3em;
-  max-width: 200px;
-  width: 40vw;
+  max-width: 300px;
 `
 
 const StyledNavigationButton = styled.button`
   color: white;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-variant: helvetica;
-  margin: 1em;
+  margin: 0.5rem;
   padding: 0.25em 1em;
   border: 2px solid palevioletred;
-  border-radius: 50px;
+  border-radius: 1rem;
   align-items: center;
   background-color: #FB8E7E;
   outline: 0;
@@ -62,12 +70,12 @@ const StyledNavigationButton = styled.button`
 
 const StyledAddButton = styled.button`
   color: white;
-  font-size: 2em;
+  font-size: 2rem;
   font-variant: helvetica;
-  margin: 0.25em;
-  padding: 0.25em 1em;
+  margin: 0.25rem;
+  padding: 0.5rem 0.5rem;
   border: 2px solid palevioletred;
-  border-radius: 50px;
+  border-radius: 1rem;
   align-items: center;
   background-color: #FB8E7E;
   outline: 0;
@@ -94,6 +102,7 @@ const ListItem = styled.li`
   :first-child {
     border-top: none;
   }
+  border-top: 2px solid rgba(250, 110, 79, 0.2);
 `;
 
 const StyledName = styled.span`
@@ -137,7 +146,7 @@ const AddPlayersScreen = (props: Props) => {
 
   const handleNewPlayerName = (evt: React.FormEvent) => {
     evt.preventDefault()
-    if (!props.players.includes(newPlayerName) && newPlayerName !== '') {
+    if (!props.players.includes(newPlayerName) && newPlayerName !== '' && newPlayerName.length < 30) {
       props.handleNewPlayer(newPlayerName)
       setNewPlayerName('')
     }
@@ -149,33 +158,29 @@ const AddPlayersScreen = (props: Props) => {
 
   return (
     <AddPlayersContainer>
-      <div>
+      <TopButtonContainer>
+        <StyledNavigationButton type='submit' onClick={props.handleGoToWelcome}>
+          Takaisin
+        </StyledNavigationButton>
+        {renderStartGameButton()}
+      </TopButtonContainer>
+        <StyledTitle>Lisää pelaajia</StyledTitle>
         <ButtonContainer>
-          <StyledNavigationButton type='submit' onClick={props.handleGoToWelcome}>
-            Takaisin
-          </StyledNavigationButton>
-          {renderStartGameButton()}
+          <StyledInput
+            value={newPlayerName} 
+            placeholder='Kirjoita nimi'
+            onChange={handleNewPlayerNameChange} 
+          />
+          <StyledAddButton type='submit' onClick={handleNewPlayerName}>
+              Lisää
+          </StyledAddButton>
         </ButtonContainer>
-          <StyledTitle>Lisää pelaajia</StyledTitle>
-          <ButtonContainer>
-            <form onSubmit={handleNewPlayerName}>
-              <StyledInput
-                value={newPlayerName} 
-                placeholder='Enter name'
-                onChange={handleNewPlayerNameChange} 
-              />
-              <StyledAddButton type='submit'>
-                  Lisää
-              </StyledAddButton>
-            </form>
-          </ButtonContainer>
-        <List>
-          {props.players.map(i => 
-            <ListItem key={i}>
-              <StyledName>{i}</StyledName>
-            </ListItem>)}
-        </List>
-      </div>
+      <List>
+        {props.players.map(i => 
+          <ListItem key={i}>
+            <StyledName>{i}</StyledName>
+          </ListItem>)}
+      </List>
     </AddPlayersContainer>
   )
 }

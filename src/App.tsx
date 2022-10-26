@@ -69,7 +69,7 @@ const App = () => {
   }
 
   const handleSetPreviousCards = (card: Card) => {
-    const logLength = 90
+    const logLength = 120
     const newPreviousCards = [...previousCards]
     if (newPreviousCards.length >= logLength) {
       newPreviousCards.shift()
@@ -110,7 +110,7 @@ const App = () => {
     setMessage(message)
     setTimeout(() => {
       setMessage(null)
-    }, 5000)
+    }, 1000000000000)
   }
 
   const startGame = () => {
@@ -118,7 +118,7 @@ const App = () => {
     if (players.length !== 0) {
       setCurrentPlayer(0)
     }
-    showMessage("Pressing SPACE will draw a new card")
+    showMessage("Painamalla välilyöntiä saa myös uuden kortin")
     setGamestate(Gamestate.Playing)
   }
 
@@ -135,7 +135,7 @@ const App = () => {
         </div>
       )
     case Gamestate.Playing:
-      return (
+      return <>
         <div className='mainContainer' tabIndex={0} onKeyUp={handleKeyUp}>
           <div className='playerList'>
             <PlayerList
@@ -151,9 +151,6 @@ const App = () => {
               <Button
                 handleTurnChange={handleTurnChange}
               />
-              <Notification
-                message={message}
-              />
             </div>
           </div>
           <div className='effectList'>
@@ -162,7 +159,8 @@ const App = () => {
             />
           </div>
         </div>
-      )
+        <Notification message={message} />
+      </>
     default:
       return (
         <div className='centered'>

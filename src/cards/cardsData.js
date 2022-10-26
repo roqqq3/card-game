@@ -1230,5 +1230,117 @@ export const cardsData = [
     "description": "Kaikki pelaajat, joilla on rannekello kädessä, juovat 3 kertaa.",
     "rarity": 0,
     "continuous": false
+  },
+  {
+    "id": 176,
+    "name": "Suurimmat kädet",
+    "description": "Vertailkaa käsiä kaikkien pelaajien kesken. Pelaaja, jolla on isoimmat kädet, juo 6 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 177,
+    "name": "Lampaat",
+    "description": "Kaikki pelaajat, jotka käyvät tällä hetkellä töissä, juovat 3 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "id": 178,
+    "name": "Megis",
+    "description": "Jos olet juonut tänään energiajuomaa, juo 3 kertaa. Jos et, valitse joku juomaan 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 179,
+    "name": "Olutkiljut",
+    "description": "Kaikki pelaajat, jotka ovat valmistaneet omaa alkoholijuomaa käymällä, juovat 6 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 180,
+    "name": "Pohjoisin paikka",
+    "description": "Pelaaja, joka on käynyt pohjoisimmassa paikassa, juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 181,
+    "name": "Eteläisin paikka",
+    "description": "Pelaaja, joka on käynyt eteläisimmässä paikassa, juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 182,
+    "name": "Kukkia",
+    "description": "Juo kerran jokaista asunnossasi olevaa kasvia kohden. Jos sinulla ei ole kasveja, juo 6 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "id": 184,
+    "name": "Huvipuistot",
+    "description": "Juo kerran jokaista huvipuistoa kohden missä olet käynyt. Jos et ole käynyt huvipuistoissa, juo 6 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "id": 184,
+    "name": "Huvipuistot",
+    "description": "Juo kerran jokaista huvipuistoa kohden missä olet käynyt. Jos et ole käynyt huvipuistoissa, juo 6 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "id": 185,
+    "name": "Erivärisukat",
+    "description": "Kaikki pelaajat, joilla on eriväriset sukat, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 186,
+    "name": "Kuopijjoo",
+    "description": "Kaikki pelaajat, jotka eivät ole ikinä käyneet Kuopiossa, juovat 3 kertaa.",
+    "rarity": 60,
+    "continuous": false
+  },
+  {
+    "id": 187,
+    "name": "Lappibois",
+    "description": "Kaikki pelaajat, jotka eivät ole ikinä käyneet Lapissa, juovat 3 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "id": 188,
+    "name": "Opiskelija",
+    "description": "Jos opiskelet tällä hetkellä jossain, juo 3 kertaa. Muussa tapauksessa valitse joku juomaan 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 189,
+    "name": "Taskupuhelin",
+    "description": "Jos sinulla on tällä hetkellä puhelin taskussa, juo 3 kertaa. Muussa tapauksessa valitse joku juomaan 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 190,
+    "name": "Tatuointeja",
+    "description": "Kaikki pelaajat, joilla on tatuointeja, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 191,
+    "name": "Lävistyksiä",
+    "description": "Kaikki pelaajat, joilla on lävistyksiä, esimerkiksi korvakoruja, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
   }
 ]
