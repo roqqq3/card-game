@@ -870,7 +870,7 @@ export const cardsData = [
   {
     "id": 124,
     "name": "Korkeasaari",
-    "description": "Alkaen sinusta pelaajat vuorollaan sanovat eläinrotuja, joita on Korkeasaaressa. Pelaaja, jolla kestää yli 10 sekuntia tai sanoo väärän eläimen, juo 3.",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat eläinlajeja, joita on Korkeasaaressa. Pelaaja, jolla kestää yli 10 sekuntia tai sanoo väärän eläimen, juo 3.",
     "rarity": 0,
     "continuous": false
   },
