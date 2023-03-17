@@ -646,7 +646,7 @@ export const cardsData = [
   {
     "id": 93,
     "name": "Valta valita",
-    "description": "Valitse montako kertaa kaikki juovat. Enintään 5.",
+    "description": "Valitse montako kertaa kaikki juovat.",
     "rarity": 40,
     "continuous": false
   },
