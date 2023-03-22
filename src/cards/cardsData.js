@@ -1342,5 +1342,33 @@ export const cardsData = [
     "description": "Kaikki pelaajat, joilla on lävistyksiä, esimerkiksi korvakoruja, juovat 3 kertaa.",
     "rarity": 0,
     "continuous": false
+  },
+  {
+    "id": 192,
+    "name": "Hiljaa",
+    "description": "Kaikki pelaavat ovat hiljaa, mutta peli jatkuu. Ensimmäinen pelaaja, joka puhuu, juo juomansa loppuun.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 193,
+    "name": "Paikan vaihto",
+    "description": "Valitse pelaaja. Sinä ja valitsemasi pelaaja vaihtavat paikkaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "id": 194,
+    "name": "Sikin sokin",
+    "description": "Kaikki pelaajat vaihtavat paikkaa.",
+    "rarity": 70,
+    "continuous": false
+  },
+  {
+    "id": 195,
+    "name": "Värikkäät vaatteet",
+    "description": "Valitse väri. Kaikki pelaajat, joiden vaatteissa on tätä väriä, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
   }
 ]
