@@ -1370,5 +1370,33 @@ export const cardsData = [
     "description": "Valitse väri. Kaikki pelaajat, joiden vaatteissa on tätä väriä, juovat 3 kertaa.",
     "rarity": 0,
     "continuous": false
+  },
+  {
+    "id": 196,
+    "name": "Mikä biisi",
+    "description": "Nimeä muistista biisi joka soi tällä hetkellä. Jos nimeät väärin tai ette kuuntele musiikkia, juo 6 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "id": 197,
+    "name": "Tekijä",
+    "description": "Sano joku asia jonka voi tehdä. Pelaaja, joka on viimeksi tehnyt kyseisen asian, juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "id": 198,
+    "name": "Aasinsilta",
+    "description": "Muut pelaajat sanovat jonkun sanan. Keksi aasinsilta, jossa käytetään tätä sanaa. Jos aasinsilta on muiden mielestä huono, juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "id": 199,
+    "name": "Lempiväri",
+    "description": "Arvaa oikealla olevan pelaajan lempiväri. Jos arvaat oikein, he juovat 3 kertaa. Jos arvaat väärin, sinä juot 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
   }
 ]
