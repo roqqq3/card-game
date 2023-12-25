@@ -4,12 +4,14 @@ import styled from 'styled-components'
 const Modal = styled.div`
   background: #ffcfb8;
   position: absolute;
-  bottom: calc(50% - 5rem);
-  left: calc(50% - 10rem);
-  width: 20rem;
-  height: 10rem;
+  top: 50%;
+  left: 50%;
+  width: min(20rem, 80%);
+  height: auto;
   border-radius: 1rem;
   border: 1px solid #FB8E7E;
+  padding: 0.5rem;
+  transform: translate(-50%, -50%);
 `;
 
 const StyledAddButton = styled.button`
@@ -31,12 +33,15 @@ const StyledAddButton = styled.button`
 
 const StyledInput = styled.input`
   padding: 1rem;
-  margin: 0.25em;
   color: palevioletred;
   background: papayawhip;
   border: none;
   border-radius: 3px;
   font-size: 1.3em;
+  width: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   max-width: 300px;
 `;
 
