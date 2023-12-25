@@ -31,6 +31,7 @@ const App = () => {
   }
 
   const handleKeyUp = (e: React.KeyboardEvent) => {
+    e.stopPropagation();
     if (e.key === ' ') {
       handleTurnChange()
     }
@@ -63,9 +64,13 @@ const App = () => {
   }
 
   const updateCurrentPlayer = () => {
-    let idx = (currentPlayer + 1) % players.length
-    setCurrentPlayer(idx)
-    return idx
+    if (currentPlayer > players.length - 1) {
+      setCurrentPlayer(0);
+      return 0;
+    }
+    const idx = (currentPlayer + 1) % players.length;
+    setCurrentPlayer(idx);
+    return idx;
   }
 
   const handleSetPreviousCards = (card: Card) => {
@@ -98,6 +103,16 @@ const App = () => {
     setPlayers([...players, name])
   }
 
+  const handlePlayerRemove = (name: string) => {
+    //const playerIdx = players.indexOf(name);
+    setContinuousCards(continuousCards.filter(c => c.player !== name));
+    const newPlayers = players.filter(n => n !== name);
+    setPlayers(newPlayers);
+    if (currentPlayer > newPlayers.length - 1) {
+      setCurrentPlayer(0);
+    }
+  }
+
   const handleGoToWelcome = () => {
     setGamestate(Gamestate.WelcomeScreen)
   }
@@ -127,6 +142,7 @@ const App = () => {
       return ( 
         <div className='centered'>
             <AddPlayersScreen
+              handleRemovePlayer={handlePlayerRemove}
               players={players}
               handleNewPlayer={handleNewPlayer}
               handleGoToWelcome={handleGoToWelcome}
@@ -141,6 +157,8 @@ const App = () => {
             <PlayerList
               players={players}
               currentPlayer={players[currentPlayer]}
+              handleNewPlayer={handleNewPlayer}
+              handlePlayerRemove={handlePlayerRemove}
             />
           </div>
           <div className='centered'>

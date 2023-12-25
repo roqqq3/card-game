@@ -1,4 +1,9 @@
+import { useState } from 'react';
 import styled from 'styled-components'
+import AddPlayerModal from './AddPlayerModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import RemovePlayerModal from './RemovePlayerModal';
 
 const List = styled.ul`
   overflow: hidden;
@@ -31,24 +36,54 @@ const StyledName = styled.span`
   margin-bottom: 5px;
 `;
 
+const StyledButton = styled.button`
+  color: white;
+  font-size: 1.5rem;
+  font-variant: helvetica;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid palevioletred;
+  border-radius: 1rem;
+  align-items: center;
+  background-color: #FB8E7E;
+  outline: 0;
+  :hover {
+    color: #FB8E7E;
+    background-color: white;
+  }
+`;
+
 interface PlayerListProps {
-  players: string[]
-  currentPlayer: string
+  players: string[];
+  currentPlayer: string;
+  handleNewPlayer: (name: string) => void;
+  handlePlayerRemove: (name: string) => void;
 }
- 
+
 const PlayerList = (props: PlayerListProps) => {
-  return (
+
+  const [addPlayerModal, setAddPlayerModal] = useState(false);
+  const [removePlayerModal, setRemovePlayerModal] = useState('');
+
+  return <>
+    {addPlayerModal && <AddPlayerModal players={props.players} handleNewPlayer={props.handleNewPlayer} closeModal={() => setAddPlayerModal(false)} />}
+    {removePlayerModal && <RemovePlayerModal handlePlayerRemove={props.handlePlayerRemove} closeModal={() => setRemovePlayerModal('')} player={removePlayerModal} />}
     <List>
       {props.players.map(player => 
         <ListItem
+          onMouseDown={() => setRemovePlayerModal(player)}
           key={player}
           current={player === props.currentPlayer}>
           <StyledName>
             {player}
           </StyledName>
         </ListItem>)}
+        <StyledButton onClick={() => setAddPlayerModal(true)}>
+          <FontAwesomeIcon icon={faPlus} fixedWidth />
+        </StyledButton>
     </List>
-  )
+  </>
 }
 
 export default PlayerList

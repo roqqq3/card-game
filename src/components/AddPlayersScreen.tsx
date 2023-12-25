@@ -1,3 +1,5 @@
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react'; 
 import styled from 'styled-components';
 
@@ -85,6 +87,23 @@ const StyledAddButton = styled.button`
   }
 `
 
+const StyledRemoveButton = styled.button`
+  color: white;
+  font-size: 1.5rem;
+  font-variant: helvetica;
+  margin: 0.25rem;
+  padding: 0.5rem 0.5rem;
+  border: 2px solid palevioletred;
+  border-radius: 1rem;
+  align-items: center;
+  background-color: #FB8E7E;
+  outline: 0;
+  :hover {
+    color: #FB8E7E;
+    background-color: white;
+  }
+`
+
 const List = styled.ul`
   list-style: none;
   padding: 0px 20px;
@@ -97,7 +116,8 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px 0px;
   :first-child {
     border-top: none;
@@ -115,6 +135,7 @@ interface Props {
   players: string[];
   startGame: () => void;
   handleNewPlayer: (name: string) => void;
+  handleRemovePlayer: (name: string) => void;
   handleGoToWelcome: () => void;
 }
 
@@ -179,6 +200,9 @@ const AddPlayersScreen = (props: Props) => {
         {props.players.map(i => 
           <ListItem key={i}>
             <StyledName>{i}</StyledName>
+            <StyledRemoveButton onClick={() => props.handleRemovePlayer(i)}>
+              <FontAwesomeIcon icon={faTrash} />
+            </StyledRemoveButton>
           </ListItem>)}
       </List>
     </AddPlayersContainer>

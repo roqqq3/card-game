@@ -1398,5 +1398,54 @@ export const cardsData = [
     "description": "Arvaa oikealla olevan pelaajan lempiväri. Jos arvaat oikein, he juovat 3 kertaa. Jos arvaat väärin, sinä juot 3 kertaa.",
     "rarity": 0,
     "continuous": false
-  }
+  },
+  {
+    "id": 200,
+    "name": "Kaksoisolento",
+    "description": "Valitse toinen pelaaja. Pelaajan on jäljitettävä sinun eleitä ja liikkeitä kierroksen ajan. Jos ei halua, juo juomansa loppuun.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "id": 201,
+    "name": "Taikatemppu",
+    "description": "Suorita taikatemppu. Jos et osaa tai jos muiden mielestä temppu on todella huono, juo 6 kertaa.",
+    "rarity": 70,
+    "continuous": false
+  },
+  {
+    "id": 202,
+    "name": "Kielletty sana",
+    "description": "Valitse sana, jota ei saa sanoa tämän kierroksen aikana. Joka kerta kun joku pelaajista sanoo sanan, juo hän 3 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "id": 203,
+    "name": "Biisei",
+    "description": "Valitse musiikkikategoria. Pelaajat vuorollaan mainitsevat yhden biisin kyseisestä kategoriasta. Se, joka ei keksi biisiä, juo 3 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 204,
+    "name": "Sormileikki",
+    "description": "Haasta jokin pelaaja haasteeseen, joka vaatii taituruutta sormilta. Jos pelaaja epäonnistuu, juo hän 3 kertaa. Jos onnistuu, sinä juot 3 kertaa.",
+    "rarity": 60,
+    "continuous": false
+  },
+  {
+    "id": 205,
+    "name": "Värikäs totuus",
+    "description": "Jokainen pelaaja kertoo yhden asian itsestään, ja muut pelaajat arvaavat, onko se totta vai tarua. Väärin arvanneet juovat 3 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "id": 243,
+    "name": "Vauhtikortti",
+    "description": "Seuraavan kierroksen ajan kaikki liikkuvat kaksi kertaa normaalia nopeammin. Jos et pysy tahdissa, juo 4 kertaa.",
+    "rarity": 55,
+    "continuous": true
+  },
 ]
