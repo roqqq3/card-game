@@ -1431,21 +1431,49 @@ export const cardsData = [
     "id": 204,
     "name": "Sormileikki",
     "description": "Haasta jokin pelaaja haasteeseen, joka vaatii taituruutta sormilta. Jos pelaaja epäonnistuu, juo hän 3 kertaa. Jos onnistuu, sinä juot 3 kertaa.",
-    "rarity": 60,
+    "rarity": 30,
     "continuous": false
   },
   {
     "id": 205,
     "name": "Värikäs totuus",
     "description": "Jokainen pelaaja kertoo yhden asian itsestään, ja muut pelaajat arvaavat, onko se totta vai tarua. Väärin arvanneet juovat 3 kertaa.",
-    "rarity": 40,
+    "rarity": 60,
     "continuous": false
   },
   {
-    "id": 243,
-    "name": "Vauhtikortti",
-    "description": "Seuraavan kierroksen ajan kaikki liikkuvat kaksi kertaa normaalia nopeammin. Jos et pysy tahdissa, juo 4 kertaa.",
-    "rarity": 55,
-    "continuous": true
+    "id": 206,
+    "name": "Päivänsankari",
+    "description": "Pelaaja, jonka syntymäpäivä on lähimpänä tätä päivää juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
   },
+  {
+    "id": 206,
+    "name": "Salainen esine",
+    "description": "Valitse mielessäsi jokin esine tässä huoneessa. Muut pelaajat vuorollaan kysyvät yhden kyllä/ei kysymyksen esineestä. Kaikki paitsi sinä ja esineen oikein arvaaja juovat 3 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "id": 207,
+    "name": "Gaming moment",
+    "description": "Jos olet pelannut videopeliä tänään, juo 3 kertaa. Muussa tapauksessa valitse joku pelaaja juomaan 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "id": 208,
+    "name": "Lämpötila",
+    "description": "Arvaa monta astetta ulkona on lämmintä ja tarkista arvauksen jälkeen puhelimesta. Jos arvasit oikein, määrää joku juomaan 6 kertaa. Jos arvasit väärin, juo 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "id": 209,
+    "name": "Maan kaupungit",
+    "description": "Valitse maa. Kaikki pelaajat, sinä mukaan lukien, luettelevat vuorollaan kaupunkeja tästä maasta. Se, jolla kestää yli 10 sekuntia, juo 6 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  }
 ]
