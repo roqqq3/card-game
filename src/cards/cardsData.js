@@ -567,13 +567,6 @@ export const cardsData = [
     "continuous": false
   },
   {
-    "id": 82,
-    "name": "Bonuskortti",
-    "description": "Kaikki, joilla on lompakossa K-Plussa kortti, juovat.",
-    "rarity": 0,
-    "continuous": false
-  },
-  {
     "id": 83,
     "name": "Pelikonsoli",
     "description": "Kaikki, jotka omistavat pelikonsolin, juovat kerran.",
@@ -676,13 +669,6 @@ export const cardsData = [
     "name": "UKKOMETSO",
     "description": "Laita ukkometso soimaan. Kaikkien tulee juoda juomansa loppuun biisin loppuun mennessä.",
     "rarity": 70,
-    "continuous": false
-  },
-  {
-    "id": 98,
-    "name": "Olutmerkit",
-    "description": "Alkaen sinusta, pelaajat vuorollaan sanovat olutmerkkejä. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
-    "rarity": 0,
     "continuous": false
   },
   {
@@ -931,13 +917,6 @@ export const cardsData = [
     "continuous": false
   },
   {
-    "id": 133,
-    "name": "Risto Räppääjä",
-    "description": "Miten jatkuu riimi 'Elämä ei ole hassumpaa...'? Et voi sanoa samaa, mitä on jo sanottu tässä pelissä. Jos et tiedä, juo 3. Jos tiedät, valitse joku juomaan 3.",
-    "rarity": 0,
-    "continuous": false
-  },
-  {
     "id": 134,
     "name": "Kaksi kaverusta",
     "description": "Mitkä oli Leijonakuninkaassa eräiden mangustin ja pahkasian nimet? Jos et tiedä, häpeä ja juo 3 kertaa. Jos tiedät, valitse joku juomaan 3 kertaa.",
@@ -1012,13 +991,6 @@ export const cardsData = [
     "name": "KUNNON TYÖ UKKO",
     "description": "Jos olet juomassa kaljaa tölkistä, voit huutaa RÄYH ja pakottaa jonkun muun, kuin kaljaa tölkistä juovan, juomaan juomansa loppuun. Voit tehdä tämän vain nyt ja kerran.",
     "rarity": 60,
-    "continuous": false
-  },
-  {
-    "id": 145,
-    "name": "Köyhät kävelee",
-    "description": "Kaikki juovat 3 kertaa, paitsi ne, jotka ovat ajaneet autolla tänään.",
-    "rarity": 0,
     "continuous": false
   },
   {
@@ -1277,13 +1249,6 @@ export const cardsData = [
     "id": 182,
     "name": "Kukkia",
     "description": "Juo kerran jokaista asunnossasi olevaa kasvia kohden. Jos sinulla ei ole kasveja, juo 6 kertaa.",
-    "rarity": 30,
-    "continuous": false
-  },
-  {
-    "id": 184,
-    "name": "Huvipuistot",
-    "description": "Juo kerran jokaista huvipuistoa kohden missä olet käynyt. Jos et ole käynyt huvipuistoissa, juo 6 kertaa.",
     "rarity": 30,
     "continuous": false
   },
