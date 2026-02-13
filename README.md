@@ -66,26 +66,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-## GitHub Pages deployment (custom domain)
-
-This repo is configured to deploy automatically to GitHub Pages with GitHub Actions on every push to `master` or `main`.
-
-One-time GitHub setup:
-
-1. In GitHub, open repository `Settings` -> `Pages`.
-2. Under Build and deployment, set `Source` to `GitHub Actions`.
-
-DNS setup for `juodaan.com`:
-
-- Add these four A records for the root domain (`@`):
-  - `185.199.108.153`
-  - `185.199.109.153`
-  - `185.199.110.153`
-  - `185.199.111.153`
-- Add a `www` CNAME record pointing to `<your-github-username>.github.io`.
-
-Notes:
-
-- The custom domain is committed in `public/CNAME`.
-- Remove old Heroku DNS records so traffic no longer points to Heroku.
