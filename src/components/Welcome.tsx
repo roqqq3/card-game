@@ -33,15 +33,6 @@ const StyledTitle = styled.h1`
   letter-spacing: -0.045em;
 `
 
-const StyledDescription = styled.p`
-  max-width: 34rem;
-  margin: 1.5rem auto 0;
-  color: var(--color-text-muted);
-  font-size: clamp(1.1rem, 3.5vw, 1.45rem);
-  line-height: 1.5;
-  text-wrap: balance;
-`;
-
 const ActionSections = styled.div`
   display: grid;
   gap: 1.5rem;
@@ -71,15 +62,6 @@ const SectionHeading = styled.div`
   min-width: 0;
 `
 
-const SectionLabel = styled.p`
-  margin: 0 0 0.25rem;
-  color: var(--color-primary);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-`
-
 const SectionTitle = styled.h2`
   margin: 0;
   color: var(--color-text);
@@ -87,25 +69,19 @@ const SectionTitle = styled.h2`
   line-height: 1.2;
 `
 
-const SectionDescription = styled.p`
-  max-width: 34rem;
-  margin: 0.5rem auto 0;
-  color: var(--color-text-muted);
-  font-size: 0.92rem;
-  line-height: 1.4;
-`
-
 const SavedGameSummary = styled.p`
   margin: 0.4rem 0 0;
-  overflow: hidden;
   color: var(--color-text-muted);
   font-size: 0.9rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+`
 
-  @media (max-width: 520px) {
-    white-space: normal;
-  }
+const SavedGameTime = styled.p`
+  margin: 0.2rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
 `
 
 const NewGameActions = styled.div`
@@ -176,22 +152,19 @@ interface WelcomeProps {
   handleSetAddPlayersScreen: () => void;
   hasSavedGame: boolean;
   savedGameSummary?: string;
+  savedGameSavedAt?: string;
   resumeGame: () => void;
 }
 
-const Welcome = ({ quickStartGame, handleSetAddPlayersScreen, hasSavedGame, savedGameSummary, resumeGame }: WelcomeProps) => {
+const Welcome = ({ quickStartGame, handleSetAddPlayersScreen, hasSavedGame, savedGameSummary, savedGameSavedAt, resumeGame }: WelcomeProps) => {
   return (
     <WelcomeContainer>
       <BrandIcon src={`${process.env.PUBLIC_URL}/start-icons/02-cocktail-die.svg`} alt='' aria-hidden='true' />
       <StyledTitle>Juomapeli</StyledTitle>
-      <StyledDescription>
-        Valitse pelitapa ja aloita.
-      </StyledDescription>
       <ActionSections>
         <NewGameSection aria-labelledby='new-game-title'>
           <SectionHeading>
             <SectionTitle id='new-game-title'>Aloita uusi peli</SectionTitle>
-            <SectionDescription>Lisää pelaajat vuorojen seurantaa varten tai aloita ilman pelaajalistaa.</SectionDescription>
           </SectionHeading>
           <NewGameActions>
             <PrimaryButton
@@ -212,9 +185,9 @@ const Welcome = ({ quickStartGame, handleSetAddPlayersScreen, hasSavedGame, save
         </NewGameSection>
         {hasSavedGame && <ContinueSection aria-labelledby='continue-game-title'>
           <SectionHeading>
-            <SectionLabel>Tallennettu peli</SectionLabel>
             <SectionTitle id='continue-game-title'>Jatka edellistä peliä</SectionTitle>
             {savedGameSummary && <SavedGameSummary>{savedGameSummary}</SavedGameSummary>}
+            {savedGameSavedAt && <SavedGameTime>Tallennettu {savedGameSavedAt}</SavedGameTime>}
           </SectionHeading>
           <ContinueButton
             value='resumeGame'

@@ -207,7 +207,19 @@ const App = () => {
   const savedGameSummary = savedGame
     ? `${savedGame.players.length === 0
       ? 'Nopea peli'
-      : `${savedGame.players.length} ${savedGame.players.length === 1 ? 'pelaaja' : 'pelaajaa'}`} · Kortti: ${savedGame.currentCard.name}`
+      : `${savedGame.players.length} ${savedGame.players.length === 1 ? 'pelaaja' : 'pelaajaa'}`} · ${savedGame.currentCard.name}`
+    : undefined
+
+  const savedGameSavedAt = savedGame
+    ? (() => {
+      const savedAt = new Date(savedGame.savedAt)
+      return Number.isNaN(savedAt.getTime())
+        ? undefined
+        : new Intl.DateTimeFormat('fi-FI', {
+          dateStyle: 'short',
+          timeStyle: 'short'
+        }).format(savedAt)
+    })()
     : undefined
 
   switch (gamestate) {
@@ -269,6 +281,7 @@ const App = () => {
             handleSetAddPlayersScreen={handleSetAddPlayersScreen}
             hasSavedGame={Boolean(savedGame)}
             savedGameSummary={savedGameSummary}
+            savedGameSavedAt={savedGameSavedAt}
             resumeGame={resumeGame}
           />
         </div>
