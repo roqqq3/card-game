@@ -3,25 +3,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components'
 
 const WelcomeContainer = styled.main`
-  width: min(100%, 760px);
-  padding: clamp(2rem, 7vw, 5rem);
-  border: 1px solid rgba(233, 185, 170, 0.8);
-  border-radius: clamp(1.75rem, 5vw, 3rem);
-  background: rgba(255, 253, 251, 0.9);
-  box-shadow: var(--shadow-card);
+  width: min(100%, 720px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  border: 1px solid rgba(218, 125, 151, 0.42);
+  border-radius: clamp(1.75rem, 5vw, 2.75rem);
+  background: var(--surface-glass);
+  box-shadow: 0 24px 64px rgba(103, 43, 65, 0.14);
+  backdrop-filter: blur(18px);
   text-align: center;
+
 `
 
-const ButtonContainer = styled.div`
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
-
-  @media (max-width: 520px) {
-    flex-direction: column;
-  }
+const BrandIcon = styled.img`
+  width: clamp(5.25rem, 11vw, 7rem);
+  height: clamp(5.25rem, 11vw, 7rem);
+  display: block;
+  margin: 0 auto 0.25rem;
+  filter: drop-shadow(0 10px 16px rgba(103, 43, 65, 0.12));
 `
 
 const StyledTitle = styled.h1`
@@ -40,6 +41,82 @@ const StyledDescription = styled.p`
   line-height: 1.5;
   text-wrap: balance;
 `;
+
+const ActionSections = styled.div`
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.8rem;
+`
+
+const NewGameSection = styled.section`
+  text-align: center;
+`
+
+const ContinueSection = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0.25rem 0;
+  border-top: 1px solid rgba(184, 63, 99, 0.22);
+  text-align: left;
+
+  @media (max-width: 520px) {
+    align-items: stretch;
+    flex-direction: column;
+  }
+`
+
+const SectionHeading = styled.div`
+  min-width: 0;
+`
+
+const SectionLabel = styled.p`
+  margin: 0 0 0.25rem;
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+`
+
+const SectionTitle = styled.h2`
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  line-height: 1.2;
+`
+
+const SectionDescription = styled.p`
+  max-width: 34rem;
+  margin: 0.5rem auto 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.4;
+`
+
+const SavedGameSummary = styled.p`
+  margin: 0.4rem 0 0;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: 520px) {
+    white-space: normal;
+  }
+`
+
+const NewGameActions = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
+`
 
 const BaseButton = styled.button`
   min-height: 3.75rem;
@@ -63,6 +140,7 @@ const BaseButton = styled.button`
 `
 
 const PrimaryButton = styled(BaseButton)`
+  flex: 1;
   border: 1px solid var(--color-primary);
   color: white;
   background: var(--color-primary);
@@ -73,6 +151,7 @@ const PrimaryButton = styled(BaseButton)`
 `
 
 const SecondaryButton = styled(BaseButton)`
+  flex: 1;
   border: 1px solid var(--color-border);
   color: var(--color-primary);
   background: var(--color-surface);
@@ -82,45 +161,70 @@ const SecondaryButton = styled(BaseButton)`
   }
 `
 
+const ContinueButton = styled(SecondaryButton)`
+  min-width: 10rem;
+  flex: 0 0 auto;
+  background: var(--surface-control);
+
+  @media (max-width: 520px) {
+    width: 100%;
+  }
+`
+
 interface WelcomeProps {
   quickStartGame: () => void;
   handleSetAddPlayersScreen: () => void;
   hasSavedGame: boolean;
+  savedGameSummary?: string;
   resumeGame: () => void;
 }
 
-const Welcome = ({ quickStartGame, handleSetAddPlayersScreen, hasSavedGame, resumeGame }: WelcomeProps) => {
-  const QuickStartButton = hasSavedGame ? SecondaryButton : PrimaryButton
-
+const Welcome = ({ quickStartGame, handleSetAddPlayersScreen, hasSavedGame, savedGameSummary, resumeGame }: WelcomeProps) => {
   return (
     <WelcomeContainer>
+      <BrandIcon src={`${process.env.PUBLIC_URL}/start-icons/02-cocktail-die.svg`} alt='' aria-hidden='true' />
       <StyledTitle>Juomapeli</StyledTitle>
       <StyledDescription>
-        Lisää pelaajat ja seuraa vuoroja — tai aloita heti nopea peli.
+        Valitse pelitapa ja aloita.
       </StyledDescription>
-      <ButtonContainer>
-        {hasSavedGame && <PrimaryButton
-          value='resumeGame'
-          type='button'
-          onClick={resumeGame}>
-            <FontAwesomeIcon icon={faPlay} fixedWidth />
-            Jatka peliä
-        </PrimaryButton>}
-        <QuickStartButton
-          value='QuickStartGame'
-          type='button'
-          onClick={quickStartGame}>
-            <FontAwesomeIcon icon={faBoltLightning} fixedWidth />
-            Nopea peli
-        </QuickStartButton>
-        <SecondaryButton
-          value='addPlayers'
-          type='button'
-          onClick={handleSetAddPlayersScreen}>
-            <FontAwesomeIcon icon={faPeoplePulling} fixedWidth />
-            Lisää pelaajia
-        </SecondaryButton>
-      </ButtonContainer>
+      <ActionSections>
+        <NewGameSection aria-labelledby='new-game-title'>
+          <SectionHeading>
+            <SectionTitle id='new-game-title'>Aloita uusi peli</SectionTitle>
+            <SectionDescription>Lisää pelaajat vuorojen seurantaa varten tai aloita ilman pelaajalistaa.</SectionDescription>
+          </SectionHeading>
+          <NewGameActions>
+            <PrimaryButton
+              value='addPlayers'
+              type='button'
+              onClick={handleSetAddPlayersScreen}>
+                <FontAwesomeIcon icon={faPeoplePulling} fixedWidth />
+                Lisää pelaajia
+            </PrimaryButton>
+            <SecondaryButton
+              value='QuickStartGame'
+              type='button'
+              onClick={quickStartGame}>
+                <FontAwesomeIcon icon={faBoltLightning} fixedWidth />
+                Nopea peli
+            </SecondaryButton>
+          </NewGameActions>
+        </NewGameSection>
+        {hasSavedGame && <ContinueSection aria-labelledby='continue-game-title'>
+          <SectionHeading>
+            <SectionLabel>Tallennettu peli</SectionLabel>
+            <SectionTitle id='continue-game-title'>Jatka edellistä peliä</SectionTitle>
+            {savedGameSummary && <SavedGameSummary>{savedGameSummary}</SavedGameSummary>}
+          </SectionHeading>
+          <ContinueButton
+            value='resumeGame'
+            type='button'
+            onClick={resumeGame}>
+              <FontAwesomeIcon icon={faPlay} fixedWidth />
+              Jatka peliä
+          </ContinueButton>
+        </ContinueSection>}
+      </ActionSections>
     </WelcomeContainer>
   )
 }

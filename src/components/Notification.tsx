@@ -17,7 +17,7 @@ const StyledNotification = styled.p`
   border: 1px solid var(--color-border);
   border-radius: 0.9rem;
   color: var(--color-text);
-  background: rgba(255, 253, 251, 0.96);
+  background: var(--surface-glass);
   box-shadow: var(--shadow-soft);
   font-size: 0.92rem;
   font-weight: 700;

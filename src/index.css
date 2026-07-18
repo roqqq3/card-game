@@ -1,8 +1,8 @@
 :root {
   --color-bg: #fff6f9;
   --color-bg-accent: #f9dce6;
-  --color-surface: #fffdfd;
-  --color-surface-muted: #fcebf1;
+  --color-surface: #fff2f6;
+  --color-surface-muted: #f8dce6;
   --color-primary: #b83f63;
   --color-primary-hover: #96314f;
   --color-accent: #ee7f9d;
@@ -13,6 +13,9 @@
   --color-danger: #a72d4b;
   --shadow-card: 0 18px 44px rgba(103, 43, 65, 0.14);
   --shadow-soft: 0 8px 20px rgba(103, 43, 65, 0.1);
+  --surface-glass: linear-gradient(145deg, rgba(255, 244, 248, 0.94), rgba(248, 215, 226, 0.84));
+  --surface-glass-light: linear-gradient(150deg, rgba(255, 249, 251, 0.97), rgba(252, 229, 237, 0.9));
+  --surface-control: rgba(255, 241, 246, 0.88);
 }
 
 * {

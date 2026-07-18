@@ -204,6 +204,12 @@ const App = () => {
     setGamestate(Gamestate.Playing)
   }
 
+  const savedGameSummary = savedGame
+    ? `${savedGame.players.length === 0
+      ? 'Nopea peli'
+      : `${savedGame.players.length} ${savedGame.players.length === 1 ? 'pelaaja' : 'pelaajaa'}`} · Kortti: ${savedGame.currentCard.name}`
+    : undefined
+
   switch (gamestate) {
     case Gamestate.AddPlayers:
       return (
@@ -262,6 +268,7 @@ const App = () => {
             quickStartGame={startGame}
             handleSetAddPlayersScreen={handleSetAddPlayersScreen}
             hasSavedGame={Boolean(savedGame)}
+            savedGameSummary={savedGameSummary}
             resumeGame={resumeGame}
           />
         </div>

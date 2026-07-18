@@ -9,8 +9,9 @@ const Panel = styled.section`
   overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: 1.25rem;
-  background: rgba(255, 253, 251, 0.88);
+  background: var(--surface-glass);
   box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
 
   @media (max-width: 820px) {
     display: flex;
@@ -130,7 +131,7 @@ const AddButton = styled.button`
   border: 1px solid var(--color-border);
   border-radius: 0.8rem;
   color: var(--color-primary);
-  background: var(--color-surface);
+  background: var(--surface-control);
   font-weight: 800;
 
   &:hover {

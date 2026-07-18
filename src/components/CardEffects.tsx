@@ -29,8 +29,9 @@ const Panel = styled.section<PanelProps>`
   overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: 1.25rem;
-  background: rgba(255, 253, 251, 0.96);
+  background: var(--surface-glass);
   box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
 
   @media (max-width: 820px) {
     position: fixed;
@@ -104,6 +105,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   min-width: 0;
+  overflow: hidden;
   padding: 0.7rem 0.8rem;
   border-radius: 0.8rem;
   background: var(--color-accent-soft);
@@ -119,9 +121,14 @@ const StyledName = styled.strong`
 
 const PlayerName = styled.span`
   display: block;
+  min-width: 0;
+  max-width: 100%;
   margin-top: 0.2rem;
+  overflow: hidden;
   color: var(--color-text-muted);
   font-size: 0.85rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const MobileToggle = styled.button`
@@ -140,7 +147,7 @@ const MobileToggle = styled.button`
     border: 1px solid var(--color-border);
     border-radius: 50%;
     color: var(--color-primary);
-    background: var(--color-surface);
+    background: var(--surface-control);
     box-shadow: var(--shadow-soft);
     font-size: 1rem;
     font-weight: 850;

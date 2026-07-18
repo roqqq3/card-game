@@ -25,7 +25,7 @@ const CardContainer = styled.article`
   padding: clamp(2rem, 6vw, 4.5rem);
   border: 1px solid rgba(233, 185, 170, 0.78);
   border-radius: clamp(1.5rem, 4vw, 2.5rem);
-  background: linear-gradient(150deg, #fffdfd 0%, #fff6fa 100%);
+  background: var(--surface-glass-light);
   box-shadow: var(--shadow-card);
   text-align: center;
 

@@ -16,8 +16,9 @@ const Modal = styled.div`
   padding: 1.5rem;
   border: 1px solid var(--color-border);
   border-radius: 1.5rem;
-  background: var(--color-surface);
+  background: var(--surface-glass);
   box-shadow: var(--shadow-card);
+  backdrop-filter: blur(18px);
 `;
 
 const Title = styled.h2`

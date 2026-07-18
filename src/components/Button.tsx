@@ -13,11 +13,6 @@ const ButtonContainer = styled.div`
     position: static;
     z-index: 5;
     flex: 0 0 auto;
-    padding: 0.5rem;
-    border: 1px solid rgba(233, 184, 199, 0.8);
-    border-radius: 1.25rem;
-    background: rgba(255, 246, 249, 0.92);
-    backdrop-filter: blur(12px);
   }
 `;
 
