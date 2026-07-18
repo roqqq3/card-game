@@ -1,68 +1,113 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+# 🍻 Juomapeli
 
-In the project directory, you can run:
+**A fast, browser-based drinking card game for Finnish game nights.**
 
-### `npm start`
+[![React](https://img.shields.io/badge/React-17-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Styled Components](https://img.shields.io/badge/styled--components-5-DB7093?logo=styledcomponents&logoColor=white)](https://styled-components.com/)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Play online](https://juodaan.com) · [Report a bug](https://github.com/roqqq3/card-game/issues) · [Suggest a card](https://github.com/roqqq3/card-game/issues)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+</div>
 
-### `npm test`
+## About
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Juomapeli draws randomized Finnish-language challenge cards for a group of players. Start a quick game immediately or add player names to track turns and ongoing card effects.
 
-### `npm run build`
+### Features
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **210 challenge cards** with different rarity levels
+- **Quick play** without player setup
+- **Player mode** with automatic turn tracking
+- **Continuous effects** shown alongside the active card
+- **No immediate repeats** from the recent card history
+- **Keyboard controls** — press the space bar to draw the next card
+- **Responsive browser UI** for both desktop and mobile play
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Getting started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Requirements
 
-### `npm run eject`
+- [Node.js](https://nodejs.org/)
+- npm
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/roqqq3/card-game.git
+cd card-game
+npm ci
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Start the development server:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser. The page reloads automatically when you edit the source files.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Available commands
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create an optimized production build in `build/` |
+| `npm start` | Serve the existing production build |
+| `npm test` | Run tests in interactive watch mode |
 
-### Code Splitting
+To run the production version locally:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```bash
+npm run build
+npm start
+```
 
-### Analyzing the Bundle Size
+## Adding cards
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Cards live in [`src/cards/cardsData.js`](src/cards/cardsData.js). Add a new object to `cardsDataWithoutIds`:
 
-### Making a Progressive Web App
+```js
+{
+  "name": "Example card",
+  "description": "Describe the challenge here.",
+  "rarity": 20,
+  "continuous": false
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+| Field | Meaning |
+| --- | --- |
+| `name` | Short title displayed on the card |
+| `description` | Instructions shown to the players |
+| `rarity` | Draw threshold from `0` (common) to `100` (extremely rare) |
+| `continuous` | Whether the effect remains active for the assigned player |
 
-### Advanced Configuration
+Card IDs are generated automatically from their position in the array, so they should not be added manually.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Project structure
 
-### Deployment
+```text
+src/
+├── cards/          # Card data and card types
+├── components/     # Game screens and reusable UI components
+├── types/          # Shared TypeScript types
+├── App.tsx         # Game state and card selection logic
+└── index.tsx       # Application entry point
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Built with
 
-### `npm run build` fails to minify
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Create React App](https://create-react-app.dev/)
+- [styled-components](https://styled-components.com/)
+- [Font Awesome](https://fontawesome.com/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
+
+<div align="center">
+  Made for game nights in Finland 🇫🇮
+</div>
