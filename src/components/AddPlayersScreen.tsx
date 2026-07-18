@@ -1,134 +1,144 @@
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faPlay, faTrash, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const AddPlayersContainer = styled.div`
-  width: 100%;
-  max-width: 500px;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 90vh;
+const AddPlayersContainer = styled.main`
+  width: min(100%, 620px);
+  padding: clamp(1.25rem, 5vw, 3rem);
+  border: 1px solid var(--color-border);
+  border-radius: clamp(1.5rem, 4vw, 2.5rem);
+  background: rgba(255, 253, 251, 0.92);
+  box-shadow: var(--shadow-card);
   text-align: center;
 `
 
 const TopButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 `
 
-const ButtonContainer = styled.div`
+const PlayerForm = styled.form`
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
 `
 
 const StyledTitle = styled.h1`
-  font-size: 3.5em;
-  font-variant: helvetica;
-  text-align: center;
-  color: #FA6E4F;
+  margin: clamp(1.5rem, 5vw, 2.5rem) 0 0;
+  color: var(--color-primary);
+  font-size: clamp(2.25rem, 8vw, 4rem);
+  line-height: 1;
 `
 
 const StyledDescription = styled.p`
-  font-size: 1em;
-  font-variant: helvetica;
-  text-align: center;
-  color: #FA6E4F;
-  width: 156px;
-  margin: 1em;
-  padding: 0.25em 1em;
+  margin: 0.75rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
 `;
 
 const StyledInput = styled.input`
-  padding: 1rem;
-  margin: 0.25em;
-  color: palevioletred;
-  background: papayawhip;
-  border: none;
-  border-radius: 3px;
-  font-size: 1.3em;
-  max-width: 300px;
-`
+  min-width: 0;
+  flex: 1;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.9rem;
+  color: var(--color-text);
+  background: white;
+  font-size: 1.05rem;
 
-const StyledNavigationButton = styled.button`
-  color: white;
-  font-size: 1.5rem;
-  font-variant: helvetica;
-  margin: 0.5rem;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 1rem;
-  align-items: center;
-  background-color: #FB8E7E;
-  outline: 0;
-  :hover {
-    color: #FB8E7E;
-    background-color: white;
+  &::placeholder {
+    color: #8a7070;
   }
 `
 
-const StyledAddButton = styled.button`
-  color: white;
-  font-size: 2rem;
-  font-variant: helvetica;
-  margin: 0.25rem;
-  padding: 0.5rem 0.5rem;
-  border: 2px solid palevioletred;
-  border-radius: 1rem;
+const BaseButton = styled.button`
+  min-height: 3rem;
+  display: inline-flex;
   align-items: center;
-  background-color: #FB8E7E;
-  outline: 0;
-  :hover {
-    color: #FB8E7E;
-    background-color: white;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.9rem;
+  font-weight: 800;
+  transition: transform 160ms ease, background-color 160ms ease;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
   }
 `
 
-const StyledRemoveButton = styled.button`
+const NavigationButton = styled(BaseButton)`
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  background: var(--color-surface);
+
+  &:hover {
+    background: var(--color-surface-muted);
+  }
+`
+
+const PrimaryButton = styled(BaseButton)`
+  border: 1px solid var(--color-primary);
   color: white;
-  font-size: 1.5rem;
-  font-variant: helvetica;
-  margin: 0.25rem;
-  padding: 0.5rem 0.5rem;
-  border: 2px solid palevioletred;
-  border-radius: 1rem;
-  align-items: center;
-  background-color: #FB8E7E;
-  outline: 0;
-  :hover {
-    color: #FB8E7E;
-    background-color: white;
+  background: var(--color-primary);
+
+  &:hover {
+    background: var(--color-primary-hover);
   }
 `
 
 const List = styled.ul`
+  margin: 1.5rem 0 0;
+  padding: 0;
+  overflow: hidden;
   list-style: none;
-  padding: 0px 20px;
-  background-color: #E9C8B7;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
-  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-surface);
 `;
 
 const ListItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px;
-  :first-child {
-    border-top: none;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+
+  & + & {
+    border-top: 1px solid var(--color-border);
   }
-  border-top: 2px solid rgba(250, 110, 79, 0.2);
 `;
 
 const StyledName = styled.span`
-  font-size: 25px;
-  color: #FA6E4F;
-  margin-bottom: 5px;
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+const RemoveButton = styled.button`
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 2.75rem;
+  border: 0;
+  border-radius: 0.75rem;
+  color: var(--color-danger);
+  background: #fff0f4;
+
+  &:hover {
+    background: #ffdde7;
+  }
 `;
 
 interface Props {
@@ -140,71 +150,60 @@ interface Props {
 }
 
 const AddPlayersScreen = (props: Props) => {
+  const [newPlayerName, setNewPlayerName] = useState('')
 
-  const [ newPlayerName, setNewPlayerName ] = useState('') // The value of the name field when adding a new player
-
-  const renderStartGameButton = () => {
-    if (props.players.length >= 2) {
-      return ( 
-        <StyledNavigationButton type='submit' onClick={props.startGame}>
-          Aloita peli
-        </StyledNavigationButton>
-      )
-    } else if (props.players.length === 0) {
-      return (
-        <StyledDescription>
-          Lisää kaksi pelaajaa
-        </StyledDescription>
-      )
-    } else {
-      return (
-        <StyledDescription>
-          Lisää yksi pelaaja
-        </StyledDescription>
-      )
-    }
-  }
-
-  const handleNewPlayerName = (evt: React.FormEvent) => {
-    evt.preventDefault()
-    if (!props.players.includes(newPlayerName) && newPlayerName !== '' && newPlayerName.length < 30) {
-      props.handleNewPlayer(newPlayerName)
+  const handleNewPlayerName = (event: React.FormEvent) => {
+    event.preventDefault()
+    const trimmedName = newPlayerName.trim()
+    if (!props.players.includes(trimmedName) && trimmedName !== '' && trimmedName.length < 30) {
+      props.handleNewPlayer(trimmedName)
       setNewPlayerName('')
     }
   }
 
-  const handleNewPlayerNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNewPlayerName(event.target.value)
-  }
+  const playersNeeded = Math.max(0, 2 - props.players.length)
 
   return (
     <AddPlayersContainer>
       <TopButtonContainer>
-        <StyledNavigationButton type='submit' onClick={props.handleGoToWelcome}>
-          Takaisin
-        </StyledNavigationButton>
-        {renderStartGameButton()}
+        <NavigationButton type='button' onClick={props.handleGoToWelcome}>
+          <FontAwesomeIcon icon={faArrowLeft} /> Takaisin
+        </NavigationButton>
+        {props.players.length >= 2 &&
+          <PrimaryButton type='button' onClick={props.startGame}>
+            Aloita peli <FontAwesomeIcon icon={faPlay} />
+          </PrimaryButton>}
       </TopButtonContainer>
-        <StyledTitle>Lisää pelaajia</StyledTitle>
-        <ButtonContainer>
-          <StyledInput
-            value={newPlayerName} 
-            placeholder='Kirjoita nimi'
-            onChange={handleNewPlayerNameChange} 
-          />
-          <StyledAddButton type='submit' onClick={handleNewPlayerName}>
-              Lisää
-          </StyledAddButton>
-        </ButtonContainer>
-      <List>
-        {props.players.map(i => 
-          <ListItem key={i}>
-            <StyledName>{i}</StyledName>
-            <StyledRemoveButton onClick={() => props.handleRemovePlayer(i)}>
+      <StyledTitle>Lisää pelaajat</StyledTitle>
+      <StyledDescription aria-live='polite'>
+        {playersNeeded > 0
+          ? `Lisää vielä ${playersNeeded === 1 ? 'yksi pelaaja' : 'kaksi pelaajaa'}`
+          : `${props.players.length} pelaajaa valmiina`}
+      </StyledDescription>
+      <PlayerForm onSubmit={handleNewPlayerName}>
+        <StyledInput
+          value={newPlayerName}
+          placeholder='Pelaajan nimi'
+          aria-label='Pelaajan nimi'
+          maxLength={29}
+          onChange={event => setNewPlayerName(event.target.value)}
+        />
+        <PrimaryButton type='submit'>
+          <FontAwesomeIcon icon={faUserPlus} /> Lisää
+        </PrimaryButton>
+      </PlayerForm>
+      {props.players.length > 0 && <List aria-label='Lisätyt pelaajat'>
+        {props.players.map(player =>
+          <ListItem key={player}>
+            <StyledName>{player}</StyledName>
+            <RemoveButton
+              type='button'
+              aria-label={`Poista pelaaja ${player}`}
+              onClick={() => props.handleRemovePlayer(player)}>
               <FontAwesomeIcon icon={faTrash} />
-            </StyledRemoveButton>
+            </RemoveButton>
           </ListItem>)}
-      </List>
+      </List>}
     </AddPlayersContainer>
   )
 }

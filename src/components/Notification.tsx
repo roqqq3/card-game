@@ -1,11 +1,29 @@
-import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const slideIn = keyframes`
+  from {
+    transform: translateY(-0.75rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`
 
 const StyledNotification = styled.p`
-font-size: 1em;
-font-variant: helvetica;
-text-align: center;
-color: #FA6E4F;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.9rem;
+  color: var(--color-text);
+  background: rgba(255, 253, 251, 0.96);
+  box-shadow: var(--shadow-soft);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: center;
+  animation: ${slideIn} 180ms ease-out;
+  backdrop-filter: blur(10px);
 `
 
 interface NotificationProps {
@@ -13,17 +31,13 @@ interface NotificationProps {
 }
 
 const Notification = ({ message }: NotificationProps) => {
-  if (message !== null) {
-    return (
-      <div className="message">
-        <StyledNotification>
-          {message}
-        </StyledNotification>
-      </div>
-    )
-  } else {
-    return null
-  }
+  if (message === null) return null
+
+  return (
+    <div className='message' role='status' aria-live='polite'>
+      <StyledNotification>{message}</StyledNotification>
+    </div>
+  )
 }
 
 export default Notification

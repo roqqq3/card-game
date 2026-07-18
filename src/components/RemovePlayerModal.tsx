@@ -1,84 +1,85 @@
 import styled from 'styled-components'
 
+const Overlay = styled.div`
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(69, 38, 49, 0.4);
+  backdrop-filter: blur(4px);
+`;
+
 const Modal = styled.div`
-  background: #ffcfb8;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(20rem, 80%);
-  height: auto;
-  border-radius: 1rem;
-  border: 1px solid #FB8E7E;
-  padding: 0.5rem;
-  transform: translate(-50%, -50%);
+  width: min(100%, 24rem);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 `;
 
-const StyledButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+const Title = styled.h2`
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 1.65rem;
 `;
 
-const StyledAddButton = styled.button`
-  color: white;
-  font-size: 2rem;
-  font-variant: helvetica;
-  margin: 0.25rem;
-  padding: 0.5rem 0.5rem;
-  border: 2px solid palevioletred;
-  border-radius: 1rem;
-  align-items: center;
-  background-color: #FB8E7E;
-  outline: 0;
-  :hover {
-    color: #FB8E7E;
-    background-color: white;
-  }
+const Text = styled.p`
+  margin: 0.75rem 0 1.25rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
 `;
-
-const StyledText = styled.p`
-  font-size: calc(1.5em + 0.7vw);
-  font-variant: helvetica;
-  text-align: center; 
-  color: #FA6E4F;
-`
 
 const ButtonContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-`
+  justify-content: flex-end;
+  gap: 0.65rem;
+`;
+
+const BaseButton = styled.button`
+  min-height: 2.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.8rem;
+  font-weight: 800;
+`;
+
+const CancelButton = styled(BaseButton)`
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  background: var(--color-surface);
+`;
+
+const RemoveButton = styled(BaseButton)`
+  border: 1px solid var(--color-danger);
+  color: white;
+  background: var(--color-danger);
+`;
 
 interface RemovePlayerModalProps {
   player: string;
   closeModal: () => void;
   handlePlayerRemove: (name: string) => void;
 }
- 
+
 const RemovePlayerModal = (props: RemovePlayerModalProps) => {
-  
   const submitRemove = () => {
     props.handlePlayerRemove(props.player);
     props.closeModal();
   }
 
   return (
-    <Modal>
-      <p></p> 
-      <ButtonContainer>
-        <StyledText>Haluatko varmasti poistaa pelaajan {props.player}?</StyledText>
-        <StyledButtonContainer>
-          <StyledAddButton onClick={props.closeModal}>
-              Jätä
-          </StyledAddButton>
-          <StyledAddButton type='submit' onClick={submitRemove}>
-              Poista
-          </StyledAddButton>
-        </StyledButtonContainer>
-      </ButtonContainer>
-    </Modal>
+    <Overlay>
+      <Modal role='dialog' aria-modal='true' aria-labelledby='remove-player-title'>
+        <Title id='remove-player-title'>Poistetaanko pelaaja?</Title>
+        <Text>{props.player} poistetaan pelistä ja hänen jatkuvat korttinsa tyhjennetään.</Text>
+        <ButtonContainer>
+          <CancelButton type='button' autoFocus onClick={props.closeModal}>Peruuta</CancelButton>
+          <RemoveButton type='button' onClick={submitRemove}>Poista</RemoveButton>
+        </ButtonContainer>
+      </Modal>
+    </Overlay>
   )
 }
 
