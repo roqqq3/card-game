@@ -1258,6 +1258,156 @@ const cardsDataWithoutIds = [
     "description": "Valitse kirjain. Kukaan ei saa sanoa kyseisen kirjaimen sisältävää sanaa ennen seuraavaa vuoroasi. Virheen tehnyt juo 3 kertaa.",
     "rarity": 50,
     "continuous": true
+  },
+  {
+    "name": "Lyhimmät hiukset",
+    "description": "Pelaaja, jolla on lyhimmät hiukset, juo.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Echo",
+    "description": "Saat puhua vain toistamalla viimeisen sanotun sanan kunnes tulee uudestaan vuorosi. Virheestä juo 6.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Pokemonit",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat Pokémoneja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Suomen kaupungit",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat Suomen kaupunkeja. Pelaaja, jolla kestää yli 10 sekuntia, juo 6.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Kapteeni",
+    "description": "Olet kapteeni. Aina kun sanot \"kapteeni käskee\", muiden on tehtävä käskysi. Viimeinen juo. Tämän voi tehdä korkeintaan kerran vuorossa.",
+    "rarity": 0,
+    "continuous": true
+  },
+  {
+    "name": "Nimipäivä",
+    "description": "Pelaaja, jonka nimipäivä on lähimpänä, juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Venäjä",
+    "description": "Puhu venäjän aksentilla yhden kierroksen ajan. Jos jäät kiinni normaalisti puhumisesta, juot juomasi tyhjäksi.",
+    "rarity": 60,
+    "continuous": false
+  },
+  {
+    "name": "Uhraus",
+    "description": "Valitse: juot itse juomasi loppuun TAI kaikki muut juovat 3 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Noppasota",
+    "description": "Heitä noppaa oikealla olevan kanssa. Häviäjä juo silmälukujen erotuksen verran x2. Jos ei ole noppaa, molemmat juovat 5.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "VENÄJÄN ROULETTE",
+    "description": "Heitä noppaa. Jos 1, juo juomasi tyhjäksi. Jos 2-5, juo silmäluvun verran. Jos 6, valitse joku juomaan juomansa tyhjäksi. Jos ei ole noppaa, juo juomasi tyhjäksi.",
+    "rarity": 70,
+    "continuous": false
+  },
+  {
+    "name": "KAIKKI TAI EI MITÄÄN",
+    "description": "Heitä kolikkoa. Jos klaava, kaikki juovat juomansa tyhjäksi. Jos kruuna, sinä juot juomasi tyhjäksi.",
+    "rarity": 90,
+    "continuous": false
+  },
+  {
+    "name": "BOMBI",
+    "description": "Sinulla on 30 s aikaa juoda juomasi loppuun. Jos et ehdi, juot lisäksi shotin (4cl).",
+    "rarity": 80,
+    "continuous": false
+  },
+  {
+    "name": "Silmät kiinni",
+    "description": "Sulje silmät. Oikealla oleva ojentaa esineen. Arvaa mikä se on. Jos väärin, juo 3. Jos oikein, hän juo 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Nopeustesti",
+    "description": "Ensimmäinen, joka koskettaa kattoa (tai oven yläkarmia), saa määrätä 3 juomakertaa. Viimeinen juo 3.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Muistipeli",
+    "description": "Nimeä järjestyksessä kaikki pelaajat vasemmalta oikealle silmät kiinni. Virheestä juo 3.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Ääniä",
+    "description": "Matki jotain eläintä. Ensimmäinen pelaaja, joka arvaa oikein, saa määrätä 3 juomakertaa. Jos kukaan ei arvaa 15 sekunnissa, sinä juot 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Emoji",
+    "description": "Näytä kasvoillasi emoji. Ensimmäinen, joka arvaa oikein, saa määrätä 3 juomakertaa. Jos kukaan ei arvaa 15 sekunnissa, sinä juot 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Kahvikuppi",
+    "description": "Montako kuppia kahvia tai energiajuomaa joit tänään? Juo niin monta kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Suomalaiset artistit",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat suomalaisia artisteja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Junat",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat juna-asemia Suomessa. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Alkometri",
+    "description": "Valitse kirjain. Pelaajat vuorollaan sanovat alkoholijuoman, joka alkaa sillä. Pelaaja, jolla kestää yli 10 sekuntia, juo juomansa loppuun.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Rikkinäinen puhelin",
+    "description": "Kuiskaa lause oikealla olevalle, kiertäen ympäri. Jos lopputulos on eri, kaikki juovat 3 paitsi sinä.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Väärä nimi",
+    "description": "Kutsu kaikkia väärällä nimellä kunnes tulee uudestaan vuorosi. Jos kutsut jotakuta oikealla nimellä, juo 6.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Hidasmo",
+    "description": "Kaikki liikkuvat hidastettuna yhden kierroksen ajan. Jos joku liikkuu normaalilla nopeudella, hän juo 3.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Myrsky",
+    "description": "Kaikki juovat kerran. Sitten heitä kolikkoa. Jos klaava, toistetaan. Jos kruuna, loppu.",
+    "rarity": 60,
+    "continuous": false
   }
 ]
 

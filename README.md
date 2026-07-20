@@ -18,7 +18,7 @@ Juomapeli draws randomized Finnish-language challenge cards for a group of playe
 
 ### Features
 
-- **210 challenge cards** with different rarity levels
+- **235 challenge cards** with different rarity levels
 - **Quick play** without player setup
 - **Player mode** with automatic turn tracking
 - **Continuous effects** shown alongside the active card
