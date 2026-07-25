@@ -1,16 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import SingleCard from './components/SingleCard'
-import Button from './components/Button'
+import GameCard from './components/GameCard'
+import DrawButton from './components/DrawButton'
 import Welcome from './components/Welcome'
-import Notification from './components/Notification'
+import Toast from './components/Toast'
 import AddPlayersScreen from './components/AddPlayersScreen'
-import PlayerList from './components/PlayerList'
-import CardEffects from './components/CardEffects'
+import TopBar from './components/TopBar'
+import TurnRail from './components/TurnRail'
+import PlayersPanel from './components/PlayersPanel'
+import EffectsList from './components/EffectsList'
+import SideRail from './components/SideRail'
+import Sheet from './components/Sheet'
+import ConfirmDialog from './components/ConfirmDialog'
 import { Gamestate } from './types/Gamestate';
 import { Card, cards } from './cards/Card';
 import { ContinuousCard } from './types/ContinuousCard';
 import { clearGameSession, loadGameSession, SavedGameSession, saveGameSession } from './utils/gameSession';
+import { trackViewportSize } from './utils/viewport';
+
+type OpenSheet = 'players' | 'effects' | null
+
+const hasFinePointer = () =>
+  typeof window.matchMedia === 'function'
+  && window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
 const App = () => {
 
@@ -22,8 +34,11 @@ const App = () => {
   const [continuousCards, setContinuousCards] = useState<ContinuousCard[]>([])
   const [previousCards, setPreviousCards] = useState<number[]>([])
   const [savedGame, setSavedGame] = useState<SavedGameSession | null>(() => loadGameSession())
+  const [openSheet, setOpenSheet] = useState<OpenSheet>(null)
+  const [playerPendingRemoval, setPlayerPendingRemoval] = useState<string | null>(null)
   const spaceHeldRef = useRef(false)
   const handleTurnChangeRef = useRef<() => void>(() => undefined)
+  const messageTimeoutRef = useRef<number>()
 
   const updateCurrentPlayer = () => {
     if (currentPlayer > players.length - 1) {
@@ -93,15 +108,29 @@ const App = () => {
 
   handleTurnChangeRef.current = handleTurnChange
 
+  /**
+   * All game-level keyboard handling lives here so the precedence between
+   * stacked overlays is explicit rather than a side effect of which component
+   * happened to attach its listener first.
+   */
   useEffect(() => {
     if (gamestate !== Gamestate.Playing) return
 
     const handleKeyboardShortcut = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        // Dismiss the topmost layer only.
+        if (playerPendingRemoval !== null) setPlayerPendingRemoval(null)
+        else if (openSheet !== null) setOpenSheet(null)
+        return
+      }
+
       const target = event.target as HTMLElement
       const isTyping = ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(target.tagName) || target.isContentEditable
       if (event.code !== 'Space' || isTyping) return
 
       event.preventDefault()
+      // A sheet or dialog on screen owns the interaction; don't draw behind it.
+      if (openSheet !== null || playerPendingRemoval !== null) return
       if (event.repeat || spaceHeldRef.current) return
 
       spaceHeldRef.current = true
@@ -126,7 +155,7 @@ const App = () => {
       window.removeEventListener('blur', clearHeldKeys)
       clearHeldKeys()
     }
-  }, [gamestate])
+  }, [gamestate, openSheet, playerPendingRemoval])
 
   useEffect(() => {
     const activeGameClass = 'game-active'
@@ -153,6 +182,10 @@ const App = () => {
     if (savedSession) setSavedGame(savedSession)
   }, [gamestate, currentCard, players, currentPlayer, continuousCards, previousCards])
 
+  useEffect(() => () => window.clearTimeout(messageTimeoutRef.current), [])
+
+  useEffect(() => trackViewportSize(), [])
+
   const handleNewPlayer = (name: string) => {
     setPlayers([...players, name])
   }
@@ -175,8 +208,9 @@ const App = () => {
   }
 
   const showMessage = (newMessage: string) => {
+    window.clearTimeout(messageTimeoutRef.current)
     setMessage(newMessage)
-    window.setTimeout(() => setMessage(null), 4500)
+    messageTimeoutRef.current = window.setTimeout(() => setMessage(null), 4500)
   }
 
   const startGame = () => {
@@ -186,7 +220,9 @@ const App = () => {
     if (players.length !== 0) {
       setCurrentPlayer(0)
     }
-    showMessage('Vinkki: välilyönti nostaa seuraavan kortin')
+    showMessage(hasFinePointer()
+      ? 'Vinkki: välilyönti nostaa seuraavan kortin'
+      : 'Vinkki: napauta korttia nostaaksesi uuden')
     setGamestate(Gamestate.Playing)
   }
 
@@ -202,6 +238,28 @@ const App = () => {
     setPreviousCards(savedGame.previousCards)
     showMessage('Peli palautettu')
     setGamestate(Gamestate.Playing)
+  }
+
+  /**
+   * Leaving mid-game returns to the menu with a clean slate, so the next
+   * "Nopea peli" really is player-free. The saved session survives, which is
+   * what the menu's resume card offers.
+   */
+  const exitGame = () => {
+    setOpenSheet(null)
+    setPlayerPendingRemoval(null)
+    setCurrentCard(undefined)
+    setPlayers([])
+    setCurrentPlayer(0)
+    setContinuousCards([])
+    setPreviousCards([])
+    setGamestate(Gamestate.WelcomeScreen)
+  }
+
+  const confirmPlayerRemoval = () => {
+    if (playerPendingRemoval === null) return
+    handlePlayerRemove(playerPendingRemoval)
+    setPlayerPendingRemoval(null)
   }
 
   const savedGameSummary = savedGame
@@ -225,7 +283,7 @@ const App = () => {
   switch (gamestate) {
     case Gamestate.AddPlayers:
       return (
-        <div className='centered'>
+        <div className='screen-center'>
           <AddPlayersScreen
             handleRemovePlayer={handlePlayerRemove}
             players={players}
@@ -238,44 +296,82 @@ const App = () => {
     case Gamestate.Playing: {
       const hasPlayers = players.length > 0
       const hasEffects = continuousCards.length > 0
-      const layoutClass = hasPlayers ? '' : 'quickGame'
+      const activePlayer = hasPlayers ? players[currentPlayer] : undefined
+
+      const innerClass = [
+        'board__inner',
+        hasPlayers ? 'board__inner--players' : '',
+        hasEffects ? 'board__inner--effects' : ''
+      ].filter(Boolean).join(' ')
 
       return <>
-        <main className={`mainContainer ${layoutClass}`}>
-          {hasPlayers && <aside className='playerList' aria-label='Pelaajat'>
-            <PlayerList
-              players={players}
-              currentPlayer={players[currentPlayer]}
-              handleNewPlayer={handleNewPlayer}
-              handlePlayerRemove={handlePlayerRemove}
-            />
-          </aside>}
-          <section className='gameScreen' aria-label='Nykyinen kortti'>
-            {hasPlayers && <div className='mobileGameContext'>
-              <div className='currentPlayerMobile'>
-                Vuorossa <strong>{players[currentPlayer]}</strong>
-              </div>
+        <div className='board'>
+          <TopBar
+            playerCount={players.length}
+            effectCount={continuousCards.length}
+            onOpenPlayers={() => setOpenSheet('players')}
+            onOpenEffects={() => setOpenSheet('effects')}
+            onExit={exitGame}
+          />
+          {hasPlayers && <TurnRail players={players} currentPlayer={players[currentPlayer]} />}
+          <div className={innerClass}>
+            {hasPlayers && <div className='board__players'>
+              <SideRail title='Pelaajat' count={players.length}>
+                <PlayersPanel
+                  players={players}
+                  currentPlayer={activePlayer}
+                  onAddPlayer={handleNewPlayer}
+                  onRequestRemove={setPlayerPendingRemoval}
+                  scrollToCurrent
+                />
+              </SideRail>
             </div>}
-            <div className='cardStage'>
-              <SingleCard
-                card={currentCard}
-                mobileAction={hasEffects
-                  ? <CardEffects continuousCards={continuousCards} />
-                  : undefined}
-              />
-            </div>
-            <Button handleTurnChange={handleTurnChange} />
-          </section>
-          {hasEffects && <aside className='effectList desktopEffectList' aria-label='Jatkuvat kortit'>
-            <CardEffects continuousCards={continuousCards} />
-          </aside>}
-        </main>
-        <Notification message={message} />
+            <section className='board__stage' aria-label='Nykyinen kortti'>
+              {/* Stable live region: the card inside it is keyed and remounts
+                  on every draw, so the announcement has to be anchored here. */}
+              <div className='board__card' aria-live='polite' aria-atomic='true'>
+                <GameCard card={currentCard} owner={activePlayer} onDraw={handleTurnChange} />
+              </div>
+              <div className='board__action'>
+                <DrawButton onDraw={handleTurnChange} />
+              </div>
+              <p className='board__hint'>Voit nostaa kortin myös napsauttamalla sitä</p>
+            </section>
+            {hasEffects && <div className='board__effects'>
+              <SideRail title='Jatkuvat kortit' count={continuousCards.length}>
+                <EffectsList continuousCards={continuousCards} />
+              </SideRail>
+            </div>}
+          </div>
+        </div>
+
+        {openSheet === 'players' && <Sheet title='Pelaajat' onClose={() => setOpenSheet(null)}>
+          <PlayersPanel
+            players={players}
+            currentPlayer={activePlayer}
+            onAddPlayer={handleNewPlayer}
+            onRequestRemove={setPlayerPendingRemoval}
+          />
+        </Sheet>}
+
+        {openSheet === 'effects' && <Sheet title='Jatkuvat kortit' onClose={() => setOpenSheet(null)}>
+          <EffectsList continuousCards={continuousCards} />
+        </Sheet>}
+
+        {playerPendingRemoval !== null && <ConfirmDialog
+          title='Poistetaanko pelaaja?'
+          message={`${playerPendingRemoval} poistetaan pelistä ja hänen jatkuvat korttinsa tyhjennetään.`}
+          confirmLabel='Poista'
+          onConfirm={confirmPlayerRemoval}
+          onCancel={() => setPlayerPendingRemoval(null)}
+        />}
+
+        <Toast message={message} />
       </>
     }
     default:
       return (
-        <div className='centered'>
+        <div className='screen-center'>
           <Welcome
             quickStartGame={startGame}
             handleSetAddPlayersScreen={handleSetAddPlayersScreen}

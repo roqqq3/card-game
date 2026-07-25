@@ -1,204 +1,227 @@
-import { faBoltLightning, faPeoplePulling, faPlay } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components'
+import { faBoltLightning, faPlay, faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
+import styled, { keyframes } from 'styled-components'
+import { getRandomQuote } from '../copy/quotes'
+import { hoverOnly } from '../styles/mixins'
+import BrandMark from './BrandMark'
 
-const WelcomeContainer = styled.main`
-  width: min(100%, 720px);
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: clamp(1.25rem, 4vw, 3rem);
-  border: 1px solid rgba(218, 125, 151, 0.42);
-  border-radius: clamp(1.75rem, 5vw, 2.75rem);
-  background: var(--surface-glass);
-  box-shadow: 0 24px 64px rgba(103, 43, 65, 0.14);
-  backdrop-filter: blur(18px);
-  text-align: center;
-
+const riseIn = keyframes`
+  from { transform: translateY(1rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 `
 
-const BrandIcon = styled.img`
-  width: clamp(5.25rem, 11vw, 7rem);
-  height: clamp(5.25rem, 11vw, 7rem);
-  display: block;
-  margin: 0 auto 0.25rem;
-  filter: drop-shadow(0 10px 16px rgba(103, 43, 65, 0.12));
-`
-
-const StyledTitle = styled.h1`
-  margin: 0;
-  color: var(--color-primary);
-  font-size: clamp(3rem, 10vw, 5.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-`
-
-const ActionSections = styled.div`
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 1.8rem;
-`
-
-const NewGameSection = styled.section`
-  text-align: center;
-`
-
-const ContinueSection = styled.section`
+const Screen = styled.main`
+  width: min(100%, 30rem);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem 0.25rem 0;
-  border-top: 1px solid rgba(184, 63, 99, 0.22);
-  text-align: left;
-
-  @media (max-width: 520px) {
-    align-items: stretch;
-    flex-direction: column;
-  }
+  gap: clamp(1.5rem, 4vh, 2.25rem);
+  text-align: center;
 `
 
-const SectionHeading = styled.div`
-  min-width: 0;
-`
-
-const SectionTitle = styled.h2`
-  margin: 0;
-  color: var(--color-text);
-  font-size: 1.25rem;
-  line-height: 1.2;
-`
-
-const SavedGameSummary = styled.p`
-  margin: 0.4rem 0 0;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  line-height: 1.4;
-  overflow-wrap: anywhere;
-`
-
-const SavedGameTime = styled.p`
-  margin: 0.2rem 0 0;
-  color: var(--color-text-muted);
-  font-size: 0.8rem;
-  line-height: 1.4;
-`
-
-const NewGameActions = styled.div`
+const Hero = styled.div`
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  animation: ${riseIn} 420ms var(--ease-out) both;
+`
 
-  @media (max-width: 520px) {
-    flex-direction: column;
-  }
+const Wordmark = styled.h1`
+  margin: 0;
+  /* Plain white so the pink is spent on the quote and the primary action rather
+     than three stacked elements competing in the same hue. */
+  color: var(--text);
+  font-size: clamp(2.75rem, 13vw, 4.75rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+`
+
+const Quote = styled.p`
+  max-width: 20rem;
+  margin: 0.15rem 0 0;
+  color: var(--pink-bright);
+  font-size: clamp(1rem, 3.6vw, 1.15rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+  text-wrap: balance;
+`
+
+const Actions = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  animation: ${riseIn} 460ms var(--ease-out) 100ms both;
 `
 
 const BaseButton = styled.button`
+  width: 100%;
   min-height: 3.75rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
-  padding: 0.9rem 1.25rem;
-  border-radius: 1rem;
+  gap: 0.65rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--r-md);
+  font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 800;
-  transition: transform 160ms ease, background-color 160ms ease;
+  font-weight: 700;
+  transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out), filter 160ms var(--ease-out);
 
-  &:hover {
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 520px) {
-    width: 100%;
+  &:active {
+    transform: scale(0.99);
   }
 `
 
 const PrimaryButton = styled(BaseButton)`
-  flex: 1;
-  border: 1px solid var(--color-primary);
-  color: white;
-  background: var(--color-primary);
+  border: 0;
+  color: #fff;
+  background: var(--brand);
+  box-shadow: var(--glow-brand), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
-  &:hover {
-    background: var(--color-primary-hover);
-  }
+  ${hoverOnly`
+    &:hover {
+      box-shadow: var(--glow-brand-lg), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      filter: saturate(1.12) brightness(1.06);
+      transform: translateY(-2px);
+    }
+  `}
 `
 
 const SecondaryButton = styled(BaseButton)`
-  flex: 1;
-  border: 1px solid var(--color-border);
-  color: var(--color-primary);
-  background: var(--color-surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--surface);
 
-  &:hover {
-    background: var(--color-surface-muted);
-  }
+  ${hoverOnly`
+    &:hover {
+      border-color: var(--border-strong);
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+  `}
 `
 
-const ContinueButton = styled(SecondaryButton)`
-  min-width: 10rem;
-  flex: 0 0 auto;
-  background: var(--surface-control);
+const ResumeCard = styled.section`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-1);
+  text-align: left;
+  animation: ${riseIn} 500ms var(--ease-out) 180ms both;
+`
 
-  @media (max-width: 520px) {
-    width: 100%;
-  }
+const ResumeInfo = styled.div`
+  min-width: 0;
+  flex: 1;
+`
+
+const ResumeLabel = styled.h2`
+  margin: 0;
+  color: var(--text-faint);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+`
+
+const ResumeSummary = styled.p`
+  margin: 0.25rem 0 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+`
+
+const ResumeTime = styled.p`
+  margin: 0.15rem 0 0;
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  line-height: 1.4;
+`
+
+const ResumeButton = styled.button`
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 47, 126, 0.4);
+  border-radius: var(--r-md);
+  color: var(--pink-bright);
+  background: rgba(255, 47, 126, 0.14);
+  font-size: 1rem;
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+
+  ${hoverOnly`
+    &:hover {
+      color: #fff;
+      background: var(--pink-deep);
+    }
+  `}
 `
 
 interface WelcomeProps {
-  quickStartGame: () => void;
-  handleSetAddPlayersScreen: () => void;
-  hasSavedGame: boolean;
-  savedGameSummary?: string;
-  savedGameSavedAt?: string;
-  resumeGame: () => void;
+  quickStartGame: () => void
+  handleSetAddPlayersScreen: () => void
+  hasSavedGame: boolean
+  savedGameSummary?: string
+  savedGameSavedAt?: string
+  resumeGame: () => void
 }
 
-const Welcome = ({ quickStartGame, handleSetAddPlayersScreen, hasSavedGame, savedGameSummary, savedGameSavedAt, resumeGame }: WelcomeProps) => {
+const Welcome = ({
+  quickStartGame,
+  handleSetAddPlayersScreen,
+  hasSavedGame,
+  savedGameSummary,
+  savedGameSavedAt,
+  resumeGame
+}: WelcomeProps) => {
+  // Picked once per visit to the menu, so returning from a game rolls a new one.
+  const [quote] = useState(getRandomQuote)
+
   return (
-    <WelcomeContainer>
-      <BrandIcon src={`${process.env.PUBLIC_URL}/start-icons/02-cocktail-die.svg`} alt='' aria-hidden='true' />
-      <StyledTitle>Juomapeli</StyledTitle>
-      <ActionSections>
-        <NewGameSection aria-labelledby='new-game-title'>
-          <SectionHeading>
-            <SectionTitle id='new-game-title'>Aloita uusi peli</SectionTitle>
-          </SectionHeading>
-          <NewGameActions>
-            <PrimaryButton
-              value='addPlayers'
-              type='button'
-              onClick={handleSetAddPlayersScreen}>
-                <FontAwesomeIcon icon={faPeoplePulling} fixedWidth />
-                Lisää pelaajia
-            </PrimaryButton>
-            <SecondaryButton
-              value='QuickStartGame'
-              type='button'
-              onClick={quickStartGame}>
-                <FontAwesomeIcon icon={faBoltLightning} fixedWidth />
-                Nopea peli
-            </SecondaryButton>
-          </NewGameActions>
-        </NewGameSection>
-        {hasSavedGame && <ContinueSection aria-labelledby='continue-game-title'>
-          <SectionHeading>
-            <SectionTitle id='continue-game-title'>Jatka edellistä peliä</SectionTitle>
-            {savedGameSummary && <SavedGameSummary>{savedGameSummary}</SavedGameSummary>}
-            {savedGameSavedAt && <SavedGameTime>Tallennettu {savedGameSavedAt}</SavedGameTime>}
-          </SectionHeading>
-          <ContinueButton
-            value='resumeGame'
-            type='button'
-            onClick={resumeGame}>
-              <FontAwesomeIcon icon={faPlay} fixedWidth />
-              Jatka peliä
-          </ContinueButton>
-        </ContinueSection>}
-      </ActionSections>
-    </WelcomeContainer>
+    <Screen>
+      <Hero>
+        <BrandMark size='clamp(3.75rem, 17vw, 5rem)' />
+        <Wordmark>Juomapeli</Wordmark>
+        <Quote>”{quote}”</Quote>
+      </Hero>
+
+      <Actions>
+        <PrimaryButton type='button' onClick={handleSetAddPlayersScreen}>
+          <FontAwesomeIcon icon={faUserGroup} fixedWidth aria-hidden='true' />
+          Lisää pelaajat
+        </PrimaryButton>
+        <SecondaryButton type='button' onClick={quickStartGame}>
+          <FontAwesomeIcon icon={faBoltLightning} fixedWidth aria-hidden='true' />
+          Nopea peli
+        </SecondaryButton>
+      </Actions>
+
+      {hasSavedGame && <ResumeCard aria-labelledby='resume-label'>
+        <ResumeInfo>
+          <ResumeLabel id='resume-label'>Jatka edellistä</ResumeLabel>
+          {savedGameSummary && <ResumeSummary>{savedGameSummary}</ResumeSummary>}
+          {savedGameSavedAt && <ResumeTime>Tallennettu {savedGameSavedAt}</ResumeTime>}
+        </ResumeInfo>
+        <ResumeButton type='button' aria-label='Jatka edellistä peliä' onClick={resumeGame}>
+          <FontAwesomeIcon icon={faPlay} aria-hidden='true' />
+        </ResumeButton>
+      </ResumeCard>}
+    </Screen>
   )
 }
 

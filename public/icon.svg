@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Juomapeli">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171028"/>
+      <stop offset="1" stop-color="#08060e"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff2f7e"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="die" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e6dcff"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.32" r="0.62">
+      <stop offset="0" stop-color="#ff2f7e" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#ff2f7e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="512" height="512" fill="url(#halo)"/>
+
+  <!-- Framed to nearly fill the canvas so the mark still reads at 16px in a browser tab. -->
+  <g transform="translate(12.25 53.5) scale(7.5)">
+    <path d="M15 20h34L32 39z" fill="url(#liquid)"/>
+    <g fill="none" stroke="#f7f3ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.94">
+      <path d="M11 15h42L32 39z"/>
+      <path d="M32 39v13"/>
+      <path d="M22 54h20"/>
+    </g>
+    <g transform="rotate(14 42 15)">
+      <rect x="31" y="4" width="22" height="22" rx="5.5" fill="url(#die)"/>
+      <g fill="#ff2f7e">
+        <circle cx="37.5" cy="10.5" r="2.1"/>
+        <circle cx="46.5" cy="10.5" r="2.1"/>
+        <circle cx="42" cy="15" r="2.1"/>
+        <circle cx="37.5" cy="19.5" r="2.1"/>
+        <circle cx="46.5" cy="19.5" r="2.1"/>
+      </g>
+    </g>
+  </g>
+</svg>

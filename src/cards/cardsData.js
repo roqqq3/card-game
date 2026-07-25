@@ -763,7 +763,7 @@ const cardsDataWithoutIds = [
   },
   {
     "name": "Kieli solmussa",
-    "description": "Sano ääneen ''Kas vain!' sanoi kasvain, ja kasvoi vain. Vain kasvain voi kasvaa noin vain.' Jos epäonnistuit muiden mielestä, juo 3 kertaa.",
+    "description": "Sano ääneen 'Kas vain! sanoi kasvain, ja kasvoi vain. Vain kasvain voi kasvaa noin vain.' Jos epäonnistuit muiden mielestä, juo 3 kertaa.",
     "rarity": 0,
     "continuous": false
   },
@@ -1285,7 +1285,7 @@ const cardsDataWithoutIds = [
   },
   {
     "name": "Kapteeni",
-    "description": "Olet kapteeni. Aina kun sanot \"kapteeni käskee\", muiden on tehtävä käskysi. Viimeinen juo. Tämän voi tehdä korkeintaan kerran vuorossa.",
+    "description": "Olet kapteeni. Aina kun sanot 'kapteeni käskee', muiden on tehtävä käskysi. Viimeinen juo. Tämän voi tehdä korkeintaan kerran vuorossa.",
     "rarity": 0,
     "continuous": true
   },
@@ -1407,6 +1407,498 @@ const cardsDataWithoutIds = [
     "name": "Myrsky",
     "description": "Kaikki juovat kerran. Sitten heitä kolikkoa. Jos klaava, toistetaan. Jos kruuna, loppu.",
     "rarity": 60,
+    "continuous": false
+  },
+  {
+    "name": "Naapurit",
+    "description": "Molemmat vieressäsi istuvat juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Kaksi kärpästä",
+    "description": "Valitse kaksi pelaajaa. Molemmat juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Korkoa korolle",
+    "description": "Juo kerran. Jokaisen vuorosi alussa juot yhden kerran enemmän kuin viimeksi.",
+    "rarity": 60,
+    "continuous": true
+  },
+  {
+    "name": "Majesteetti",
+    "description": "Kaikkien on puhuteltava sinua majesteetiksi. Joka kerta kun joku unohtaa, hän juo 2 kertaa.",
+    "rarity": 30,
+    "continuous": true
+  },
+  {
+    "name": "Kyykkykuningas",
+    "description": "Tee 15 kyykkyä. Mikäli et pysty tai halua, juo 6 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Plankku",
+    "description": "Pidä plankkua 30 sekuntia. Jos et pysty, juo juomasi loppuun.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Ilman käsiä",
+    "description": "Juo kerran koskematta lasiin käsilläsi. Jos et onnistu, juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Pyörremyrsky",
+    "description": "Pyöri 10 kertaa ympäri ja kävele viisi askelta suoraan. Jos kaadut, juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Kärrynpyörä",
+    "description": "Tee kärrynpyörä. Jos et osaa tai halua, juo 6 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Hengityskilpailu",
+    "description": "Pidätä hengitystä oikealla olevan kanssa. Häviäjä juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Tuijotuskilpailu",
+    "description": "Tuijota oikealla olevaa silmiin. Ensimmäinen, joka kääntää katseen tai nauraa, juo 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Suomen presidentit",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat Suomen presidenttejä. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Liigajoukkueet",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat Liigan jääkiekkojoukkueita. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Pizzatäytteet",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat pizzan täytteitä. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Pakkoruotsi",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat ruotsinkielisiä sanoja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Kirosanat",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat kirosanoja. Toistoa ei hyväksytä. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Planeetat",
+    "description": "Luettele planeetat järjestyksessä Auringosta ulospäin. Virheestä juo 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Kuukaudet ruotsiksi",
+    "description": "Luettele kuukaudet ruotsiksi. Jos menee jossain kohtaa väärin, juo 6 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Metroasemat",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat Helsingin metroasemia. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Akkuvaroitus",
+    "description": "Jos puhelimesi akku on alle 20 %, juo 3 kertaa. Muussa tapauksessa valitse joku juomaan 3.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Ruutuaika",
+    "description": "Kaikki tarkistavat päivän ruutuaikansa. Suurin juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Askelmittari",
+    "description": "Pelaaja, jolla on tänään vähiten askeleita, juo 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Kameramuisti",
+    "description": "Näytä galleriasi viimeisin kuva muille. Jos et halua, juo 6 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Soittolista",
+    "description": "Näytä muille eniten kuuntelemasi artisti. Jos et halua, juo 6 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Kolme kolikkoa",
+    "description": "Heitä kolikkoa 3 kertaa. Juo kolme kertaa jokaista kruunaa kohden.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Kaksoisnoppa",
+    "description": "Heitä kahta noppaa. Jos sama silmäluku, kaikki juovat juomansa loppuun. Muuten juo silmälukujen erotuksen verran.",
+    "rarity": 70,
+    "continuous": false
+  },
+  {
+    "name": "Tuplaa tai kuole",
+    "description": "Heitä kolikkoa. Jos kruuna, et juo mitään ennen seuraavaa vuoroasi. Jos klaava, juo juomasi loppuun.",
+    "rarity": 70,
+    "continuous": false
+  },
+  {
+    "name": "Sekuntikello",
+    "description": "Sano 'stop', kun luulet 30 sekunnin kuluneen. Oikealla oleva ottaa aikaa. Juo virheesi verran sekunneissa, enintään 8.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Kellonaika",
+    "description": "Katso kelloa. Juo minuuttien viimeisen numeron verran.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Vedonlyönti",
+    "description": "Lyö vetoa oikealla olevan kanssa mistä tahansa. Häviäjä juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Vasenkätiset",
+    "description": "Kaikki vasenkätiset juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Esikoinen",
+    "description": "Kaikki perheensä esikoiset juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Kuopus",
+    "description": "Kaikki perheensä kuopukset juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Ajokortti",
+    "description": "Kaikki, joilla ei ole ajokorttia, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Inttiin",
+    "description": "Kaikki, jotka ovat käyneet armeijan tai sivarin, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Kissaihmiset",
+    "description": "Kaikki kissanomistajat juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Koiraihmiset",
+    "description": "Kaikki koiranomistajat juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Avanto",
+    "description": "Kaikki, jotka ovat käyneet avannossa, juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Murtuma",
+    "description": "Juo kerran jokaista murtunutta luutasi kohden.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Nukutus",
+    "description": "Kaikki, joita on joskus leikattu, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Pisin pelaaja",
+    "description": "Pisin pelaaja juo 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Kaima",
+    "description": "Jos jonkun toisen pelaajan nimi alkaa samalla kirjaimella kuin sinun, molemmat juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Lentopelko",
+    "description": "Kaikki, jotka pelkäävät lentämistä, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Sinisilmä",
+    "description": "Kaikki sinisilmäiset juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "KOSTON KIERRE",
+    "description": "Valitse pelaaja. Hän juo juomansa loppuun ja valitsee seuraavan tekemään saman. Kierre päättyy, kun joku kieltäytyy — hän ottaa shotin (4cl).",
+    "rarity": 90,
+    "continuous": false
+  },
+  {
+    "name": "Vasen käsi",
+    "description": "Kaikkien on juotava vasemmalla kädellä yhden kierroksen ajan. Virheestä juo 3 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Kippis",
+    "description": "Yhden kierroksen ajan jokaisen on sanottava 'kippis' ennen juomista. Joka unohtaa, juo 3 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Ei nimiä",
+    "description": "Yhden kierroksen ajan kenenkään nimeä ei saa sanoa. Virheestä juo 3 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Seisomaan",
+    "description": "Yhden kierroksen ajan kaikkien on noustava seisomaan juodessaan. Virheestä juo 3 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Ei sormia",
+    "description": "Yhden kierroksen ajan kukaan ei saa osoittaa sormella. Virheestä juo 3 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Puhelimet pöydälle",
+    "description": "Kaikki laittavat puhelimensa pöydän keskelle. Ensimmäinen, joka koskee omaansa, juo juomansa loppuun.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Fizz buzz",
+    "description": "Laskekaa vuorotellen. Kolmella jaolliset korvataan sanalla 'fizz', viidellä jaolliset sanalla 'buzz' ja molemmilla jaolliset sanalla 'fizzbuzz'. Virheestä juo 3 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Takaperin",
+    "description": "Oikealla oleva antaa sinulle sanan. Sano se takaperin. Virheestä juo 3 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Alkusointu",
+    "description": "Sano vähintään viiden sanan lause, jossa jokainen sana alkaa samalla kirjaimella. Jos et onnistu, juo 3 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Yksitavuiset",
+    "description": "Puhu vain yksitavuisilla sanoilla, kunnes tulee uudestaan vuorosi. Virheestä juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Kertolasku",
+    "description": "Anna oikealla olevalle kertolasku kahdella kaksinumeroisella luvulla. Jos hän vastaa oikein, sinä juot 3. Jos väärin, hän juo 3.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Pääkaupungit",
+    "description": "Kysy oikealla olevalta jonkin maan pääkaupunki. Jos vastaus on oikein, sinä juot 3. Jos väärin, hän juo 3.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Tasapainoilija",
+    "description": "Aseta kolikko pystyyn lasin reunalle niin, että se pysyy. Jos et onnistu kolmella yrityksellä, juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Savon murre",
+    "description": "Puhu Savon murretta, kunnes tulee uudestaan vuorosi. Virheestä juo 6 kertaa.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Muumit",
+    "description": "Nimeä viisi Muumilaakson hahmoa. Jos et osaa, juo 3 kertaa.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Habbo",
+    "description": "Kaikki, joilla on ollut Habbo-tunnus, juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "IRC-Galleria",
+    "description": "Kaikki, joilla on ollut IRC-Galleria-profiili, juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Messenger",
+    "description": "Kaikki, jotka käyttivät MSN Messengeriä, juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Euroviisut",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat Suomen euroviisuedustajia. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 40,
+    "continuous": false
+  },
+  {
+    "name": "Cha Cha Cha",
+    "description": "Laula Käärijän Cha Cha Chan kertosäe. Jos et osaa, juo 3 kertaa.",
+    "rarity": 50,
+    "continuous": false
+  },
+  {
+    "name": "Salkkarit",
+    "description": "Nimeä kolme Salatut elämät -hahmoa. Jos et osaa, juo 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Aku Ankka",
+    "description": "Alkaen sinusta pelaajat vuorollaan sanovat Aku Ankan hahmoja. Pelaaja, jolla kestää yli 10 sekuntia, juo 3.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "SingStar",
+    "description": "Kaikki, jotka ovat pelanneet SingStaria tai Guitar Heroa, juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Azeroth",
+    "description": "Kaikki, jotka ovat pelanneet World of Warcraftia, juovat 3 kertaa.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Siideripojat",
+    "description": "Jos juot siideriä, juo 3 kertaa. Muussa tapauksessa valitse joku juomaan 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Viinipojat",
+    "description": "Jos juot viiniä, juo 3 kertaa. Muussa tapauksessa valitse joku juomaan 3.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Pullo vai tölkki",
+    "description": "Kaikki, jotka juovat pullosta, juovat 3 kertaa.",
+    "rarity": 0,
+    "continuous": false
+  },
+  {
+    "name": "Naapurin armo",
+    "description": "Vasemmalla oleva päättää, montako kertaa juot. Enintään 6.",
+    "rarity": 30,
+    "continuous": false
+  },
+  {
+    "name": "Puolet pois",
+    "description": "Juo puolet juomastasi.",
+    "rarity": 60,
+    "continuous": false
+  },
+  {
+    "name": "Stop",
+    "description": "Aloita juominen. Oikealla oleva sanoo 'stop' milloin haluaa.",
+    "rarity": 60,
+    "continuous": false
+  },
+  {
+    "name": "Horoskooppi",
+    "description": "Arvaa oikealla olevan horoskooppimerkki. Jos oikein, hän juo 3. Jos väärin, sinä juot 3.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Kengännumero",
+    "description": "Arvaa oikealla olevan kengännumero. Jos oikein, hän juo 3. Jos väärin, sinä juot 3.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Pituusarvio",
+    "description": "Arvaa oikealla olevan pituus kahden sentin tarkkuudella. Jos oikein, hän juo 6. Jos väärin, sinä juot 3.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "Muutot",
+    "description": "Juo niin monta kertaa kuin olet muuttanut elämässäsi, enintään 6.",
+    "rarity": 20,
+    "continuous": false
+  },
+  {
+    "name": "HYÖKKÄYS",
+    "description": "Valitse pelaaja. Hän juo 9 kertaa.",
+    "rarity": 70,
+    "continuous": false
+  },
+  {
+    "name": "KIERROS KAIKILLE",
+    "description": "Juo niin monta kertaa kuin pelissä on pelaajia, ja kaikki muut juovat 3 kertaa.",
+    "rarity": 70,
+    "continuous": false
+  },
+  {
+    "name": "DOMINO",
+    "description": "Juo kerran. Oikealla oleva juo kaksi kertaa, seuraava neljä, seuraava kahdeksan. Ensimmäinen, joka ei pysty, juo juomansa loppuun.",
+    "rarity": 90,
     "continuous": false
   }
 ]

@@ -18,13 +18,25 @@ Juomapeli draws randomized Finnish-language challenge cards for a group of playe
 
 ### Features
 
-- **235 challenge cards** with different rarity levels
+- **235 challenge cards** across four visible rarity tiers
 - **Quick play** without player setup
 - **Player mode** with automatic turn tracking
-- **Continuous effects** shown alongside the active card
+- **Continuous effects** tracked per player
 - **No immediate repeats** from the recent card history
-- **Keyboard controls** — press the space bar to draw the next card
-- **Responsive browser UI** for both desktop and mobile play
+- **Resume** an interrupted game from the start screen
+- **Keyboard controls** — the space bar draws the next card, Escape closes overlays
+- **Dark, mobile-first UI** that scales from a 320 px phone to a wide desktop
+
+### Interface
+
+The UI is built for a dim room and a phone passed around a table:
+
+- **Dark theme** with a neon accent, so nobody gets a white flash at midnight
+- **The card is the screen** — tap it anywhere to draw, or use the button below it
+- **Rarity is visible**: each card is tinted by tier (`Tavallinen`, `Epätavallinen`, `Harvinainen`, `Legendaarinen`), and legendary draws get a shimmer
+- **Mobile** puts turn order in a scrolling rail and moves the player and effect lists into bottom sheets
+- **Desktop** shows those lists as side rails flanking the card
+- Text and controls meet WCAG AA contrast, respect `prefers-reduced-motion`, and honour safe-area insets
 
 ## Getting started
 
@@ -87,16 +99,34 @@ Cards live in [`src/cards/cardsData.js`](src/cards/cardsData.js). Add a new obje
 
 Card IDs are generated automatically from their position in the array, so they should not be added manually.
 
+The `rarity` value also drives the card's appearance. The tier boundaries live in
+[`src/cards/rarity.ts`](src/cards/rarity.ts):
+
+| `rarity` | Tier |
+| --- | --- |
+| `0`–`19` | Tavallinen |
+| `20`–`49` | Epätavallinen |
+| `50`–`69` | Harvinainen |
+| `70`+ | Legendaarinen |
+
 ## Project structure
 
 ```text
 src/
-├── cards/          # Card data and card types
+├── cards/          # Card data, types and rarity tiers
 ├── components/     # Game screens and reusable UI components
+├── copy/           # Start-screen quotes
 ├── types/          # Shared TypeScript types
-├── App.tsx         # Game state and card selection logic
+├── utils/          # Session persistence and player-name rules
+├── App.css         # App shell layout (menu column, game board grid)
+├── index.css       # Design tokens, reset and global styles
+├── App.tsx         # Game state, card selection, keyboard handling
 └── index.tsx       # Application entry point
 ```
+
+Styling is split deliberately: `index.css` owns the design tokens (colour,
+type, radii, motion) and `App.css` owns the page-level layout, while individual
+components use styled-components that read those tokens as CSS variables.
 
 ## Built with
 
