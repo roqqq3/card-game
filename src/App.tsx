@@ -216,9 +216,11 @@ const App = () => {
   const startGame = () => {
     clearGameSession()
     setSavedGame(null)
-    handleNewCard()
     if (players.length !== 0) {
       setCurrentPlayer(0)
+      handleNewCard(0)
+    } else {
+      handleNewCard()
     }
     showMessage(hasFinePointer()
       ? 'Vinkki: välilyönti nostaa seuraavan kortin'

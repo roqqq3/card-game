@@ -8,11 +8,11 @@ import { railsDown } from '../styles/breakpoints'
 
 const dealIn = keyframes`
   from {
-    transform: perspective(1200px) rotateX(9deg) translateY(1.5rem) scale(0.95);
+    transform: perspective(75rem) rotateX(9deg) translateY(1.5rem) scale(0.95);
     opacity: 0;
   }
   to {
-    transform: perspective(1200px) rotateX(0) translateY(0) scale(1);
+    transform: perspective(75rem) rotateX(0) translateY(0) scale(1);
     opacity: 1;
   }
 `

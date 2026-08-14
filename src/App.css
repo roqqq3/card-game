@@ -55,7 +55,9 @@
 }
 
 .board__inner {
-  width: min(100%, 1400px);
+  /* 87.5rem = 1400px at the base font size; rem so the board widens along
+     with the root scaling on large screens instead of staying a fixed island. */
+  width: min(100%, 87.5rem);
   min-height: 0;
   flex: 1;
   margin: 0 auto;

@@ -154,7 +154,7 @@ const AddButton = styled.button`
   border-radius: var(--r-sm);
   color: #fff;
   background: var(--brand);
-  box-shadow: 0 6px 18px rgba(255, 47, 126, 0.28);
+  box-shadow: 0 0.375rem 1.125rem rgba(255, 47, 126, 0.28);
   transition: filter 150ms var(--ease-out), opacity 150ms var(--ease-out);
 
   ${hoverOnly`

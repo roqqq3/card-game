@@ -87,7 +87,7 @@ const PrimaryButton = styled(BaseButton)`
     &:hover {
       box-shadow: var(--glow-brand-lg), inset 0 1px 0 rgba(255, 255, 255, 0.25);
       filter: saturate(1.12) brightness(1.06);
-      transform: translateY(-2px);
+      transform: translateY(-0.125rem);
     }
   `}
 `
@@ -101,7 +101,7 @@ const SecondaryButton = styled(BaseButton)`
     &:hover {
       border-color: var(--border-strong);
       background: var(--surface-hover);
-      transform: translateY(-2px);
+      transform: translateY(-0.125rem);
     }
   `}
 `

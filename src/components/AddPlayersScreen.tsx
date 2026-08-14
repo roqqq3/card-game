@@ -107,7 +107,7 @@ const AddButton = styled.button`
   border-radius: var(--r-md);
   color: #fff;
   background: var(--brand);
-  box-shadow: 0 8px 22px rgba(255, 47, 126, 0.3);
+  box-shadow: 0 0.5rem 1.375rem rgba(255, 47, 126, 0.3);
   font-size: 1.05rem;
   transition: filter 150ms var(--ease-out), opacity 150ms var(--ease-out);
 

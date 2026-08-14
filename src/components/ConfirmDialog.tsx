@@ -88,7 +88,7 @@ const DestructiveButton = styled(BaseButton)`
   border: 1px solid transparent;
   color: #fff;
   background: var(--danger-deep);
-  box-shadow: 0 8px 24px rgba(207, 31, 63, 0.35);
+  box-shadow: 0 0.5rem 1.5rem rgba(207, 31, 63, 0.35);
 
   ${hoverOnly`
     &:hover {
