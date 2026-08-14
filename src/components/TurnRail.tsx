@@ -50,6 +50,7 @@ const Chip = styled.li<{ $current: boolean }>`
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   gap: 0.05rem;
   padding: ${props => props.$current ? '0.4rem 0.85rem' : '0.55rem 0.85rem'};
