@@ -135,6 +135,10 @@ const Title = styled.h1`
   text-shadow: 0 0 2.5rem var(--tier-glow);
   text-wrap: balance;
   animation: ${riseIn} 380ms var(--ease-out) 60ms both;
+
+  ${railsDown} {
+    font-size: clamp(2.4rem, 9.5vw, 3.4rem);
+  }
 `
 
 const Description = styled.p`
@@ -146,6 +150,10 @@ const Description = styled.p`
   line-height: 1.55;
   text-wrap: pretty;
   animation: ${riseIn} 420ms var(--ease-out) 160ms both;
+
+  ${railsDown} {
+    font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+  }
 `
 
 const Footer = styled.footer`
@@ -172,6 +180,10 @@ const ContinuousBadge = styled.span`
   font-weight: 600;
   text-align: center;
   overflow-wrap: anywhere;
+
+  ${railsDown} {
+    font-size: 0.9rem;
+  }
 `
 
 const Placeholder = styled.div`
