@@ -92,7 +92,7 @@ const Count = styled.span`
   border: 2px solid var(--bg);
   border-radius: var(--r-pill);
   color: #fff;
-  background: var(--pink-deep);
+  background: var(--violet-deep);
   font-size: 0.66rem;
   font-weight: 700;
   line-height: 1;
@@ -129,7 +129,6 @@ const TopBar = ({ effectCount, playerCount, onOpenEffects, onOpenPlayers, onExit
           onClick={onOpenPlayers}
         >
           <FontAwesomeIcon icon={faUserGroup} {...iconProps} />
-          <Count aria-hidden='true'>{playerCount}</Count>
         </MobileOnly>}
         {effectCount > 0 && <MobileOnly
           type='button'
