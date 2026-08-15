@@ -1,4 +1,4 @@
-import { faLayerGroup, faRightFromBracket, faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { faLayerGroup, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
 import { railsUp } from '../styles/breakpoints'
@@ -13,16 +13,28 @@ const Bar = styled.header`
   gap: 0.75rem;
 `
 
-const Brand = styled.div`
+const Brand = styled.button`
   min-width: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin: -0.5rem;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: var(--r-sm);
   color: var(--text);
+  background: transparent;
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+  transition: background-color 150ms var(--ease-out);
+
+  ${hoverOnly`
+    &:hover {
+      background: var(--surface);
+    }
+  `}
 `
 
 const BrandName = styled.span`
@@ -69,17 +81,6 @@ const IconButton = styled.button`
   `}
 `
 
-const ButtonLabel = styled.span`
-  @media (max-width: 900px) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-`
-
 const Count = styled.span`
   position: absolute;
   top: -0.35rem;
@@ -118,9 +119,9 @@ const TopBar = ({ effectCount, playerCount, onOpenEffects, onOpenPlayers, onExit
 
   return (
     <Bar>
-      <Brand>
+      <Brand type='button' aria-label='Juomapeli — palaa alkuun' onClick={onExit}>
         <BrandMark size='1.6rem' />
-        <BrandName>Juomapeli</BrandName>
+        <BrandName aria-hidden='true'>Juomapeli</BrandName>
       </Brand>
       <Actions>
         {playerCount > 0 && <MobileOnly
@@ -138,10 +139,6 @@ const TopBar = ({ effectCount, playerCount, onOpenEffects, onOpenPlayers, onExit
           <FontAwesomeIcon icon={faLayerGroup} {...iconProps} />
           <Count aria-hidden='true'>{effectCount}</Count>
         </MobileOnly>}
-        <IconButton type='button' aria-label='Lopeta peli' onClick={onExit}>
-          <FontAwesomeIcon icon={faRightFromBracket} {...iconProps} />
-          <ButtonLabel>Lopeta</ButtonLabel>
-        </IconButton>
       </Actions>
     </Bar>
   )
