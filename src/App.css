@@ -104,11 +104,15 @@
   justify-content: center;
 }
 
-/* Hint under the card, desktop only — mobile relies on the button itself. */
+/* Hint under the card, desktop only — mobile relies on the button itself.
+   Keeps its line height when empty so the layout above holds still once the
+   hint has been dismissed. */
 .board__hint {
+  min-height: 1.2em;
   margin: 0;
   color: var(--text-faint);
   font-size: 0.78rem;
+  line-height: 1.2;
   text-align: center;
 }
 

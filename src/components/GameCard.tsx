@@ -29,6 +29,9 @@ const shimmer = keyframes`
 
 const Frame = styled.article<{ $showcase: boolean; $clickable: boolean }>`
   width: min(100%, 36rem);
+  /* A generous fixed floor rather than content-hugging: the deck mixes one-line
+     cards with five-line ones, and a card that resized on every draw would
+     drag the draw button up and down the screen with it. */
   min-height: clamp(19rem, 56vh, 32rem);
   position: relative;
   isolation: isolate;
@@ -125,34 +128,40 @@ const Content = styled.div`
   }
 `
 
+/* The title names the card; the description is the rule. The title is still
+   large, but it is no longer the only thing the eye lands on. There is
+   deliberately no text glow here — the frame already carries the tier glow,
+   and two glows on a legendary draw read as noise rather than emphasis. */
 const Title = styled.h1`
   margin: 0;
   color: var(--text);
-  font-size: clamp(2.1rem, 7.5vw, 3.6rem);
+  font-size: clamp(1.9rem, 6.5vw, 3rem);
   font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  text-shadow: 0 0 2.5rem var(--tier-glow);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   text-wrap: balance;
   animation: ${riseIn} 380ms var(--ease-out) 60ms both;
 
   ${railsDown} {
-    font-size: clamp(2.4rem, 9.5vw, 3.4rem);
+    font-size: clamp(2.2rem, 9vw, 3rem);
   }
 `
 
+/* Full text colour, not muted: this is the instruction the table has to read
+   from across the room. The longest cards in the deck run to about 170
+   characters, which is five lines at this size within the width cap. */
 const Description = styled.p`
   max-width: 30rem;
   margin: 0;
-  color: var(--text-muted);
-  font-size: clamp(1.02rem, 2.4vw, 1.3rem);
-  font-weight: 400;
-  line-height: 1.55;
+  color: var(--text);
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.45;
   text-wrap: pretty;
   animation: ${riseIn} 420ms var(--ease-out) 160ms both;
 
   ${railsDown} {
-    font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+    font-size: clamp(1.25rem, 5vw, 1.65rem);
   }
 `
 
@@ -167,22 +176,24 @@ const Footer = styled.footer`
   animation: ${riseIn} 440ms var(--ease-out) 220ms both;
 `
 
+/* A continuous card changes the rules for the rest of the game, so the badge
+   sits at the description's visual weight rather than as a footnote. */
 const ContinuousBadge = styled.span`
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid rgba(139, 92, 246, 0.35);
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid rgba(139, 92, 246, 0.45);
   border-radius: var(--r-pill);
   color: var(--violet-bright);
-  background: rgba(139, 92, 246, 0.12);
-  font-size: 0.8rem;
-  font-weight: 600;
+  background: rgba(139, 92, 246, 0.16);
+  font-size: 1rem;
+  font-weight: 700;
   text-align: center;
   overflow-wrap: anywhere;
 
   ${railsDown} {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 `
 
